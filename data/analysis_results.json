@@ -1,0 +1,7081 @@
+{
+  "resumen": {
+    "por_aseguradora": [
+      {
+        "aseguradora": "ASISA",
+        "total_registros": 928,
+        "especialidades": 50,
+        "municipios": 27,
+        "profesionales_unicos": 536,
+        "centros": 232
+      },
+      {
+        "aseguradora": "DKV",
+        "total_registros": 705,
+        "especialidades": 46,
+        "municipios": 17,
+        "profesionales_unicos": 492,
+        "centros": 79
+      },
+      {
+        "aseguradora": "Sanitas",
+        "total_registros": 576,
+        "especialidades": 50,
+        "municipios": 25,
+        "profesionales_unicos": 160,
+        "centros": 71
+      },
+      {
+        "aseguradora": "Adeslas",
+        "total_registros": 546,
+        "especialidades": 42,
+        "municipios": 29,
+        "profesionales_unicos": 479,
+        "centros": 21
+      },
+      {
+        "aseguradora": "Mapfre",
+        "total_registros": 476,
+        "especialidades": 42,
+        "municipios": 29,
+        "profesionales_unicos": 354,
+        "centros": 88
+      }
+    ],
+    "totales": {
+      "registros": 3231,
+      "especialidades": 62,
+      "municipios": 54
+    }
+  },
+  "comparativa_especialidades": [
+    {
+      "especialidad": "Pruebas Diagnósticas Cardiológicas",
+      "asisa": 0,
+      "promedio_competencia": 31.5,
+      "max_competencia": 54,
+      "diferencia_vs_promedio": -31.5,
+      "detalle": "DKV:54,Sanitas:9"
+    },
+    {
+      "especialidad": "Mamografía",
+      "asisa": 0,
+      "promedio_competencia": 14.0,
+      "max_competencia": 14,
+      "diferencia_vs_promedio": -14.0,
+      "detalle": "DKV:14"
+    },
+    {
+      "especialidad": "Enfermería",
+      "asisa": 3,
+      "promedio_competencia": 16.8,
+      "max_competencia": 25,
+      "diferencia_vs_promedio": -13.8,
+      "detalle": "Adeslas:21,DKV:20,Mapfre:25,Sanitas:1"
+    },
+    {
+      "especialidad": "Análisis Clínicos",
+      "asisa": 4,
+      "promedio_competencia": 16.7,
+      "max_competencia": 24,
+      "diferencia_vs_promedio": -12.7,
+      "detalle": "Adeslas:22,DKV:4,Mapfre:24"
+    },
+    {
+      "especialidad": "Odontología - Ortodoncia",
+      "asisa": 0,
+      "promedio_competencia": 12.0,
+      "max_competencia": 19,
+      "diferencia_vs_promedio": -12.0,
+      "detalle": "DKV:19,Sanitas:5"
+    },
+    {
+      "especialidad": "Diagnóstico Prenatal",
+      "asisa": 0,
+      "promedio_competencia": 10.0,
+      "max_competencia": 10,
+      "diferencia_vs_promedio": -10.0,
+      "detalle": "DKV:10"
+    },
+    {
+      "especialidad": "Fisioterapia",
+      "asisa": 30,
+      "promedio_competencia": 39.0,
+      "max_competencia": 66,
+      "diferencia_vs_promedio": -9.0,
+      "detalle": "Adeslas:66,DKV:31,Mapfre:38,Sanitas:21"
+    },
+    {
+      "especialidad": "Odontología - Periodoncia",
+      "asisa": 0,
+      "promedio_competencia": 9.0,
+      "max_competencia": 9,
+      "diferencia_vs_promedio": -9.0,
+      "detalle": "Sanitas:9"
+    },
+    {
+      "especialidad": "TAC",
+      "asisa": 0,
+      "promedio_competencia": 8.0,
+      "max_competencia": 8,
+      "diferencia_vs_promedio": -8.0,
+      "detalle": "DKV:8"
+    },
+    {
+      "especialidad": "Endoscopia Digestiva",
+      "asisa": 0,
+      "promedio_competencia": 7.0,
+      "max_competencia": 12,
+      "diferencia_vs_promedio": -7.0,
+      "detalle": "Adeslas:12,DKV:2"
+    },
+    {
+      "especialidad": "Resonancia Magnética",
+      "asisa": 0,
+      "promedio_competencia": 7.0,
+      "max_competencia": 7,
+      "diferencia_vs_promedio": -7.0,
+      "detalle": "DKV:7"
+    },
+    {
+      "especialidad": "Ecografía",
+      "asisa": 0,
+      "promedio_competencia": 6.5,
+      "max_competencia": 11,
+      "diferencia_vs_promedio": -6.5,
+      "detalle": "DKV:11,Sanitas:2"
+    },
+    {
+      "especialidad": "Densitometría Ósea",
+      "asisa": 2,
+      "promedio_competencia": 8.0,
+      "max_competencia": 8,
+      "diferencia_vs_promedio": -6.0,
+      "detalle": "DKV:8"
+    },
+    {
+      "especialidad": "Dietética y Nutrición",
+      "asisa": 0,
+      "promedio_competencia": 6.0,
+      "max_competencia": 9,
+      "diferencia_vs_promedio": -6.0,
+      "detalle": "Adeslas:9,Sanitas:3"
+    },
+    {
+      "especialidad": "Podología",
+      "asisa": 8,
+      "promedio_competencia": 13.5,
+      "max_competencia": 19,
+      "diferencia_vs_promedio": -5.5,
+      "detalle": "Adeslas:19,DKV:17,Mapfre:11,Sanitas:7"
+    },
+    {
+      "especialidad": "Radiodiagnóstico",
+      "asisa": 6,
+      "promedio_competencia": 11.5,
+      "max_competencia": 26,
+      "diferencia_vs_promedio": -5.5,
+      "detalle": "Adeslas:5,DKV:26,Mapfre:14,Sanitas:1"
+    },
+    {
+      "especialidad": "Cirugía Pediátrica",
+      "asisa": 5,
+      "promedio_competencia": 9.0,
+      "max_competencia": 9,
+      "diferencia_vs_promedio": -4.0,
+      "detalle": "DKV:9"
+    },
+    {
+      "especialidad": "Reumatología",
+      "asisa": 10,
+      "promedio_competencia": 13.0,
+      "max_competencia": 22,
+      "diferencia_vs_promedio": -3.0,
+      "detalle": "Adeslas:20,DKV:22,Mapfre:6,Sanitas:4"
+    },
+    {
+      "especialidad": "Microbiología",
+      "asisa": 0,
+      "promedio_competencia": 3.0,
+      "max_competencia": 3,
+      "diferencia_vs_promedio": -3.0,
+      "detalle": "Adeslas:3"
+    },
+    {
+      "especialidad": "Osteopatía",
+      "asisa": 0,
+      "promedio_competencia": 3.0,
+      "max_competencia": 3,
+      "diferencia_vs_promedio": -3.0,
+      "detalle": "Mapfre:3"
+    },
+    {
+      "especialidad": "Anatomía Patológica",
+      "asisa": 5,
+      "promedio_competencia": 7.0,
+      "max_competencia": 13,
+      "diferencia_vs_promedio": -2.0,
+      "detalle": "Adeslas:4,DKV:13,Mapfre:4"
+    },
+    {
+      "especialidad": "Neurofisiología Clínica",
+      "asisa": 4,
+      "promedio_competencia": 6.0,
+      "max_competencia": 11,
+      "diferencia_vs_promedio": -2.0,
+      "detalle": "Adeslas:11,DKV:5,Mapfre:2"
+    },
+    {
+      "especialidad": "Cirugía Torácica",
+      "asisa": 0,
+      "promedio_competencia": 2.0,
+      "max_competencia": 2,
+      "diferencia_vs_promedio": -2.0,
+      "detalle": "DKV:2"
+    },
+    {
+      "especialidad": "Proctología",
+      "asisa": 0,
+      "promedio_competencia": 2.0,
+      "max_competencia": 2,
+      "diferencia_vs_promedio": -2.0,
+      "detalle": "Adeslas:2"
+    },
+    {
+      "especialidad": "Hematología",
+      "asisa": 5,
+      "promedio_competencia": 6.0,
+      "max_competencia": 12,
+      "diferencia_vs_promedio": -1.0,
+      "detalle": "DKV:12,Mapfre:5,Sanitas:1"
+    },
+    {
+      "especialidad": "Geriatría",
+      "asisa": 0,
+      "promedio_competencia": 1.0,
+      "max_competencia": 1,
+      "diferencia_vs_promedio": -1.0,
+      "detalle": "Sanitas:1"
+    },
+    {
+      "especialidad": "Oncología",
+      "asisa": 0,
+      "promedio_competencia": 1.0,
+      "max_competencia": 1,
+      "diferencia_vs_promedio": -1.0,
+      "detalle": "Mapfre:1"
+    },
+    {
+      "especialidad": "Aparato Digestivo",
+      "asisa": 12,
+      "promedio_competencia": 12.0,
+      "max_competencia": 27,
+      "diferencia_vs_promedio": 0.0,
+      "detalle": "Adeslas:16,DKV:27,Mapfre:2,Sanitas:3"
+    },
+    {
+      "especialidad": "Medicina Nuclear",
+      "asisa": 2,
+      "promedio_competencia": 2.0,
+      "max_competencia": 3,
+      "diferencia_vs_promedio": 0.0,
+      "detalle": "Adeslas:3,Mapfre:1"
+    },
+    {
+      "especialidad": "Endocrinología y Nutrición",
+      "asisa": 5,
+      "promedio_competencia": 4.8,
+      "max_competencia": 9,
+      "diferencia_vs_promedio": 0.20000000000000018,
+      "detalle": "Adeslas:1,DKV:9,Mapfre:4,Sanitas:5"
+    },
+    {
+      "especialidad": "Oncología Médica",
+      "asisa": 3,
+      "promedio_competencia": 2.7,
+      "max_competencia": 3,
+      "diferencia_vs_promedio": 0.2999999999999998,
+      "detalle": "Adeslas:3,DKV:3,Mapfre:2"
+    },
+    {
+      "especialidad": "Cirugía Plástica y Reparadora",
+      "asisa": 10,
+      "promedio_competencia": 9.5,
+      "max_competencia": 18,
+      "diferencia_vs_promedio": 0.5,
+      "detalle": "Adeslas:12,DKV:18,Mapfre:7,Sanitas:1"
+    },
+    {
+      "especialidad": "Pediatría",
+      "asisa": 9,
+      "promedio_competencia": 8.3,
+      "max_competencia": 11,
+      "diferencia_vs_promedio": 0.6999999999999993,
+      "detalle": "Adeslas:10,DKV:11,Mapfre:6,Sanitas:6"
+    },
+    {
+      "especialidad": "Cirugía Cardiovascular",
+      "asisa": 3,
+      "promedio_competencia": 2.0,
+      "max_competencia": 4,
+      "diferencia_vs_promedio": 1.0,
+      "detalle": "Adeslas:1,DKV:4,Mapfre:1"
+    },
+    {
+      "especialidad": "Tratamiento del Dolor",
+      "asisa": 2,
+      "promedio_competencia": 1.0,
+      "max_competencia": 1,
+      "diferencia_vs_promedio": 1.0,
+      "detalle": "Adeslas:1"
+    },
+    {
+      "especialidad": "Urología",
+      "asisa": 17,
+      "promedio_competencia": 16.0,
+      "max_competencia": 31,
+      "diferencia_vs_promedio": 1.0,
+      "detalle": "Adeslas:18,DKV:31,Mapfre:11,Sanitas:4"
+    },
+    {
+      "especialidad": "Logopedia",
+      "asisa": 8,
+      "promedio_competencia": 6.5,
+      "max_competencia": 10,
+      "diferencia_vs_promedio": 1.5,
+      "detalle": "Adeslas:10,DKV:4,Mapfre:8,Sanitas:4"
+    },
+    {
+      "especialidad": "Matronas",
+      "asisa": 4,
+      "promedio_competencia": 2.0,
+      "max_competencia": 3,
+      "diferencia_vs_promedio": 2.0,
+      "detalle": "Adeslas:3,Mapfre:2,Sanitas:1"
+    },
+    {
+      "especialidad": "Nefrología",
+      "asisa": 6,
+      "promedio_competencia": 4.0,
+      "max_competencia": 5,
+      "diferencia_vs_promedio": 2.0,
+      "detalle": "Adeslas:5,DKV:5,Mapfre:3,Sanitas:3"
+    },
+    {
+      "especialidad": "Neurocirugía",
+      "asisa": 7,
+      "promedio_competencia": 4.7,
+      "max_competencia": 8,
+      "diferencia_vs_promedio": 2.3,
+      "detalle": "Adeslas:4,DKV:8,Mapfre:2"
+    },
+    {
+      "especialidad": "Neumología",
+      "asisa": 10,
+      "promedio_competencia": 7.5,
+      "max_competencia": 18,
+      "diferencia_vs_promedio": 2.5,
+      "detalle": "Adeslas:5,DKV:18,Mapfre:6,Sanitas:1"
+    },
+    {
+      "especialidad": "Oftalmología",
+      "asisa": 17,
+      "promedio_competencia": 14.5,
+      "max_competencia": 20,
+      "diferencia_vs_promedio": 2.5,
+      "detalle": "Adeslas:20,DKV:18,Mapfre:14,Sanitas:6"
+    },
+    {
+      "especialidad": "Cirugía Oral y Maxilofacial",
+      "asisa": 10,
+      "promedio_competencia": 6.8,
+      "max_competencia": 10,
+      "diferencia_vs_promedio": 3.2,
+      "detalle": "Adeslas:5,DKV:9,Mapfre:3,Sanitas:10"
+    },
+    {
+      "especialidad": "Alergología",
+      "asisa": 12,
+      "promedio_competencia": 8.5,
+      "max_competencia": 19,
+      "diferencia_vs_promedio": 3.5,
+      "detalle": "Adeslas:4,DKV:19,Mapfre:5,Sanitas:6"
+    },
+    {
+      "especialidad": "Neurología",
+      "asisa": 13,
+      "promedio_competencia": 9.3,
+      "max_competencia": 21,
+      "diferencia_vs_promedio": 3.6999999999999993,
+      "detalle": "Adeslas:7,DKV:21,Mapfre:7,Sanitas:2"
+    },
+    {
+      "especialidad": "Psiquiatría",
+      "asisa": 9,
+      "promedio_competencia": 5.3,
+      "max_competencia": 7,
+      "diferencia_vs_promedio": 3.7,
+      "detalle": "Adeslas:6,DKV:6,Mapfre:7,Sanitas:2"
+    },
+    {
+      "especialidad": "Cirugía General",
+      "asisa": 10,
+      "promedio_competencia": 6.0,
+      "max_competencia": 9,
+      "diferencia_vs_promedio": 4.0,
+      "detalle": "Mapfre:9,Sanitas:3"
+    },
+    {
+      "especialidad": "Dermatología",
+      "asisa": 15,
+      "promedio_competencia": 11.0,
+      "max_competencia": 23,
+      "diferencia_vs_promedio": 4.0,
+      "detalle": "Adeslas:8,DKV:8,Mapfre:23,Sanitas:5"
+    },
+    {
+      "especialidad": "Angiología y Cirugía Vascular",
+      "asisa": 12,
+      "promedio_competencia": 7.0,
+      "max_competencia": 13,
+      "diferencia_vs_promedio": 5.0,
+      "detalle": "Adeslas:4,DKV:13,Mapfre:5,Sanitas:6"
+    },
+    {
+      "especialidad": "Anestesiología y Reanimación",
+      "asisa": 9,
+      "promedio_competencia": 3.0,
+      "max_competencia": 3,
+      "diferencia_vs_promedio": 6.0,
+      "detalle": "Adeslas:3"
+    },
+    {
+      "especialidad": "Odontología",
+      "asisa": 59,
+      "promedio_competencia": 52.8,
+      "max_competencia": 90,
+      "diferencia_vs_promedio": 6.200000000000003,
+      "detalle": "Adeslas:90,DKV:33,Mapfre:56,Sanitas:32"
+    },
+    {
+      "especialidad": "Medicina Interna",
+      "asisa": 19,
+      "promedio_competencia": 12.3,
+      "max_competencia": 15,
+      "diferencia_vs_promedio": 6.699999999999999,
+      "detalle": "Adeslas:15,DKV:14,Mapfre:13,Sanitas:7"
+    },
+    {
+      "especialidad": "Otorrinolaringología",
+      "asisa": 24,
+      "promedio_competencia": 14.3,
+      "max_competencia": 25,
+      "diferencia_vs_promedio": 9.7,
+      "detalle": "Adeslas:15,DKV:25,Mapfre:8,Sanitas:9"
+    },
+    {
+      "especialidad": "Psicología",
+      "asisa": 24,
+      "promedio_competencia": 10.5,
+      "max_competencia": 13,
+      "diferencia_vs_promedio": 13.5,
+      "detalle": "Adeslas:13,DKV:9,Mapfre:10,Sanitas:10"
+    },
+    {
+      "especialidad": "Ginecología y Obstetricia",
+      "asisa": 43,
+      "promedio_competencia": 24.0,
+      "max_competencia": 41,
+      "diferencia_vs_promedio": 19.0,
+      "detalle": "Adeslas:9,DKV:41,Mapfre:21,Sanitas:25"
+    },
+    {
+      "especialidad": "Cardiología",
+      "asisa": 29,
+      "promedio_competencia": 9.0,
+      "max_competencia": 12,
+      "diferencia_vs_promedio": 20.0,
+      "detalle": "Adeslas:8,DKV:10,Mapfre:12,Sanitas:6"
+    },
+    {
+      "especialidad": "Traumatología",
+      "asisa": 66,
+      "promedio_competencia": 20.8,
+      "max_competencia": 33,
+      "diferencia_vs_promedio": 45.2,
+      "detalle": "Adeslas:22,DKV:13,Mapfre:33,Sanitas:15"
+    },
+    {
+      "especialidad": "Medicina General",
+      "asisa": 137,
+      "promedio_competencia": 30.8,
+      "max_competencia": 42,
+      "diferencia_vs_promedio": 106.2,
+      "detalle": "Adeslas:31,DKV:34,Mapfre:42,Sanitas:16"
+    }
+  ],
+  "especialidades_por_aseguradora": [
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Medicina General",
+      "profesionales": 137
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Traumatología",
+      "profesionales": 66
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Odontología",
+      "profesionales": 59
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Ginecología y Obstetricia",
+      "profesionales": 43
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Fisioterapia",
+      "profesionales": 30
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Cardiología",
+      "profesionales": 29
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Psicología",
+      "profesionales": 24
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Otorrinolaringología",
+      "profesionales": 24
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Medicina Interna",
+      "profesionales": 19
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Urología",
+      "profesionales": 17
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Oftalmología",
+      "profesionales": 17
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Dermatología",
+      "profesionales": 15
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Neurología",
+      "profesionales": 13
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Aparato Digestivo",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Angiología y Cirugía Vascular",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Alergología",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Reumatología",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Neumología",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Cirugía Plástica y Reparadora",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Cirugía Oral y Maxilofacial",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Cirugía General",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Psiquiatría",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Pediatría",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Anestesiología y Reanimación",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Podología",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Logopedia",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Neurocirugía",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Radiodiagnóstico",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Nefrología",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Hematología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Endocrinología y Nutrición",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Cirugía Pediátrica",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Anatomía Patológica",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Neurofisiología Clínica",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Matronas",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Análisis Clínicos",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Oncología Médica",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Enfermería",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Cirugía Cardiovascular",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Tratamiento del Dolor",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Medicina Nuclear",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "especialidad_normalizada": "Densitometría Ósea",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Odontología",
+      "profesionales": 90
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Fisioterapia",
+      "profesionales": 66
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Medicina General",
+      "profesionales": 31
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Traumatología",
+      "profesionales": 22
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Análisis Clínicos",
+      "profesionales": 22
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Enfermería",
+      "profesionales": 21
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Reumatología",
+      "profesionales": 20
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Oftalmología",
+      "profesionales": 20
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Podología",
+      "profesionales": 19
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Urología",
+      "profesionales": 18
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Aparato Digestivo",
+      "profesionales": 16
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Otorrinolaringología",
+      "profesionales": 15
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Medicina Interna",
+      "profesionales": 15
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Psicología",
+      "profesionales": 13
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Endoscopia Digestiva",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Cirugía Plástica y Reparadora",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Neurofisiología Clínica",
+      "profesionales": 11
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Pediatría",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Logopedia",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Ginecología y Obstetricia",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Dietética y Nutrición",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Dermatología",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Cardiología",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Neurología",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Psiquiatría",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Radiodiagnóstico",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Neumología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Nefrología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Cirugía Oral y Maxilofacial",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Neurocirugía",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Angiología y Cirugía Vascular",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Anatomía Patológica",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Alergología",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Oncología Médica",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Microbiología",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Medicina Nuclear",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Matronas",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Anestesiología y Reanimación",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Proctología",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Tratamiento del Dolor",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Endocrinología y Nutrición",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "especialidad_normalizada": "Cirugía Cardiovascular",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "profesionales": 54
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Ginecología y Obstetricia",
+      "profesionales": 41
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Medicina General",
+      "profesionales": 34
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Odontología",
+      "profesionales": 33
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Urología",
+      "profesionales": 31
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Fisioterapia",
+      "profesionales": 31
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Aparato Digestivo",
+      "profesionales": 27
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Radiodiagnóstico",
+      "profesionales": 26
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Otorrinolaringología",
+      "profesionales": 25
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Reumatología",
+      "profesionales": 22
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Neurología",
+      "profesionales": 21
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Enfermería",
+      "profesionales": 20
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Odontología - Ortodoncia",
+      "profesionales": 19
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Alergología",
+      "profesionales": 19
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Oftalmología",
+      "profesionales": 18
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Neumología",
+      "profesionales": 18
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Cirugía Plástica y Reparadora",
+      "profesionales": 18
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Podología",
+      "profesionales": 17
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Medicina Interna",
+      "profesionales": 14
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Mamografía",
+      "profesionales": 14
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Traumatología",
+      "profesionales": 13
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Angiología y Cirugía Vascular",
+      "profesionales": 13
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Anatomía Patológica",
+      "profesionales": 13
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Hematología",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Pediatría",
+      "profesionales": 11
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Ecografía",
+      "profesionales": 11
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Diagnóstico Prenatal",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Cardiología",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Psicología",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Endocrinología y Nutrición",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Cirugía Pediátrica",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Cirugía Oral y Maxilofacial",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "TAC",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Neurocirugía",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Dermatología",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Densitometría Ósea",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Resonancia Magnética",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Psiquiatría",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Neurofisiología Clínica",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Nefrología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Logopedia",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Cirugía Cardiovascular",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Análisis Clínicos",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Oncología Médica",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Endoscopia Digestiva",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "especialidad_normalizada": "Cirugía Torácica",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Odontología",
+      "profesionales": 56
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Medicina General",
+      "profesionales": 42
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Fisioterapia",
+      "profesionales": 38
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Traumatología",
+      "profesionales": 33
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Enfermería",
+      "profesionales": 25
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Análisis Clínicos",
+      "profesionales": 24
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Dermatología",
+      "profesionales": 23
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Ginecología y Obstetricia",
+      "profesionales": 21
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Radiodiagnóstico",
+      "profesionales": 14
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Oftalmología",
+      "profesionales": 14
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Medicina Interna",
+      "profesionales": 13
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Cardiología",
+      "profesionales": 12
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Urología",
+      "profesionales": 11
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Podología",
+      "profesionales": 11
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Psicología",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Cirugía General",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Otorrinolaringología",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Logopedia",
+      "profesionales": 8
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Psiquiatría",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Neurología",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Cirugía Plástica y Reparadora",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Reumatología",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Pediatría",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Neumología",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Hematología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Angiología y Cirugía Vascular",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Alergología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Endocrinología y Nutrición",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Anatomía Patológica",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Osteopatía",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Nefrología",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Cirugía Oral y Maxilofacial",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Oncología Médica",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Neurofisiología Clínica",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Neurocirugía",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Matronas",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Aparato Digestivo",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Oncología",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Medicina Nuclear",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "especialidad_normalizada": "Cirugía Cardiovascular",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Odontología",
+      "profesionales": 32
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Ginecología y Obstetricia",
+      "profesionales": 25
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Fisioterapia",
+      "profesionales": 21
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Medicina General",
+      "profesionales": 16
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Traumatología",
+      "profesionales": 15
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Psicología",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Cirugía Oral y Maxilofacial",
+      "profesionales": 10
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Otorrinolaringología",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Odontología - Periodoncia",
+      "profesionales": 9
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Podología",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Medicina Interna",
+      "profesionales": 7
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Pediatría",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Oftalmología",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Cardiología",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Angiología y Cirugía Vascular",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Alergología",
+      "profesionales": 6
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Odontología - Ortodoncia",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Endocrinología y Nutrición",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Dermatología",
+      "profesionales": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Urología",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Reumatología",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Logopedia",
+      "profesionales": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Nefrología",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Dietética y Nutrición",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Cirugía General",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Aparato Digestivo",
+      "profesionales": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Psiquiatría",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Neurología",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Ecografía",
+      "profesionales": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Radiodiagnóstico",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Neumología",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Matronas",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Hematología",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Geriatría",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Enfermería",
+      "profesionales": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "especialidad_normalizada": "Cirugía Plástica y Reparadora",
+      "profesionales": 1
+    }
+  ],
+  "gaps_especialidades_asisa": [
+    {
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "aseguradoras_que_la_tienen": "DKV,Sanitas",
+      "total_profesionales": 63
+    },
+    {
+      "especialidad_normalizada": "Odontología - Ortodoncia",
+      "aseguradoras_que_la_tienen": "DKV,Sanitas",
+      "total_profesionales": 24
+    },
+    {
+      "especialidad_normalizada": "Endoscopia Digestiva",
+      "aseguradoras_que_la_tienen": "Adeslas,DKV",
+      "total_profesionales": 14
+    },
+    {
+      "especialidad_normalizada": "Dietética y Nutrición",
+      "aseguradoras_que_la_tienen": "Adeslas,Sanitas",
+      "total_profesionales": 12
+    },
+    {
+      "especialidad_normalizada": "Diagnóstico Prenatal",
+      "aseguradoras_que_la_tienen": "DKV",
+      "total_profesionales": 10
+    },
+    {
+      "especialidad_normalizada": "Odontología - Periodoncia",
+      "aseguradoras_que_la_tienen": "Sanitas",
+      "total_profesionales": 9
+    },
+    {
+      "especialidad_normalizada": "Osteopatía",
+      "aseguradoras_que_la_tienen": "Mapfre",
+      "total_profesionales": 3
+    },
+    {
+      "especialidad_normalizada": "Microbiología",
+      "aseguradoras_que_la_tienen": "Adeslas",
+      "total_profesionales": 3
+    },
+    {
+      "especialidad_normalizada": "Proctología",
+      "aseguradoras_que_la_tienen": "Adeslas",
+      "total_profesionales": 2
+    },
+    {
+      "especialidad_normalizada": "Oncología",
+      "aseguradoras_que_la_tienen": "Mapfre,Sanitas",
+      "total_profesionales": 1
+    },
+    {
+      "especialidad_normalizada": "Geriatría",
+      "aseguradoras_que_la_tienen": "Sanitas",
+      "total_profesionales": 1
+    },
+    {
+      "especialidad_normalizada": "Oxigenoterapia",
+      "aseguradoras_que_la_tienen": "Mapfre",
+      "total_profesionales": 0
+    }
+  ],
+  "ranking_municipios": [
+    {
+      "municipio": "Oviedo",
+      "poblacion": "217584",
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_registros": 408,
+      "competencia_registros": 792,
+      "asisa_especialidades": 48,
+      "competencia_especialidades": 59,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Gijón",
+      "poblacion": "268313",
+      "area_sanitaria": "Área V - Gijón",
+      "asisa_registros": 308,
+      "competencia_registros": 725,
+      "asisa_especialidades": 45,
+      "competencia_especialidades": 53,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Avilés",
+      "poblacion": "75518",
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_registros": 86,
+      "competencia_registros": 350,
+      "asisa_especialidades": 31,
+      "competencia_especialidades": 42,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Llanes",
+      "poblacion": "13524",
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_registros": 29,
+      "competencia_registros": 49,
+      "asisa_especialidades": 11,
+      "competencia_especialidades": 17,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Mieres",
+      "poblacion": "36195",
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_registros": 9,
+      "competencia_registros": 46,
+      "asisa_especialidades": 6,
+      "competencia_especialidades": 11,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Pola de Siero",
+      "poblacion": "52194",
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_registros": 11,
+      "competencia_registros": 45,
+      "asisa_especialidades": 8,
+      "competencia_especialidades": 16,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Langreo",
+      "poblacion": "37978",
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_registros": 21,
+      "competencia_registros": 40,
+      "asisa_especialidades": 11,
+      "competencia_especialidades": 16,
+      "num_aseguradoras": 4
+    },
+    {
+      "municipio": "Cangas de Onís",
+      "poblacion": "6316",
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_registros": 10,
+      "competencia_registros": 24,
+      "asisa_especialidades": 6,
+      "competencia_especialidades": 10,
+      "num_aseguradoras": 4
+    },
+    {
+      "municipio": "Ribadesella",
+      "poblacion": "5548",
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_registros": 6,
+      "competencia_registros": 23,
+      "asisa_especialidades": 3,
+      "competencia_especialidades": 5,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Vegadeo",
+      "poblacion": "3885",
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_registros": 1,
+      "competencia_registros": 19,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 9,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Villaviciosa",
+      "poblacion": "15000",
+      "area_sanitaria": "Área V - Gijón",
+      "asisa_registros": 3,
+      "competencia_registros": 19,
+      "asisa_especialidades": 2,
+      "competencia_especialidades": 6,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Grado",
+      "poblacion": "9616",
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_registros": 1,
+      "competencia_registros": 18,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 8,
+      "num_aseguradoras": 5
+    },
+    {
+      "municipio": "Pravia",
+      "poblacion": "7830",
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_registros": 2,
+      "competencia_registros": 16,
+      "asisa_especialidades": 2,
+      "competencia_especialidades": 9,
+      "num_aseguradoras": 4
+    },
+    {
+      "municipio": "Luarca",
+      "poblacion": "10958",
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_registros": 11,
+      "competencia_registros": 12,
+      "asisa_especialidades": 6,
+      "competencia_especialidades": 7,
+      "num_aseguradoras": 4
+    },
+    {
+      "municipio": "Luanco",
+      "poblacion": "10177",
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_registros": 1,
+      "competencia_registros": 11,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 4,
+      "num_aseguradoras": 3
+    },
+    {
+      "municipio": "Navia",
+      "poblacion": "8136",
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_registros": 2,
+      "competencia_registros": 9,
+      "asisa_especialidades": 2,
+      "competencia_especialidades": 5,
+      "num_aseguradoras": 3
+    },
+    {
+      "municipio": "Laviana",
+      "poblacion": "12355",
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_registros": 0,
+      "competencia_registros": 8,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 4,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Sama de Langreo",
+      "poblacion": "37978",
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_registros": 0,
+      "competencia_registros": 8,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Moreda de Aller",
+      "poblacion": "12324",
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_registros": 0,
+      "competencia_registros": 7,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Pola de Lena",
+      "poblacion": "12545",
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_registros": 1,
+      "competencia_registros": 7,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 3,
+      "num_aseguradoras": 3
+    },
+    {
+      "municipio": "Tineo",
+      "poblacion": "8769",
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_registros": 1,
+      "competencia_registros": 7,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 3,
+      "num_aseguradoras": 3
+    },
+    {
+      "municipio": "Cangas del Narcea",
+      "poblacion": "11421",
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_registros": 0,
+      "competencia_registros": 6,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 4,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Sotrondio",
+      "poblacion": "14000",
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_registros": 0,
+      "competencia_registros": 6,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 4,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Lena",
+      "poblacion": "12545",
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_registros": 1,
+      "competencia_registros": 4,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 4,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Salas",
+      "poblacion": "4806",
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_registros": 0,
+      "competencia_registros": 4,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 3,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Boal",
+      "poblacion": "1412",
+      "area_sanitaria": null,
+      "asisa_registros": 1,
+      "competencia_registros": 3,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 3
+    },
+    {
+      "municipio": "Castrillon",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 3,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "La Felguera",
+      "poblacion": "37978",
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_registros": 0,
+      "competencia_registros": 3,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 3,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "La Fresneda",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 3,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Noreña",
+      "poblacion": "5058",
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_registros": 0,
+      "competencia_registros": 3,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Tapia de Casariego",
+      "poblacion": "3652",
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_registros": 0,
+      "competencia_registros": 3,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Arriondas",
+      "poblacion": "5208",
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Castrillón",
+      "poblacion": "22103",
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Llanera",
+      "poblacion": "13948",
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Lugones",
+      "poblacion": "13948",
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Moreda",
+      "poblacion": "12324",
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Parres",
+      "poblacion": "5208",
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_registros": 1,
+      "competencia_registros": 2,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 3
+    },
+    {
+      "municipio": "Posada de Llanera",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Siero",
+      "poblacion": "52194",
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_registros": 3,
+      "competencia_registros": 2,
+      "asisa_especialidades": 2,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Silvota-Llanera",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 2,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Somiedo",
+      "poblacion": null,
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_registros": 0,
+      "competencia_registros": 2,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Aller",
+      "poblacion": "12324",
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_registros": 2,
+      "competencia_registros": 1,
+      "asisa_especialidades": 2,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Arenas de Cabrales",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Cabanaquinta",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Candás",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Caridad La",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "El Franco",
+      "poblacion": null,
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Piedras Blancas",
+      "poblacion": "22103",
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_registros": 3,
+      "competencia_registros": 1,
+      "asisa_especialidades": 2,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 2
+    },
+    {
+      "municipio": "Pilona",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Posada de Llanes",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "Soto del Barco",
+      "poblacion": "3807",
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_registros": 0,
+      "competencia_registros": 1,
+      "asisa_especialidades": 0,
+      "competencia_especialidades": 1,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "El Entrego",
+      "poblacion": "37978",
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_registros": 1,
+      "competencia_registros": 0,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 0,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "San Martin del Rey Aurelio",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 1,
+      "competencia_registros": 0,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 0,
+      "num_aseguradoras": 1
+    }
+  ],
+  "gaps_municipios_asisa": [
+    {
+      "municipio": "Laviana",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 4,
+      "profesionales": 8,
+      "poblacion": "12355"
+    },
+    {
+      "municipio": "Sama de Langreo",
+      "aseguradoras_presentes": "DKV",
+      "especialidades_disponibles": 2,
+      "profesionales": 8,
+      "poblacion": "37978"
+    },
+    {
+      "municipio": "Moreda de Aller",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 2,
+      "profesionales": 7,
+      "poblacion": "12324"
+    },
+    {
+      "municipio": "Sotrondio",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 4,
+      "profesionales": 6,
+      "poblacion": "14000"
+    },
+    {
+      "municipio": "Cangas del Narcea",
+      "aseguradoras_presentes": "Adeslas,Mapfre",
+      "especialidades_disponibles": 4,
+      "profesionales": 5,
+      "poblacion": "11421"
+    },
+    {
+      "municipio": "Salas",
+      "aseguradoras_presentes": "Adeslas,Mapfre",
+      "especialidades_disponibles": 3,
+      "profesionales": 4,
+      "poblacion": "4806"
+    },
+    {
+      "municipio": "Castrillon",
+      "aseguradoras_presentes": "Mapfre,Sanitas",
+      "especialidades_disponibles": 2,
+      "profesionales": 3,
+      "poblacion": null
+    },
+    {
+      "municipio": "La Felguera",
+      "aseguradoras_presentes": "DKV",
+      "especialidades_disponibles": 3,
+      "profesionales": 3,
+      "poblacion": "37978"
+    },
+    {
+      "municipio": "La Fresneda",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 1,
+      "profesionales": 3,
+      "poblacion": null
+    },
+    {
+      "municipio": "Noreña",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 2,
+      "profesionales": 3,
+      "poblacion": "5058"
+    },
+    {
+      "municipio": "Tapia de Casariego",
+      "aseguradoras_presentes": "Adeslas,Mapfre",
+      "especialidades_disponibles": 2,
+      "profesionales": 3,
+      "poblacion": "3652"
+    },
+    {
+      "municipio": "Arriondas",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 2,
+      "profesionales": 2,
+      "poblacion": "5208"
+    },
+    {
+      "municipio": "Castrillón",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 2,
+      "profesionales": 2,
+      "poblacion": "22103"
+    },
+    {
+      "municipio": "Lugones",
+      "aseguradoras_presentes": "Sanitas",
+      "especialidades_disponibles": 1,
+      "profesionales": 2,
+      "poblacion": "13948"
+    },
+    {
+      "municipio": "Moreda",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 2,
+      "profesionales": 2,
+      "poblacion": "12324"
+    },
+    {
+      "municipio": "Posada de Llanera",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 1,
+      "profesionales": 2,
+      "poblacion": null
+    },
+    {
+      "municipio": "Somiedo",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 1,
+      "profesionales": 2,
+      "poblacion": null
+    },
+    {
+      "municipio": "Arenas de Cabrales",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Cabanaquinta",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Candás",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Caridad La",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "El Franco",
+      "aseguradoras_presentes": "Sanitas",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Llanera",
+      "aseguradoras_presentes": "Mapfre,Sanitas",
+      "especialidades_disponibles": 2,
+      "profesionales": 1,
+      "poblacion": "13948"
+    },
+    {
+      "municipio": "Pilona",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Posada de Llanes",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Silvota-Llanera",
+      "aseguradoras_presentes": "Mapfre",
+      "especialidades_disponibles": 2,
+      "profesionales": 1,
+      "poblacion": null
+    },
+    {
+      "municipio": "Soto del Barco",
+      "aseguradoras_presentes": "Adeslas",
+      "especialidades_disponibles": 1,
+      "profesionales": 1,
+      "poblacion": "3807"
+    }
+  ],
+  "gaps_criticos": [
+    {
+      "municipio": "Ribadesella",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 4,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Cangas de Onís",
+      "especialidad_normalizada": "Medicina Interna",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Grado",
+      "especialidad_normalizada": "Podología",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Llanes",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Mieres",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Enfermería",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pola de Siero",
+      "especialidad_normalizada": "Traumatología",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Ribadesella",
+      "especialidad_normalizada": "Análisis Clínicos",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Villaviciosa",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 3,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Cirugía Oral y Maxilofacial",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Dietética y Nutrición",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Endocrinología y Nutrición",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Neumología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Odontología - Ortodoncia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Avilés",
+      "especialidad_normalizada": "Urgencias",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Cangas de Onís",
+      "especialidad_normalizada": "Podología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Cangas del Narcea",
+      "especialidad_normalizada": "Odontología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Castrillon",
+      "especialidad_normalizada": "Oftalmología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Gijón",
+      "especialidad_normalizada": "Dietética y Nutrición",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Gijón",
+      "especialidad_normalizada": "Endoscopia Digestiva",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Gijón",
+      "especialidad_normalizada": "Odontología - Ortodoncia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Gijón",
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Grado",
+      "especialidad_normalizada": "Medicina General",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Grado",
+      "especialidad_normalizada": "Psicología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Langreo",
+      "especialidad_normalizada": "Podología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Llanes",
+      "especialidad_normalizada": "Enfermería",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Navia",
+      "especialidad_normalizada": "Odontología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Dietética y Nutrición",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Endoscopia Digestiva",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Odontología - Ortodoncia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Oncología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Oviedo",
+      "especialidad_normalizada": "Urgencias",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pola de Lena",
+      "especialidad_normalizada": "Medicina General",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pola de Siero",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pola de Siero",
+      "especialidad_normalizada": "Ginecología y Obstetricia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pola de Siero",
+      "especialidad_normalizada": "Radiodiagnóstico",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pravia",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Pravia",
+      "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Salas",
+      "especialidad_normalizada": "Odontología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Tapia de Casariego",
+      "especialidad_normalizada": "Odontología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Tineo",
+      "especialidad_normalizada": "Fisioterapia",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Vegadeo",
+      "especialidad_normalizada": "Análisis Clínicos",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    },
+    {
+      "municipio": "Vegadeo",
+      "especialidad_normalizada": "Odontología",
+      "aseguradoras_con_cobertura": 2,
+      "asisa_cubre": "NO"
+    }
+  ],
+  "gaps_centros_asisa": [
+    {
+      "centro": "Centro Médico Asturias",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 21,
+      "profesionales": 72
+    },
+    {
+      "centro": "Clínica Asturias",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 24,
+      "profesionales": 68
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Oviedo",
+      "aseguradoras": "Mapfre",
+      "especialidades": 22,
+      "profesionales": 45
+    },
+    {
+      "centro": "Hospital Covadonga",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 12,
+      "profesionales": 40
+    },
+    {
+      "centro": "Hospital Begoña",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 16,
+      "profesionales": 39
+    },
+    {
+      "centro": "Centro Medico de Asturias",
+      "municipio": "Oviedo",
+      "aseguradoras": "Mapfre",
+      "especialidades": 31,
+      "profesionales": 37
+    },
+    {
+      "centro": "Sanatorio Covadonga",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV,Mapfre",
+      "especialidades": 21,
+      "profesionales": 28
+    },
+    {
+      "centro": "Clínicas Cardialis",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 8,
+      "profesionales": 22
+    },
+    {
+      "centro": "Centro Medico Mapfre Salud Gijon",
+      "municipio": "Gijón",
+      "aseguradoras": "Mapfre",
+      "especialidades": 18,
+      "profesionales": 20
+    },
+    {
+      "centro": "Hospital Begona",
+      "municipio": "Gijón",
+      "aseguradoras": "Mapfre",
+      "especialidades": 16,
+      "profesionales": 19
+    },
+    {
+      "centro": "Policlínica Rozona",
+      "municipio": "Avilés",
+      "aseguradoras": "DKV",
+      "especialidades": 8,
+      "profesionales": 19
+    },
+    {
+      "centro": "Clinica Rozona",
+      "municipio": "Avilés",
+      "aseguradoras": "Mapfre",
+      "especialidades": 15,
+      "profesionales": 18
+    },
+    {
+      "centro": "Clinica Asturias",
+      "municipio": "Oviedo",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 35,
+      "profesionales": 17
+    },
+    {
+      "centro": "Clinica Asturias(Policlinica)",
+      "municipio": "Oviedo",
+      "aseguradoras": "Mapfre",
+      "especialidades": 15,
+      "profesionales": 16
+    },
+    {
+      "centro": "POLICLÍNICAS OVIEDO",
+      "municipio": "Oviedo",
+      "aseguradoras": "Adeslas",
+      "especialidades": 13,
+      "profesionales": 16
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Gijón",
+      "aseguradoras": "Mapfre",
+      "especialidades": 10,
+      "profesionales": 15
+    },
+    {
+      "centro": "Centro Médico Salud 4",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 10,
+      "profesionales": 13
+    },
+    {
+      "centro": "Centro Médico Por Tú Salud",
+      "municipio": "Avilés",
+      "aseguradoras": "DKV",
+      "especialidades": 6,
+      "profesionales": 12
+    },
+    {
+      "centro": "Es Clínic",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 5,
+      "profesionales": 12
+    },
+    {
+      "centro": "Clinica Dental Sanitas Millennium Oviedo",
+      "municipio": "Oviedo",
+      "aseguradoras": "Sanitas",
+      "especialidades": 4,
+      "profesionales": 11
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Avilés",
+      "aseguradoras": "Mapfre",
+      "especialidades": 9,
+      "profesionales": 11
+    },
+    {
+      "centro": "Centro Médico Asturias",
+      "municipio": "Avilés",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 9
+    },
+    {
+      "centro": "Por Tu Salud Clinicas",
+      "municipio": "Avilés",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 14,
+      "profesionales": 9
+    },
+    {
+      "centro": "Previtalia",
+      "municipio": "Avilés",
+      "aseguradoras": "DKV,Mapfre",
+      "especialidades": 4,
+      "profesionales": 9
+    },
+    {
+      "centro": "Clínica El Fontán",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 5,
+      "profesionales": 8
+    },
+    {
+      "centro": "Clinica Rodriguez Reguero",
+      "municipio": "Pola de Siero",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 12,
+      "profesionales": 7
+    },
+    {
+      "centro": "Clínica B Internacional",
+      "municipio": "Avilés",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 7
+    },
+    {
+      "centro": "Clínica Sella",
+      "municipio": "Sama de Langreo",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 7
+    },
+    {
+      "centro": "Clínica Zigomat",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 7
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Mieres",
+      "aseguradoras": "Mapfre",
+      "especialidades": 6,
+      "profesionales": 7
+    },
+    {
+      "centro": "Salutec",
+      "municipio": "Avilés",
+      "aseguradoras": "DKV",
+      "especialidades": 6,
+      "profesionales": 7
+    },
+    {
+      "centro": "Clinica \"El Fontan\"",
+      "municipio": "Oviedo",
+      "aseguradoras": "Mapfre",
+      "especialidades": 8,
+      "profesionales": 6
+    },
+    {
+      "centro": "Clinica Cangas",
+      "municipio": "Cangas de Onís",
+      "aseguradoras": "Mapfre",
+      "especialidades": 5,
+      "profesionales": 6
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Tineo",
+      "aseguradoras": "Mapfre",
+      "especialidades": 3,
+      "profesionales": 6
+    },
+    {
+      "centro": "Hospital Begoha",
+      "municipio": "Gijón",
+      "aseguradoras": "Sanitas",
+      "especialidades": 20,
+      "profesionales": 6
+    },
+    {
+      "centro": "Insituto Urológico Asturiano",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 6
+    },
+    {
+      "centro": "Policlínicas Oviedo",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 6
+    },
+    {
+      "centro": "Centro Dental Pedraza Cotarelo",
+      "municipio": "Villaviciosa",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 5
+    },
+    {
+      "centro": "Clinica Salud Villalegre",
+      "municipio": "Avilés",
+      "aseguradoras": "Mapfre",
+      "especialidades": 4,
+      "profesionales": 5
+    },
+    {
+      "centro": "Clinica Salutec",
+      "municipio": "Avilés",
+      "aseguradoras": "Mapfre",
+      "especialidades": 5,
+      "profesionales": 5
+    },
+    {
+      "centro": "Clínica Garaya",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 4,
+      "profesionales": 5
+    },
+    {
+      "centro": "Clínica Ginecológica Cecchini",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 5
+    },
+    {
+      "centro": "Clínica Rodríguez Reguero",
+      "municipio": "Pravia",
+      "aseguradoras": "DKV",
+      "especialidades": 5,
+      "profesionales": 5
+    },
+    {
+      "centro": "Fundacion Sanatorio Adaro",
+      "municipio": "Langreo",
+      "aseguradoras": "Mapfre",
+      "especialidades": 5,
+      "profesionales": 5
+    },
+    {
+      "centro": "Hospital de Luarca",
+      "municipio": "Mieres",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 5
+    },
+    {
+      "centro": "Join Dental",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 5
+    },
+    {
+      "centro": "Centro Medico de Asturias",
+      "municipio": "Gijón",
+      "aseguradoras": "Mapfre",
+      "especialidades": 4,
+      "profesionales": 4
+    },
+    {
+      "centro": "Clinica Castillo de Llanes",
+      "municipio": "Llanes",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 9,
+      "profesionales": 4
+    },
+    {
+      "centro": "Clinica Santos Suarez",
+      "municipio": "Oviedo",
+      "aseguradoras": "Sanitas",
+      "especialidades": 5,
+      "profesionales": 4
+    },
+    {
+      "centro": "Clínica Cangas",
+      "municipio": "Cangas de Onís",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 4
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Cangas del Narcea",
+      "aseguradoras": "Mapfre",
+      "especialidades": 4,
+      "profesionales": 4
+    },
+    {
+      "centro": "Imagen Diagnóstica El Molinón",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 4
+    },
+    {
+      "centro": "Numa Guilhou 16, 1º B",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 4
+    },
+    {
+      "centro": "Policlinica Semad",
+      "municipio": "Langreo",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 8,
+      "profesionales": 4
+    },
+    {
+      "centro": "Rehberger López - Fanjul",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 4
+    },
+    {
+      "centro": "Begoña)",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 3
+    },
+    {
+      "centro": "Centro Médico Por Tú Salud",
+      "municipio": "Cangas de Onís",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 3
+    },
+    {
+      "centro": "Ck Hospital Covadonga",
+      "municipio": "Gijón",
+      "aseguradoras": "Sanitas",
+      "especialidades": 22,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clinica Centromenas",
+      "municipio": "Avilés",
+      "aseguradoras": "Mapfre",
+      "especialidades": 3,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clinica Imagen Diagnostica Mieres",
+      "municipio": "Mieres",
+      "aseguradoras": "Mapfre",
+      "especialidades": 3,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clinica Lena",
+      "municipio": "Lena",
+      "aseguradoras": "Mapfre",
+      "especialidades": 3,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clinica Llanes",
+      "municipio": "Llanes",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 5,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clinica Sella",
+      "municipio": "Ribadesella",
+      "aseguradoras": "Mapfre,Sanitas",
+      "especialidades": 3,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clínica Dental Rubió",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clínica Junquera",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 3
+    },
+    {
+      "centro": "Clínica Santa Susana",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 2,
+      "profesionales": 3
+    },
+    {
+      "centro": "Consultorio",
+      "municipio": "Grado",
+      "aseguradoras": "Mapfre",
+      "especialidades": 3,
+      "profesionales": 3
+    },
+    {
+      "centro": "Ignacio Javier",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 3
+    },
+    {
+      "centro": "Linares Espec. En Digestivo",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 3
+    },
+    {
+      "centro": "Merino Laboratorio",
+      "municipio": "Oviedo",
+      "aseguradoras": "DKV",
+      "especialidades": 1,
+      "profesionales": 3
+    },
+    {
+      "centro": "Multiclínicas Laserdental",
+      "municipio": "Gijón",
+      "aseguradoras": "DKV",
+      "especialidades": 3,
+      "profesionales": 3
+    },
+    {
+      "centro": "Policlinico Sierosalud",
+      "municipio": "Pola de Siero",
+      "aseguradoras": "Mapfre",
+      "especialidades": 3,
+      "profesionales": 3
+    }
+  ],
+  "concentracion_centros": [
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO MEDICO DE ASTURIAS",
+      "municipio": "Oviedo",
+      "registros": 142,
+      "especialidades": 43
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA ASTURIAS",
+      "municipio": "Oviedo",
+      "registros": 121,
+      "especialidades": 35
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "HOSPITAL RIBERA COVADONGA",
+      "municipio": "Gijón",
+      "registros": 68,
+      "especialidades": 29
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "HOSPITAL BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 63,
+      "especialidades": 33
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "POLICLINICA ROZONA",
+      "municipio": "Avilés",
+      "registros": 37,
+      "especialidades": 22
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "GESTION DE CENTROS MEDICOS MAPFRE",
+      "municipio": "Gijón",
+      "registros": 25,
+      "especialidades": 14
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA CASTILLO DELLANES",
+      "municipio": "Llanes",
+      "registros": 20,
+      "especialidades": 9
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "POLICLINICAS OVIEDO",
+      "municipio": "Oviedo",
+      "registros": 19,
+      "especialidades": 15
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA EL FONTAN",
+      "municipio": "Oviedo",
+      "registros": 15,
+      "especialidades": 8
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO MEDICO POR TU SALUD",
+      "municipio": "Avilés",
+      "registros": 15,
+      "especialidades": 8
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "MEGALAB",
+      "municipio": "Oviedo",
+      "registros": 11,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICAS CARDALIS",
+      "municipio": "Gijón",
+      "registros": 11,
+      "especialidades": 7
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA CERVANTES",
+      "municipio": "Oviedo",
+      "registros": 11,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA RODRIGUEZ REGUERO",
+      "municipio": "Pola de Siero",
+      "registros": 9,
+      "especialidades": 7
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA CANGAS",
+      "municipio": "Cangas de Onís",
+      "registros": 9,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 92",
+      "municipio": "Gijón",
+      "registros": 9,
+      "especialidades": 8
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "POLICLINICA SEMAD",
+      "municipio": "Langreo",
+      "registros": 8,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Quintana, 11 / POLICLINICAS OVIEDO",
+      "municipio": "Oviedo",
+      "registros": 7,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "SANATORIO ADARO",
+      "municipio": "Langreo",
+      "registros": 6,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "SALUTEC",
+      "municipio": "Avilés",
+      "registros": 6,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Quintana, 11, BAJO / POLICLINICAS OVIEDO",
+      "municipio": "Oviedo",
+      "registros": 6,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA INTERNACIONAL CENTRO MEANAS",
+      "municipio": "Avilés",
+      "registros": 6,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "ASISTENCIA MEDICA OCCIDENTAL",
+      "municipio": "Luarca",
+      "registros": 6,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "HT MEDICA HOSPITAL COVADONGA",
+      "municipio": "Gijón",
+      "registros": 5,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA SELLA",
+      "municipio": "Ribadesella",
+      "registros": 5,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA LUANCO",
+      "municipio": "Gijón",
+      "registros": 5,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA DE REHABILITACION SAN PEDRO",
+      "municipio": "Oviedo",
+      "registros": 5,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "MIERES",
+      "municipio": "Mieres",
+      "registros": 4,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "LABORATORIOS MACIAS",
+      "municipio": "Gijón",
+      "registros": 4,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA LLANESI",
+      "municipio": "Llanes",
+      "registros": 4,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA JUNQUERA",
+      "municipio": "Oviedo",
+      "registros": 4,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA GINECOLOGICA CECHINI",
+      "municipio": "Oviedo",
+      "registros": 4,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA AVILES",
+      "municipio": "Avilés",
+      "registros": 4,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CANTO ODONTOLOGOS S.L.",
+      "municipio": "Gijón",
+      "registros": 4,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza Longoria Carbajal, 4, 1",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "PREVITALIA",
+      "municipio": "Avilés",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "HOSPITAL COVADONGA",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Celestino Cabeza, 16, 1",
+      "municipio": "Langreo",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CTI-PATH S.L.P.",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA ZIGOMAT",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA ODONTOLOGICA ALVAREZ FIGAREDO",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO MEDICO GIJON S.L.",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO ECOGRAFICO YMEDICO FERNANDEZ-CAMASL",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 92 / HOSPITAL BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 90, BAJO",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 90",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Hermanos Menendez Pidal, 21",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 3, 1",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 17, 3",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza de Domingo A Acoidal, 12",
+      "municipio": "Avilés",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Perez de la Sala, 13",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "PRAVIA",
+      "municipio": "Pravia",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "POLICLINICA BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "NAVIA",
+      "municipio": "Navia",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Marqués de Urquijo, 29, BAJO",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "MDVS",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Lugar Palacio Valdés, 7, ENTLO / MATRONIKAS",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "LABORATORIO ECHEVARNE",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Infantinos los Balsares Pues, 3, 12",
+      "municipio": "Luarca",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Doctor Casal, 4, 4",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Celestino Junquera, 16",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Carretera Providencia, 2518 / CLINICA SOMIO",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cabo Noval, 11 / POLICLINICA SAN FRANCISCO",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA VILLARREAL",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA SOMIO",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA NUEVE DE MAYO",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA LUCAS",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA GUERRA S.L.P.",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA DE FISIOTERAPIA VITALIA",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA BAVIERA",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA ASTURIAS / POLICLINICAS OVIEDO",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Jose Maria Richard Grandio, 3",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "ALLER",
+      "municipio": "Aller",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "del Sur, 1",
+      "municipio": "Siero",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "del Mundo, 16, 1º",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Vicente Prieto y Prieto, 86, BAJO / CLINICA DENTAL ISIDRO",
+      "municipio": "Siero",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Vicente Innerárity, 5 / CLINICA DE CARDIOLOGIA DR. ACERAL",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Ventura Rodriguez, 6, ENTLO / CLINICA GARIBALDI",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Ventura Rodriguez, 4, 6",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Vazquez de Mella, 65, 1",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 56, 3",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 50, 2º",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 43, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 41, 2º",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Uria, 39, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Tomas Crespo Truijillo, 20, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "TINEO",
+      "municipio": "Tineo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Santa Rafaela, 135, BAJO / SALUD VILLEGIENSE",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "San Francisco, 12, 1º",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "San Bernardo, 24",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "San Bernardo, 2, 1",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Salinas, 54, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Sabeltán Sánchez del Río, 1, 2",
+      "municipio": "Pola de Siero",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Saavedra, 15, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "SR. CENTRO D LA JUNQUERA Fisioterapia",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Rosal, 23, 1",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Roman Romanes, 10, 1",
+      "municipio": "Llanes",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Retama, 5, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "RESONANCIA ABIERTA TORENO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Puente Romano, 7",
+      "municipio": "Cangas de Onís",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Pozo Nuevo, 18, BAJO",
+      "municipio": "Piedras Blancas",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plazoleta Florencio Rodriguez, 2, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza del Carbayedo, 12, BAJO",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza de la Merced, 6, 1",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza Seis de Agosto, 3, BAJO / CENTRO MEDICO GIJON",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza La Conciliación, 6, 1",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza Instituto, 7, 5",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Plaza Hurmedal, 5, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Pio XII, 4, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Piedras Blancas, 4",
+      "municipio": "Piedras Blancas",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Peña Santa de Enol, 2, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Palacio, 2, 9",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Palacio Valdes, 12, 2º",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "POLICLINICAS BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "PODOLOGIA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Octavio Busto, 25, BAJO / CENTRO DE FISIOTERAPIA EL REMON",
+      "municipio": "Siero",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Nurin, 20, 2",
+      "municipio": "Langreo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Nueve Guillos, 16, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Naranjo de Bulnes, 4 / CLINICA ASTURIAS",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Moros, 24, 2",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Monte Auseva, 14, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Minas Canijo, 1",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Melquiades Alvarez, 43, 1",
+      "municipio": "Langreo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Marqués de Urquijo, 11, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Marquesa de Teuerga, 2, 1",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Marquesa de Santa Cruz, 8, 2",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Marquesa de San Esteban, 1, 7",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Manuel Principal, 2, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Manuel Llaneza, 26, 1",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Manuel Cottina, 9, BAJO / CENTRO MIAS",
+      "municipio": "Villaviciosa",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Manos, 12, ENTLO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Magnus Blikstad, 58, 1º",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Magnus Blikstad, 58 / CLINICA RUBIO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Madrid (Regente), 2, 1º",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Luanco, 2, 8º",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Libertad, 6, BAJO / CLINICA DENTAL MARIA DEL AMO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Langreo, 2",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "LUARCA",
+      "municipio": "",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "LLANERA",
+      "municipio": "",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "LENA",
+      "municipio": "Lena",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Juan Ochoa, 1",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Juan Carlos I, 2, 1 / PARRES",
+      "municipio": "Parres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "José Cueto, 20, BAJO / C. INTERNACIONAL CENTRO MEANAS",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Joaquin Manzanares, 2, 5",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Jerónimo Ibrañez, 26, 1",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Jeronimo Ibrañez, 4, 1º",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Isa Barquero, 2, 6º",
+      "municipio": "Llanes",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "IMAGEN DIAGNOSTICA MIERES",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Gran Bermediana",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Gracia Alas Clarin, 4",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "General Suárez Valdés, 40 / HOSPITAL COVADONGA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "General Suárez Valdés, 40",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "General Suárez Valdés, 15, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "General (Horta, 63, 1)",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Galileo, 1, BAJO",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Galiana, 8, BAJO",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "GLOBALDENT ASTURIAS S.L.",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Fuentes Alcantara, 38",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Florez Estrada, 1",
+      "municipio": "Piedras Blancas",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "FIXISALUT",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Estadio Martin, 9, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Eleusipo Quintanilla, 20, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Ecuador, 28, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "EUROFINS ANALISIS CLINICOS OVIEDO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "ESTUDIO DE LA PISADA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "ESTUDIO BIOMECANICO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "EL ENTREGO",
+      "municipio": "El Entrego",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Doctor Casal, 4, 4 / CRPS PSICOLOGOS",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Doctor Aquilino Hurlé, 49, 4º",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Doctor Aquilino Hurlé, 47, BAJO / CLINICA COVADONGA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Doctor Aquilino Hurlé, 47",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "DENTALONSO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Corrada, 18, ENTRESUELO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Comercio, 26, 1",
+      "municipio": "Ribadesella",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cimadevilla Moran, 12, 2",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cervantes, 7, 8",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cervantes, 25, 1",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cervantes, 17, 2",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Celso Fernández García, 1, 5",
+      "municipio": "Langreo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Celestino Junquera, 1, 1",
+      "municipio": "Luanco",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Castilla Bajo, 18",
+      "municipio": "Llanes",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Carrion, 13, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Carmen, 24, 1 / CLINICA DENTAL LOS ARGÜELLES",
+      "municipio": "Villaviciosa",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Carlos Bertrand, 5 N",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cardinal Cisneros, 1, 2",
+      "municipio": "Langreo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Capua-Somio, 2, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cabringa, 11, 8º",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cabo Noval, 11 / SAN FRANCISCO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Cabales, 72, 4",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA SAN ISIDRO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA KINESATUR",
+      "municipio": "Grado",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA GARAYA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA DENTAL RUBIO E HIJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA DENTAL JAVIER LOPEZ",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA CUELI",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CLINICA COVONDE",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO MEDICO GIJON",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO FISIOTERAPIA ELENA BOUS",
+      "municipio": "Boal",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CENTRO ECOGRAFICO YMEDICO FERNANDEZ-CANGA",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CEFIVA",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "CABRALES",
+      "municipio": "",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Buenaventura, 4, BAJO",
+      "municipio": "Luarca",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Bermudez de Castro, 3, 3",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "BOAL",
+      "municipio": "",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida de Roma, 2, 1",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida de Oviemo, 31, 1",
+      "municipio": "San Martin del Rey Aurelio",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida de Fernández Balsera, 18, 1",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida de Asturias, 33",
+      "municipio": "Vegadeo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Torcuato Fernandez Miranda, 42, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 95, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 92 / POLICLINICA BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 90, BAJO / POLICLINICA BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 90 / POLICLINICA BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Pablo Iglesias, 36, 3",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Manuel Llaneza, 11, 1º",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Manuel Llaneza, 1, 1",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Jose Maria Richard Grandio, 5 N",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Hermanos Menendez Pidal, 27, 1",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Hermanos Menendez Pidal, 27",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Hermanos Felgueroso, 40, BAJO",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Garcia, 7, 15",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Fundacion Principe de Asturias, 4, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Fernandez Balsera, 17, 4",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Costa, 120",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Avenida Alvaro de Abornon, 10, BAJO / CLINICA DENTAL LUCAS GONZALEZ",
+      "municipio": "Luarca",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Asturias, 6, 5",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Arturo Alvarez (Buylla), 4, ENTLO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Alvarez Garcia, 12, 3",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Alfonso Trivol, 8, 13",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "Albéniz, 4, BAJO",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro": "AQUILES",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA",
+      "municipio": "Gijón",
+      "registros": 41,
+      "especialidades": 23
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "POLICLÍNICAS OVIEDO",
+      "municipio": "Oviedo",
+      "registros": 16,
+      "especialidades": 13
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "SYNLAB",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "POLICLÍNICAS OVIEDO-",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "POLICLÍNICAS OVIEDO FERNÁNDEZ ARGÜELLES, Rosa",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA-",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA ZABALA LLERANDI, Jorge Abelardo",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA VILLARREAL RENEDO, Pedro María",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA VARELA URÍA, José Antonio",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA SÁNCHEZ LOZANO, Pablo",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA SAN MARTÍN MUÑIZ, José Carlos",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA RUIZ SÁNCHEZ, Daniel",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA ROMERO BALLARIN, Jesús Luis",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA Plaza Campinos de Begoña, 1 - 4º B",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA PELAZ GARCÍA, Alejandro",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA FERNÁNDEZ VEGA, Francisco José",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA CHAMOUN OLEA, Alejandra",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA Avda. Pablo Iglesias, 92",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA ALONSO CASTAÑÓN, Yolanda",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Adeslas",
+      "centro": "HOSPITAL BEGOÑA - SCANNER",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Centro Médico Asturias",
+      "municipio": "Oviedo",
+      "registros": 87,
+      "especialidades": 24
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Asturias",
+      "municipio": "Oviedo",
+      "registros": 75,
+      "especialidades": 24
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Hospital Begoña",
+      "municipio": "Gijón",
+      "registros": 45,
+      "especialidades": 16
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Hospital Covadonga",
+      "municipio": "Gijón",
+      "registros": 40,
+      "especialidades": 12
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Policlínica Rozona",
+      "municipio": "Avilés",
+      "registros": 24,
+      "especialidades": 9
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínicas Cardialis",
+      "municipio": "Gijón",
+      "registros": 23,
+      "especialidades": 8
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Centro Médico Por Tú Salud",
+      "municipio": "Avilés",
+      "registros": 16,
+      "especialidades": 8
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Centro Médico Salud 4",
+      "municipio": "Gijón",
+      "registros": 14,
+      "especialidades": 11
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Es Clínic",
+      "municipio": "Gijón",
+      "registros": 13,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Salutec",
+      "municipio": "Avilés",
+      "registros": 10,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Rodríguez Reguero",
+      "municipio": "Pola de Siero",
+      "registros": 10,
+      "especialidades": 7
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Sella",
+      "municipio": "Sama de Langreo",
+      "registros": 9,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica El Fontán",
+      "municipio": "Oviedo",
+      "registros": 9,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Previtalia",
+      "municipio": "Avilés",
+      "registros": 8,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Join Dental",
+      "municipio": "Oviedo",
+      "registros": 8,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Insituto Urológico Asturiano",
+      "municipio": "Gijón",
+      "registros": 7,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Covadonga",
+      "municipio": "Gijón",
+      "registros": 7,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Zigomat",
+      "municipio": "Gijón",
+      "registros": 7,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica B Internacional",
+      "municipio": "Avilés",
+      "registros": 7,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Centro Dental Pedraza Cotarelo",
+      "municipio": "Villaviciosa",
+      "registros": 7,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Rehberger López - Fanjul",
+      "municipio": "Oviedo",
+      "registros": 6,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Policlínicas Oviedo",
+      "municipio": "Oviedo",
+      "registros": 6,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Imagen Diagnóstica El Molinón",
+      "municipio": "Gijón",
+      "registros": 6,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Multiclínicas Laserdental",
+      "municipio": "Gijón",
+      "registros": 5,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Hospital de Luarca",
+      "municipio": "Mieres",
+      "registros": 5,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Junquera",
+      "municipio": "Oviedo",
+      "registros": 5,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Ginecológica Cecchini",
+      "municipio": "Oviedo",
+      "registros": 5,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Garaya",
+      "municipio": "Gijón",
+      "registros": 5,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Sanatorio Covadonga",
+      "municipio": "Gijón",
+      "registros": 4,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Numa Guilhou 16, 1º B",
+      "municipio": "Gijón",
+      "registros": 4,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Cangas",
+      "municipio": "Cangas de Onís",
+      "registros": 4,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Paz",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Merino Laboratorio",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Linares Espec. En Digestivo",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Ignacio Javier",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Santa Susana",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Dental Rubió e Hijo",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Dental Rubió",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Begoña)",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Sanatorio Covandonga",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Psicastur",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Mª",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Maxilo - Astur",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Iramsa (Instituto Radiológico)",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Oftalmológica Bascarán",
+      "municipio": "Llanes",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Bucodental",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Ayala",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Bascarán",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Álvarez",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Y OBSTETRICIA",
+      "municipio": "Cangas de Onís",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Synlab Oviedo",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Semad Semad",
+      "municipio": "La Felguera",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Semad",
+      "municipio": "La Felguera",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Sanatorio Adaro",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Rozona",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Radiología Asturiana",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Por Tu Salud Clínicas",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Pablo Iglesias 90.",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Manuel",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Laboratorio Covadonga Gutiérrez",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Iramsa (Instituto Radiológico) Podoactiva Oviedo",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "HT Médica Gijón - Hosp.",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Guillermo Rehberger Olivera",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "EN",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "DOMICILIO",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Covadonga)",
+      "municipio": "Grado",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica San Ezequiel",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Oftalmológica Dres.",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Luanco",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Llanes",
+      "municipio": "Llanes",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica Kineastur",
+      "municipio": "Grado",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clínica El Molinón",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Clinica Lena",
+      "municipio": "Pola de Lena",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Barrientos",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Asturias",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Antonio Zaldívar 2, 1º Izda.",
+      "municipio": "Villaviciosa",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "Andrés",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "DKV",
+      "centro": "ATENCIÓN DOMICILIARIA",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Consultorio",
+      "municipio": "Arriondas",
+      "registros": 133,
+      "especialidades": 26
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro Medico de Asturias",
+      "municipio": "Gijón",
+      "registros": 47,
+      "especialidades": 31
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Sanatorio Covadonga",
+      "municipio": "Gijón",
+      "registros": 24,
+      "especialidades": 19
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro Medico Mapfre Salud Gijon",
+      "municipio": "Gijón",
+      "registros": 22,
+      "especialidades": 18
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Asturias(Policlinica)",
+      "municipio": "Gijón",
+      "registros": 21,
+      "especialidades": 15
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Hospital Begona",
+      "municipio": "Gijón",
+      "registros": 20,
+      "especialidades": 16
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Rozona",
+      "municipio": "Avilés",
+      "registros": 19,
+      "especialidades": 15
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Megalab",
+      "municipio": "Avilés",
+      "registros": 13,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Asturias",
+      "municipio": "Oviedo",
+      "registros": 11,
+      "especialidades": 7
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica \"El Fontan\"",
+      "municipio": "Oviedo",
+      "registros": 10,
+      "especialidades": 8
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Por Tu Salud Clinicas",
+      "municipio": "Avilés",
+      "registros": 8,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Rodriguez Reguero",
+      "municipio": "Pola de Siero",
+      "registros": 7,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Castillo de Llanes",
+      "municipio": "Langreo",
+      "registros": 7,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Fundacion Sanatorio Adaro",
+      "municipio": "Langreo",
+      "registros": 6,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Salutec",
+      "municipio": "Avilés",
+      "registros": 6,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Cangas",
+      "municipio": "Cangas de Onís",
+      "registros": 6,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Salud Villalegre",
+      "municipio": "Avilés",
+      "registros": 5,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Policlinica Semad",
+      "municipio": "Langreo",
+      "registros": 4,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Sella",
+      "municipio": "Ribadesella",
+      "registros": 4,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Llanes",
+      "municipio": "Langreo",
+      "registros": 4,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Vithas Lab Analisis Clinicos",
+      "municipio": "Langreo",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Policlinico Sierosalud",
+      "municipio": "Pola de Siero",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Ecomedic",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Lena",
+      "municipio": "Lena",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Imagen Diagnostica Mieres",
+      "municipio": "Mieres",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Centromenas",
+      "municipio": "Avilés",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Aviles",
+      "municipio": "Avilés",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Asistencia Medica Occidental",
+      "municipio": "Luarca",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Vivisol Iberica",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Synlab",
+      "municipio": "Mieres",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Previtalia",
+      "municipio": "Avilés",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Oximesa",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Laboratorio Dr. F. Echevarne",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Instituto Medico Ramon y Cajal",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Farmacia Madrid",
+      "municipio": "Mieres",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Diagnostica El Molinon",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Santa Susana",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Maestro",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Jena",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Feito Barcena",
+      "municipio": "Llanera",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Clisaden",
+      "municipio": "Pola de Siero",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Baviera Gijon",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Barrero Pasarin",
+      "municipio": "Mieres",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Vitalaire / Air Liquide Medicinal",
+      "municipio": "Silvota-Llanera",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Saavedra Analistas",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Resonancia Abierta Toreno",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Radiologia Asturiana",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Psicoleng",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Ortoscan",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Medicina General",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Laboratorio Citecap",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "J Y D Fisioterapia",
+      "municipio": "Salas",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Instituto Radiologico Jose Miranda",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "IMOMA",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Hematologia Clinica y Analitica",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "HT Medica Gijon",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Grado Salud Policlinica",
+      "municipio": "Grado",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Eva Lopez Odontologia Integral",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Dental Tapia Clinica",
+      "municipio": "Tapia de Casariego",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Cobo Diaz Clinica Dental",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica San Ezequiel",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Psiquiatrica Somio",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Psiquiatrica",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica O.R.L.",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica MI",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Kineastur",
+      "municipio": "Grado",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Internacional",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Ginecologica MDVS",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Ginecologica Cecchini",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dr. de la Fuente",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Teran",
+      "municipio": "Mieres",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Sonrie Plus",
+      "municipio": "Lena",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Quirinal",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Lorenzo",
+      "municipio": "Cangas del Narcea",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental La Calzada",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Herberger",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental DRA",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Dental Astray",
+      "municipio": "Villaviciosa",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Cervantes",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Clinica Besada",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro de Fisioterapia Vitalia",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro de Analisis Clinicos Aviles",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro Medico San Rafael",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro Medico Gijon",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Centro Dental de Diego & Fabian",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "CIT-PATH",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Mapfre",
+      "centro": "Acompanando At. Personalizada Matronas",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Dr. Centro Medico de Asturias",
+      "municipio": "Oviedo",
+      "registros": 42,
+      "especialidades": 39
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Asturias",
+      "municipio": "Oviedo",
+      "registros": 41,
+      "especialidades": 33
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Ck Hospital Covadonga",
+      "municipio": "Avilés",
+      "registros": 27,
+      "especialidades": 22
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Hospital Begoha",
+      "municipio": "Gijón",
+      "registros": 23,
+      "especialidades": 20
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Dental Sanitas Millennium Oviedo",
+      "municipio": "Oviedo",
+      "registros": 19,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Policlinica Rozana",
+      "municipio": "Avilés",
+      "registros": 14,
+      "especialidades": 14
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Rodriguez Reguero",
+      "municipio": "Pola de Siero",
+      "registros": 13,
+      "especialidades": 12
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Por Tu Salud Clinicas",
+      "municipio": "Avilés",
+      "registros": 12,
+      "especialidades": 11
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Salud Dental Viesques Cb",
+      "municipio": "Avilés",
+      "registros": 8,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Odontologica Integral Doctor Arias S.L.P.",
+      "municipio": "Avilés",
+      "registros": 8,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Castillo de Llanes",
+      "municipio": "Llanes",
+      "registros": 8,
+      "especialidades": 7
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Sabate",
+      "municipio": "Avilés",
+      "registros": 7,
+      "especialidades": 7
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Nuevo Salud Dental Viesques",
+      "municipio": "Gijón",
+      "registros": 7,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Medicina Y Salud Siglo XXI",
+      "municipio": "Avilés",
+      "registros": 7,
+      "especialidades": 6
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Dr. Eurofins Clinical Diagnostics",
+      "municipio": "Oviedo",
+      "registros": 7,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Dental Sanitas Millennium Gijon",
+      "municipio": "Gijón",
+      "registros": 7,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Dental Escobedo",
+      "municipio": "Avilés",
+      "registros": 7,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Junquera",
+      "municipio": "Langreo",
+      "registros": 6,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Cangas C.B.",
+      "municipio": "Cangas de Onís",
+      "registros": 6,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Policlinica Semad",
+      "municipio": "Langreo",
+      "registros": 5,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Hi Medica Gijon",
+      "municipio": "Gijón",
+      "registros": 5,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Santos Suarez",
+      "municipio": "Oviedo",
+      "registros": 5,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica El Fontan",
+      "municipio": "Oviedo",
+      "registros": 5,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Cda El Molinon",
+      "municipio": "Gijón",
+      "registros": 5,
+      "especialidades": 5
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinicas Cardalis",
+      "municipio": "Gijón",
+      "registros": 4,
+      "especialidades": 4
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Llanes",
+      "municipio": "Llanes",
+      "registros": 4,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Radiologo Asturiana S.L.",
+      "municipio": "Oviedo",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Policlinico Sierucalud",
+      "municipio": "Pola de Siero",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Sella",
+      "municipio": "Ribadesella",
+      "registros": 3,
+      "especialidades": 3
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Gijon",
+      "municipio": "Gijón",
+      "registros": 3,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Unidad de Cirugia Maxilofacial e Implantologia",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Salud Villalegre",
+      "municipio": "Avilés",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Lafe Centro de Fisioterapia Sp",
+      "municipio": "Avilés",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Ginepo",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Fisioterapia C.B.",
+      "municipio": "Avilés",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Es Clinic",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Ecomedic",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Zigomar",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 2
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Ergo",
+      "municipio": "Gijón",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Centro de Fisioterapia Junquera",
+      "municipio": "Avilés",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Centro Ginecologico Valdes",
+      "municipio": "Oviedo",
+      "registros": 2,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Veiga Y Taboyo S.L.P.",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Sophyas Servicios de Fisioterapia",
+      "municipio": "Llanera",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Resonancia Abierta Toreno S.L.",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Psicoser",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Policlinica San Francisco",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Podactivo Oviedo",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Podactivo Gijon",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Metodo Ciep",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Mama Sana",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Lanzavos Clinica",
+      "municipio": "Grado",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Instituto de Rehabilitacion Junquera",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Instituto de Rehabilitacion Atiur",
+      "municipio": "Avilés",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Hospital de Jove",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Gabinete Psicologico Romero",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica del Pie La Era",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica de Medicina Nuclear Gamma",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica San Ezequiel",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Roblote",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Psiquiatrica Somio",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Picosonter",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Oftalmologica Bascaran",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Ginecologica Cecchini",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Bascaran",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Clinica Arganzuela",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Cips Psicologia",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Centro Medico Gijon S.L.",
+      "municipio": "Gijón",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Asistencia Medico-Sanitaria",
+      "municipio": "Oviedo",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Asistencia Medica Occidental S.L.",
+      "municipio": "Luarca",
+      "registros": 1,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "Sanitas",
+      "centro": "Age Fisioterapia Avanzada SR",
+      "municipio": "Pravia",
+      "registros": 1,
+      "especialidades": 1
+    }
+  ],
+  "profesionales_compartidos": [],
+  "profesionales_exclusivos_competencia": [
+    {
+      "profesional": "Iglesias Puzas, Alvaro",
+      "aseguradoras": "DKV,Sanitas",
+      "especialidades": "Ginecología y Obstetricia,Dermatología",
+      "municipios": "Oviedo,Gijón"
+    }
+  ],
+  "kpis_competitivos": {
+    "especialidades_mercado": 62,
+    "especialidades_asisa": 50,
+    "pct_cobertura_especialidades": 80.6,
+    "por_aseguradora": [
+      {
+        "aseguradora": "ASISA",
+        "especialidades": 50,
+        "municipios": 27,
+        "profesionales": 536,
+        "centros": 232
+      },
+      {
+        "aseguradora": "Adeslas",
+        "especialidades": 42,
+        "municipios": 29,
+        "profesionales": 479,
+        "centros": 21
+      },
+      {
+        "aseguradora": "DKV",
+        "especialidades": 46,
+        "municipios": 17,
+        "profesionales": 492,
+        "centros": 79
+      },
+      {
+        "aseguradora": "Mapfre",
+        "especialidades": 42,
+        "municipios": 29,
+        "profesionales": 354,
+        "centros": 88
+      },
+      {
+        "aseguradora": "Sanitas",
+        "especialidades": 50,
+        "municipios": 25,
+        "profesionales": 160,
+        "centros": 71
+      }
+    ]
+  },
+  "areas_sanitarias": [
+    {
+      "area_sanitaria": "Área VIII - Langreo",
+      "poblacion": "65000",
+      "asisa_registros": 22,
+      "competencia_registros": 65,
+      "asisa_profesionales": 15,
+      "comp_profesionales": 51,
+      "asisa_especialidades": 11,
+      "comp_especialidades": 16,
+      "municipios": 6,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área VII - Mieres",
+      "poblacion": "65000",
+      "asisa_registros": 13,
+      "competencia_registros": 67,
+      "asisa_profesionales": 12,
+      "comp_profesionales": 61,
+      "asisa_especialidades": 8,
+      "comp_especialidades": 12,
+      "municipios": 6,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "poblacion": "55000",
+      "asisa_registros": 2,
+      "competencia_registros": 37,
+      "asisa_profesionales": 2,
+      "comp_profesionales": 34,
+      "asisa_especialidades": 2,
+      "comp_especialidades": 9,
+      "municipios": 5,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área I - Jarrio",
+      "poblacion": "42600",
+      "asisa_registros": 14,
+      "competencia_registros": 44,
+      "asisa_profesionales": 8,
+      "comp_profesionales": 25,
+      "asisa_especialidades": 7,
+      "comp_especialidades": 13,
+      "municipios": 5,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área VI - Arriondas",
+      "poblacion": "35000",
+      "asisa_registros": 46,
+      "competencia_registros": 100,
+      "asisa_profesionales": 27,
+      "comp_profesionales": 69,
+      "asisa_especialidades": 13,
+      "comp_especialidades": 21,
+      "municipios": 5,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área IV - Oviedo",
+      "poblacion": "340000",
+      "asisa_registros": 422,
+      "competencia_registros": 846,
+      "asisa_profesionales": 284,
+      "comp_profesionales": 604,
+      "asisa_especialidades": 49,
+      "comp_especialidades": 59,
+      "municipios": 6,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área V - Gijón",
+      "poblacion": "305000",
+      "asisa_registros": 311,
+      "competencia_registros": 744,
+      "asisa_profesionales": 194,
+      "comp_profesionales": 541,
+      "asisa_especialidades": 45,
+      "comp_especialidades": 53,
+      "municipios": 2,
+      "aseguradoras": 5
+    },
+    {
+      "area_sanitaria": "Área III - Avilés",
+      "poblacion": "155000",
+      "asisa_registros": 92,
+      "competencia_registros": 381,
+      "asisa_profesionales": 55,
+      "comp_profesionales": 262,
+      "asisa_especialidades": 31,
+      "comp_especialidades": 42,
+      "municipios": 6,
+      "aseguradoras": 5
+    }
+  ],
+  "ratios_por_area": [
+    {
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "poblacion": "55000",
+      "asisa_prof": 2,
+      "asisa_prof_per_10k": 0.36,
+      "comp_avg_prof_per_10k": 1.5
+    },
+    {
+      "area_sanitaria": "Área I - Jarrio",
+      "poblacion": "42600",
+      "asisa_prof": 7,
+      "asisa_prof_per_10k": 1.64,
+      "comp_avg_prof_per_10k": 1.41
+    },
+    {
+      "area_sanitaria": "Área VII - Mieres",
+      "poblacion": "65000",
+      "asisa_prof": 11,
+      "asisa_prof_per_10k": 1.69,
+      "comp_avg_prof_per_10k": 2.31
+    },
+    {
+      "area_sanitaria": "Área VIII - Langreo",
+      "poblacion": "65000",
+      "asisa_prof": 14,
+      "asisa_prof_per_10k": 2.15,
+      "comp_avg_prof_per_10k": 1.92
+    },
+    {
+      "area_sanitaria": "Área III - Avilés",
+      "poblacion": "155000",
+      "asisa_prof": 54,
+      "asisa_prof_per_10k": 3.48,
+      "comp_avg_prof_per_10k": 4.21
+    },
+    {
+      "area_sanitaria": "Área V - Gijón",
+      "poblacion": "305000",
+      "asisa_prof": 193,
+      "asisa_prof_per_10k": 6.33,
+      "comp_avg_prof_per_10k": 4.43
+    },
+    {
+      "area_sanitaria": "Área VI - Arriondas",
+      "poblacion": "35000",
+      "asisa_prof": 26,
+      "asisa_prof_per_10k": 7.43,
+      "comp_avg_prof_per_10k": 4.86
+    },
+    {
+      "area_sanitaria": "Área IV - Oviedo",
+      "poblacion": "340000",
+      "asisa_prof": 283,
+      "asisa_prof_per_10k": 8.32,
+      "comp_avg_prof_per_10k": 4.43
+    }
+  ],
+  "densidad_municipios": [
+    {
+      "municipio": "Arriondas",
+      "poblacion": 5208,
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_prof": 0,
+      "comp_prof": 2,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.96
+    },
+    {
+      "municipio": "Cangas del Narcea",
+      "poblacion": 11421,
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_prof": 0,
+      "comp_prof": 5,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 1.09
+    },
+    {
+      "municipio": "Castrillón",
+      "poblacion": 22103,
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_prof": 0,
+      "comp_prof": 2,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.23
+    },
+    {
+      "municipio": "La Felguera",
+      "poblacion": 37978,
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_prof": 0,
+      "comp_prof": 3,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.2
+    },
+    {
+      "municipio": "Laviana",
+      "poblacion": 12355,
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_prof": 0,
+      "comp_prof": 8,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 1.62
+    },
+    {
+      "municipio": "Llanera",
+      "poblacion": 13948,
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_prof": 0,
+      "comp_prof": 1,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.18
+    },
+    {
+      "municipio": "Lugones",
+      "poblacion": 13948,
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_prof": 0,
+      "comp_prof": 2,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.36
+    },
+    {
+      "municipio": "Moreda",
+      "poblacion": 12324,
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_prof": 0,
+      "comp_prof": 2,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.41
+    },
+    {
+      "municipio": "Moreda de Aller",
+      "poblacion": 12324,
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_prof": 0,
+      "comp_prof": 7,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 1.42
+    },
+    {
+      "municipio": "Noreña",
+      "poblacion": 5058,
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_prof": 0,
+      "comp_prof": 3,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 1.48
+    },
+    {
+      "municipio": "Pola de Lena",
+      "poblacion": 12545,
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_prof": 0,
+      "comp_prof": 7,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 1.39
+    },
+    {
+      "municipio": "Salas",
+      "poblacion": 4806,
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_prof": 0,
+      "comp_prof": 4,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 2.08
+    },
+    {
+      "municipio": "Sama de Langreo",
+      "poblacion": 37978,
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_prof": 0,
+      "comp_prof": 8,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.53
+    },
+    {
+      "municipio": "Soto del Barco",
+      "poblacion": 3807,
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_prof": 0,
+      "comp_prof": 1,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 0.66
+    },
+    {
+      "municipio": "Sotrondio",
+      "poblacion": 14000,
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_prof": 0,
+      "comp_prof": 6,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 1.07
+    },
+    {
+      "municipio": "Tapia de Casariego",
+      "poblacion": 3652,
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_prof": 0,
+      "comp_prof": 3,
+      "asisa_per_10k": 0.0,
+      "comp_avg_per_10k": 2.05
+    },
+    {
+      "municipio": "El Entrego",
+      "poblacion": 37978,
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_prof": 1,
+      "comp_prof": 0,
+      "asisa_per_10k": 0.26,
+      "comp_avg_per_10k": 0.0
+    },
+    {
+      "municipio": "Pola de Siero",
+      "poblacion": 52194,
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_prof": 3,
+      "comp_prof": 26,
+      "asisa_per_10k": 0.57,
+      "comp_avg_per_10k": 1.25
+    },
+    {
+      "municipio": "Siero",
+      "poblacion": 52194,
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_prof": 3,
+      "comp_prof": 2,
+      "asisa_per_10k": 0.57,
+      "comp_avg_per_10k": 0.1
+    },
+    {
+      "municipio": "Lena",
+      "poblacion": 12545,
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_prof": 1,
+      "comp_prof": 4,
+      "asisa_per_10k": 0.8,
+      "comp_avg_per_10k": 0.8
+    },
+    {
+      "municipio": "Luanco",
+      "poblacion": 10177,
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_prof": 1,
+      "comp_prof": 7,
+      "asisa_per_10k": 0.98,
+      "comp_avg_per_10k": 1.72
+    },
+    {
+      "municipio": "Grado",
+      "poblacion": 9616,
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_prof": 1,
+      "comp_prof": 15,
+      "asisa_per_10k": 1.04,
+      "comp_avg_per_10k": 3.9
+    },
+    {
+      "municipio": "Tineo",
+      "poblacion": 8769,
+      "area_sanitaria": "Área II - Cangas del Narcea",
+      "asisa_prof": 1,
+      "comp_prof": 7,
+      "asisa_per_10k": 1.14,
+      "comp_avg_per_10k": 2.0
+    },
+    {
+      "municipio": "Navia",
+      "poblacion": 8136,
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_prof": 1,
+      "comp_prof": 3,
+      "asisa_per_10k": 1.23,
+      "comp_avg_per_10k": 0.92
+    },
+    {
+      "municipio": "Villaviciosa",
+      "poblacion": 15000,
+      "area_sanitaria": "Área V - Gijón",
+      "asisa_prof": 2,
+      "comp_prof": 18,
+      "asisa_per_10k": 1.33,
+      "comp_avg_per_10k": 3.0
+    },
+    {
+      "municipio": "Piedras Blancas",
+      "poblacion": 22103,
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_prof": 3,
+      "comp_prof": 1,
+      "asisa_per_10k": 1.36,
+      "comp_avg_per_10k": 0.11
+    },
+    {
+      "municipio": "Aller",
+      "poblacion": 12324,
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_prof": 2,
+      "comp_prof": 1,
+      "asisa_per_10k": 1.62,
+      "comp_avg_per_10k": 0.2
+    },
+    {
+      "municipio": "Parres",
+      "poblacion": 5208,
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_prof": 1,
+      "comp_prof": 2,
+      "asisa_per_10k": 1.92,
+      "comp_avg_per_10k": 0.96
+    },
+    {
+      "municipio": "Mieres",
+      "poblacion": 36195,
+      "area_sanitaria": "Área VII - Mieres",
+      "asisa_prof": 8,
+      "comp_prof": 39,
+      "asisa_per_10k": 2.21,
+      "comp_avg_per_10k": 2.69
+    },
+    {
+      "municipio": "Pravia",
+      "poblacion": 7830,
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_prof": 2,
+      "comp_prof": 11,
+      "asisa_per_10k": 2.55,
+      "comp_avg_per_10k": 3.51
+    },
+    {
+      "municipio": "Vegadeo",
+      "poblacion": 3885,
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_prof": 1,
+      "comp_prof": 11,
+      "asisa_per_10k": 2.57,
+      "comp_avg_per_10k": 7.08
+    },
+    {
+      "municipio": "Langreo",
+      "poblacion": 37978,
+      "area_sanitaria": "Área VIII - Langreo",
+      "asisa_prof": 13,
+      "comp_prof": 26,
+      "asisa_per_10k": 3.42,
+      "comp_avg_per_10k": 1.71
+    },
+    {
+      "municipio": "Luarca",
+      "poblacion": 10958,
+      "area_sanitaria": "Área I - Jarrio",
+      "asisa_prof": 6,
+      "comp_prof": 8,
+      "asisa_per_10k": 5.48,
+      "comp_avg_per_10k": 1.83
+    },
+    {
+      "municipio": "Avilés",
+      "poblacion": 75518,
+      "area_sanitaria": "Área III - Avilés",
+      "asisa_prof": 49,
+      "comp_prof": 243,
+      "asisa_per_10k": 6.49,
+      "comp_avg_per_10k": 8.04
+    },
+    {
+      "municipio": "Gijón",
+      "poblacion": 268313,
+      "area_sanitaria": "Área V - Gijón",
+      "asisa_prof": 191,
+      "comp_prof": 522,
+      "asisa_per_10k": 7.12,
+      "comp_avg_per_10k": 4.86
+    },
+    {
+      "municipio": "Ribadesella",
+      "poblacion": 5548,
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_prof": 4,
+      "comp_prof": 17,
+      "asisa_per_10k": 7.21,
+      "comp_avg_per_10k": 7.66
+    },
+    {
+      "municipio": "Cangas de Onís",
+      "poblacion": 6316,
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_prof": 6,
+      "comp_prof": 19,
+      "asisa_per_10k": 9.5,
+      "comp_avg_per_10k": 7.52
+    },
+    {
+      "municipio": "Llanes",
+      "poblacion": 13524,
+      "area_sanitaria": "Área VI - Arriondas",
+      "asisa_prof": 17,
+      "comp_prof": 32,
+      "asisa_per_10k": 12.57,
+      "comp_avg_per_10k": 5.92
+    },
+    {
+      "municipio": "Oviedo",
+      "poblacion": 217584,
+      "area_sanitaria": "Área IV - Oviedo",
+      "asisa_prof": 279,
+      "comp_prof": 572,
+      "asisa_per_10k": 12.82,
+      "comp_avg_per_10k": 6.57
+    }
+  ]
+}

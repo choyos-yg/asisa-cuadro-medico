@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASISA Asturias - Comparador de Cuadros Médicos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --asisa-primary: #003366;
+            --asisa-secondary: #0066cc;
+            --asisa-accent: #00aaff;
+            --bg: #f5f7fa;
+            --card-bg: #fff;
+            --text: #1a1a2e;
+            --text-muted: #6b7280;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --border: #e5e7eb;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--asisa-primary), var(--asisa-secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 { font-size: 1.8rem; font-weight: 700; }
+        header p { opacity: 0.85; margin-top: 0.3rem; font-size: 0.95rem; }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+
+        /* Navigation tabs */
+        .tabs {
+            display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border); padding-bottom: 0;
+            overflow-x: auto;
+        }
+        .tab {
+            padding: 0.7rem 1.2rem; cursor: pointer; border: none; background: none;
+            font-size: 0.9rem; color: var(--text-muted); border-bottom: 3px solid transparent;
+            white-space: nowrap; transition: all 0.2s;
+        }
+        .tab:hover { color: var(--asisa-secondary); }
+        .tab.active { color: var(--asisa-primary); border-bottom-color: var(--asisa-primary); font-weight: 600; }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* KPI cards */
+        .kpi-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem; margin-bottom: 1.5rem;
+        }
+        .kpi-card {
+            background: var(--card-bg); border-radius: 12px; padding: 1.2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .kpi-card .label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .kpi-card .value { font-size: 2rem; font-weight: 700; color: var(--asisa-primary); margin: 0.3rem 0; }
+        .kpi-card .sub { font-size: 0.85rem; color: var(--text-muted); }
+        .kpi-card.danger .value { color: var(--danger); }
+        .kpi-card.warning .value { color: var(--warning); }
+        .kpi-card.success .value { color: var(--success); }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg); border-radius: 12px; padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 1.5rem;
+        }
+        .card h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--asisa-primary); }
+
+        /* Tables */
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        th { background: var(--bg); padding: 0.7rem 0.8rem; text-align: left; font-weight: 600;
+             border-bottom: 2px solid var(--border); position: sticky; top: 0; }
+        td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border); }
+        tr:hover td { background: #f0f4ff; }
+
+        /* Chart containers */
+        .chart-container { position: relative; height: 400px; margin: 1rem 0; }
+        .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+
+        /* Badges */
+        .badge {
+            display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+            font-size: 0.75rem; font-weight: 600;
+        }
+        .badge-danger { background: #fef2f2; color: var(--danger); }
+        .badge-warning { background: #fffbeb; color: var(--warning); }
+        .badge-success { background: #f0fdf4; color: var(--success); }
+        .badge-info { background: #eff6ff; color: var(--asisa-secondary); }
+
+        /* Bar indicators */
+        .bar-cell { display: flex; align-items: center; gap: 0.5rem; }
+        .bar { height: 8px; border-radius: 4px; min-width: 4px; }
+        .bar-asisa { background: var(--asisa-secondary); }
+        .bar-comp { background: #d1d5db; }
+
+        /* Search/filter */
+        .filter-bar { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .filter-bar input, .filter-bar select {
+            padding: 0.5rem 0.8rem; border: 1px solid var(--border); border-radius: 8px;
+            font-size: 0.85rem; background: white;
+        }
+        .filter-bar input { flex: 1; min-width: 200px; }
+
+        @media (max-width: 768px) {
+            .chart-row { grid-template-columns: 1fr; }
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            header h1 { font-size: 1.3rem; }
+        }
+
+        /* Gap severity */
+        .severity-high { border-left: 3px solid var(--danger); }
+        .severity-medium { border-left: 3px solid var(--warning); }
+        .severity-low { border-left: 3px solid var(--success); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ASISA Asturias - Comparador de Red Medica</h1>
+        <p>Analisis competitivo vs Adeslas, DKV, Mapfre y Sanitas | Datos 2026</p>
+    </header>
+
+    <div class="container">
+        <div class="tabs" id="mainTabs">
+            <button class="tab active" data-tab="overview">Resumen</button>
+            <button class="tab" data-tab="specialties">Especialidades</button>
+            <button class="tab" data-tab="geography">Cobertura Geografica</button>
+            <button class="tab" data-tab="gaps">Gaps y Prioridades</button>
+            <button class="tab" data-tab="benchmark">Benchmark</button>
+            <button class="tab" data-tab="areas">Areas Sanitarias</button>
+            <button class="tab" data-tab="centers">Centros</button>
+        </div>
+
+        <!-- TAB: OVERVIEW -->
+        <div class="tab-content active" id="tab-overview">
+            <div class="kpi-grid" id="kpiCards"></div>
+            <div class="chart-row">
+                <div class="card">
+                    <h3>Profesionales por aseguradora</h3>
+                    <div class="chart-container"><canvas id="chartProfesionales"></canvas></div>
+                </div>
+                <div class="card">
+                    <h3>Especialidades cubiertas por aseguradora</h3>
+                    <div class="chart-container"><canvas id="chartEspecialidades"></canvas></div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Resumen comparativo</h3>
+                <div class="table-wrapper">
+                    <table id="tableResumen"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: SPECIALTIES -->
+        <div class="tab-content" id="tab-specialties">
+            <div class="filter-bar">
+                <input type="text" id="filterSpec" placeholder="Buscar especialidad...">
+                <select id="filterSpecSort">
+                    <option value="diff">Ordenar por deficit ASISA</option>
+                    <option value="asisa">Ordenar por N profesionales ASISA</option>
+                    <option value="name">Ordenar alfabeticamente</option>
+                </select>
+            </div>
+            <div class="card">
+                <h3>ASISA vs Promedio de Competencia por Especialidad</h3>
+                <div class="chart-container" style="height: 800px;"><canvas id="chartSpecComparison"></canvas></div>
+            </div>
+            <div class="card">
+                <h3>Detalle por especialidad</h3>
+                <div class="table-wrapper">
+                    <table id="tableSpecialties"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: GEOGRAPHY -->
+        <div class="tab-content" id="tab-geography">
+            <div class="card">
+                <h3>Cobertura por municipio: ASISA vs Competencia</h3>
+                <div class="chart-container" style="height: 600px;"><canvas id="chartMunicipios"></canvas></div>
+            </div>
+            <div class="card">
+                <h3>Detalle por municipio</h3>
+                <div class="table-wrapper">
+                    <table id="tableMunicipios"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: GAPS -->
+        <div class="tab-content" id="tab-gaps">
+            <div class="kpi-grid" id="gapKpis"></div>
+            <div class="chart-row">
+                <div class="card">
+                    <h3>Especialidades que ASISA no tiene</h3>
+                    <div class="table-wrapper"><table id="tableGapSpecs"></table></div>
+                </div>
+                <div class="card">
+                    <h3>Municipios sin presencia ASISA</h3>
+                    <div class="table-wrapper"><table id="tableGapMunis"></table></div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Gaps criticos: Zona + Especialidad sin ASISA (cubierta por 2+ competidores)</h3>
+                <div class="table-wrapper"><table id="tableGapCriticos"></table></div>
+            </div>
+        </div>
+
+        <!-- TAB: BENCHMARK -->
+        <div class="tab-content" id="tab-benchmark">
+            <div class="card">
+                <h3>Especialidades donde ASISA esta por debajo del mercado</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.85rem;">
+                    Muestra especialidades donde ASISA tiene menos profesionales que el promedio de la competencia.
+                    "Faltan X" indica cuantos profesionales necesitaria ASISA para igualar el promedio del mercado.
+                </p>
+                <div class="table-wrapper"><table id="tableBenchmark"></table></div>
+            </div>
+        </div>
+
+        <!-- TAB: AREAS SANITARIAS -->
+        <div class="tab-content" id="tab-areas">
+            <div class="card">
+                <h3>Profesionales por 10.000 habitantes: ASISA vs Competencia</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.85rem;">
+                    Ratio calculado con datos INE 2024. Promedio competencia = media de las 4 aseguradoras competidoras.
+                    Fuente poblacion: INE 2024. Areas sanitarias: SESPA (8 areas actuales).
+                </p>
+                <div class="chart-container"><canvas id="chartAreaRatios"></canvas></div>
+            </div>
+            <div class="card">
+                <h3>Detalle por Area Sanitaria</h3>
+                <div class="table-wrapper"><table id="tableAreas"></table></div>
+            </div>
+            <div class="card">
+                <h3>Densidad por municipio principal (>3.000 hab.)</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.85rem;">
+                    Profesionales ASISA por 10.000 habitantes vs promedio individual de competidores.
+                </p>
+                <div class="table-wrapper"><table id="tableDensidad"></table></div>
+            </div>
+        </div>
+
+        <!-- TAB: CENTERS -->
+        <div class="tab-content" id="tab-centers">
+            <div class="filter-bar">
+                <input type="text" id="filterCenter" placeholder="Buscar centro o municipio...">
+            </div>
+            <div class="card">
+                <h3>Centros donde la competencia tiene presencia y ASISA no</h3>
+                <div class="table-wrapper"><table id="tableCenterGaps"></table></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Load data
+    let DATA = null;
+
+    async function loadData() {
+        const resp = await fetch('data.json');
+        DATA = await resp.json();
+        renderAll();
+    }
+
+    // ============================================================
+    // TABS
+    // ============================================================
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // ============================================================
+    // RENDER
+    // ============================================================
+    const COLORS = {
+        'ASISA': '#003366',
+        'Adeslas': '#e63946',
+        'DKV': '#457b9d',
+        'Mapfre': '#f4a261',
+        'Sanitas': '#2a9d8f'
+    };
+
+    function renderAll() {
+        const fns = [renderOverview, renderSpecialties, renderGeography, renderGaps, renderBenchmark, renderAreas, renderCenters];
+        for (const fn of fns) {
+            try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
+        }
+    }
+
+    // ---- OVERVIEW ----
+    function renderOverview() {
+        const r = DATA.resumen;
+        const k = DATA.kpis_competitivos;
+        const asisa = k.por_aseguradora.find(a => a.aseguradora === 'ASISA');
+        const gaps = DATA.gaps_especialidades_asisa.length;
+        const gapsMuni = DATA.gaps_municipios_asisa.length;
+
+        document.getElementById('kpiCards').innerHTML = `
+            <div class="kpi-card success"><div class="label">Profesionales ASISA</div><div class="value">${asisa.profesionales}</div><div class="sub">en red propia</div></div>
+            <div class="kpi-card"><div class="label">Especialidades</div><div class="value">${k.especialidades_asisa}/${k.especialidades_mercado}</div><div class="sub">${k.pct_cobertura_especialidades}% del mercado</div></div>
+            <div class="kpi-card"><div class="label">Municipios</div><div class="value">${asisa.municipios}</div><div class="sub">con presencia</div></div>
+            <div class="kpi-card"><div class="label">Centros</div><div class="value">${asisa.centros}</div><div class="sub">concertados</div></div>
+            <div class="kpi-card danger"><div class="label">Gaps especialidades</div><div class="value">${gaps}</div><div class="sub">que tiene competencia</div></div>
+            <div class="kpi-card warning"><div class="label">Gaps municipios</div><div class="value">${gapsMuni}</div><div class="sub">sin presencia ASISA</div></div>
+        `;
+
+        // Chart: profesionales
+        const labels = r.por_aseguradora.map(a => a.aseguradora);
+        new Chart(document.getElementById('chartProfesionales'), {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Profesionales unicos',
+                    data: r.por_aseguradora.map(a => a.profesionales_unicos),
+                    backgroundColor: labels.map(l => COLORS[l] || '#999'),
+                    borderRadius: 6,
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+
+        // Chart: especialidades
+        new Chart(document.getElementById('chartEspecialidades'), {
+            type: 'bar',
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Especialidades',
+                    data: r.por_aseguradora.map(a => a.especialidades),
+                    backgroundColor: labels.map(l => COLORS[l] || '#999'),
+                    borderRadius: 6,
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+        });
+
+        // Table resumen
+        let html = '<thead><tr><th>Aseguradora</th><th>Registros</th><th>Especialidades</th><th>Municipios</th><th>Profesionales</th><th>Centros</th></tr></thead><tbody>';
+        for (const a of r.por_aseguradora) {
+            const isAsisa = a.aseguradora === 'ASISA';
+            html += `<tr style="${isAsisa ? 'font-weight:600;background:#f0f4ff' : ''}">
+                <td>${a.aseguradora}</td><td>${a.total_registros}</td><td>${a.especialidades}</td>
+                <td>${a.municipios}</td><td>${a.profesionales_unicos}</td><td>${a.centros}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableResumen').innerHTML = html;
+    }
+
+    // ---- SPECIALTIES ----
+    function renderSpecialties() {
+        const comp = DATA.comparativa_especialidades.filter(c => c.especialidad);
+
+        // Chart
+        const sorted = [...comp].sort((a, b) => (a.diferencia_vs_promedio || 0) - (b.diferencia_vs_promedio || 0));
+        const top40 = sorted.slice(0, 40);
+
+        new Chart(document.getElementById('chartSpecComparison'), {
+            type: 'bar',
+            data: {
+                labels: top40.map(c => c.especialidad),
+                datasets: [
+                    { label: 'ASISA', data: top40.map(c => c.asisa), backgroundColor: COLORS.ASISA, borderRadius: 4 },
+                    { label: 'Promedio competencia', data: top40.map(c => c.promedio_competencia), backgroundColor: '#d1d5db', borderRadius: 4 },
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+                plugins: { legend: { position: 'top' } },
+                scales: { x: { beginAtZero: true } }
+            }
+        });
+
+        // Table
+        renderSpecTable(comp);
+
+        // Filters
+        document.getElementById('filterSpec').addEventListener('input', () => renderSpecTable(comp));
+        document.getElementById('filterSpecSort').addEventListener('change', () => renderSpecTable(comp));
+    }
+
+    function renderSpecTable(comp) {
+        const filter = document.getElementById('filterSpec').value.toLowerCase();
+        const sort = document.getElementById('filterSpecSort').value;
+
+        let filtered = comp.filter(c => c.especialidad && c.especialidad.toLowerCase().includes(filter));
+        if (sort === 'diff') filtered.sort((a, b) => (a.diferencia_vs_promedio || 0) - (b.diferencia_vs_promedio || 0));
+        else if (sort === 'asisa') filtered.sort((a, b) => b.asisa - a.asisa);
+        else filtered.sort((a, b) => a.especialidad.localeCompare(b.especialidad));
+
+        let html = '<thead><tr><th>Especialidad</th><th>ASISA</th><th>Prom. Comp.</th><th>Max Comp.</th><th>Diferencia</th><th>Estado</th></tr></thead><tbody>';
+        for (const c of filtered) {
+            const diff = c.diferencia_vs_promedio || 0;
+            let badge = '';
+            if (c.asisa === 0) badge = '<span class="badge badge-danger">Sin cobertura</span>';
+            else if (diff < -5) badge = '<span class="badge badge-danger">Deficit critico</span>';
+            else if (diff < 0) badge = '<span class="badge badge-warning">Por debajo</span>';
+            else badge = '<span class="badge badge-success">OK</span>';
+
+            html += `<tr><td><strong>${c.especialidad}</strong></td><td>${c.asisa}</td>
+                <td>${c.promedio_competencia}</td><td>${c.max_competencia}</td>
+                <td style="color:${diff < 0 ? 'var(--danger)' : 'var(--success)'}">${diff > 0 ? '+' : ''}${diff.toFixed(1)}</td>
+                <td>${badge}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableSpecialties').innerHTML = html;
+    }
+
+    // ---- GEOGRAPHY ----
+    function renderGeography() {
+        const ranking = DATA.ranking_municipios.filter(m => m.municipio);
+
+        // Chart top 20 municipalities
+        const top20 = ranking.slice(0, 20);
+        new Chart(document.getElementById('chartMunicipios'), {
+            type: 'bar',
+            data: {
+                labels: top20.map(m => m.municipio),
+                datasets: [
+                    { label: 'ASISA', data: top20.map(m => m.asisa_registros), backgroundColor: COLORS.ASISA, borderRadius: 4 },
+                    { label: 'Competencia', data: top20.map(m => m.competencia_registros), backgroundColor: '#d1d5db', borderRadius: 4 },
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+                plugins: { legend: { position: 'top' } },
+                scales: { x: { beginAtZero: true, stacked: false } }
+            }
+        });
+
+        // Table
+        let html = '<thead><tr><th>Municipio</th><th>ASISA reg.</th><th>Comp. reg.</th><th>ASISA esp.</th><th>Comp. esp.</th><th>Aseguradoras</th></tr></thead><tbody>';
+        for (const m of ranking) {
+            const isGap = m.asisa_registros === 0;
+            html += `<tr style="${isGap ? 'background:#fef2f2' : ''}">
+                <td><strong>${m.municipio}</strong>${isGap ? ' <span class="badge badge-danger">Sin ASISA</span>' : ''}</td>
+                <td>${m.asisa_registros}</td><td>${m.competencia_registros}</td>
+                <td>${m.asisa_especialidades || 0}</td><td>${m.competencia_especialidades || 0}</td>
+                <td>${m.num_aseguradoras}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableMunicipios').innerHTML = html;
+    }
+
+    // ---- GAPS ----
+    function renderGaps() {
+        const gapSpecs = DATA.gaps_especialidades_asisa;
+        const gapMunis = DATA.gaps_municipios_asisa;
+        const gapCrit = DATA.gaps_criticos;
+
+        document.getElementById('gapKpis').innerHTML = `
+            <div class="kpi-card danger"><div class="label">Especialidades ausentes</div><div class="value">${gapSpecs.length}</div><div class="sub">que competencia ofrece</div></div>
+            <div class="kpi-card warning"><div class="label">Municipios sin ASISA</div><div class="value">${gapMunis.length}</div><div class="sub">con presencia competencia</div></div>
+            <div class="kpi-card danger"><div class="label">Gaps criticos</div><div class="value">${gapCrit.length}</div><div class="sub">zona+especialidad sin cubrir</div></div>
+        `;
+
+        // Gap specialties table
+        let html = '<thead><tr><th>Especialidad</th><th>Aseguradoras que la tienen</th><th>Profesionales</th></tr></thead><tbody>';
+        for (const g of gapSpecs) {
+            html += `<tr><td><strong>${g.especialidad_normalizada}</strong></td><td>${g.aseguradoras_que_la_tienen}</td><td>${g.total_profesionales}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableGapSpecs').innerHTML = html;
+
+        // Gap municipalities
+        html = '<thead><tr><th>Municipio</th><th>Aseguradoras presentes</th><th>Especialidades</th><th>Profesionales</th></tr></thead><tbody>';
+        for (const g of gapMunis) {
+            html += `<tr><td><strong>${g.municipio}</strong></td><td>${g.aseguradoras_presentes}</td><td>${g.especialidades_disponibles}</td><td>${g.profesionales}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableGapMunis').innerHTML = html;
+
+        // Critical gaps
+        html = '<thead><tr><th>Municipio</th><th>Especialidad</th><th>Competidores con cobertura</th><th>Severidad</th></tr></thead><tbody>';
+        for (const g of gapCrit) {
+            const sev = g.aseguradoras_con_cobertura >= 3 ? 'high' : g.aseguradoras_con_cobertura >= 2 ? 'medium' : 'low';
+            const badge = sev === 'high' ? '<span class="badge badge-danger">Critico</span>' : sev === 'medium' ? '<span class="badge badge-warning">Alto</span>' : '<span class="badge badge-info">Medio</span>';
+            html += `<tr class="severity-${sev}"><td><strong>${g.municipio}</strong></td><td>${g.especialidad_normalizada}</td><td>${g.aseguradoras_con_cobertura}</td><td>${badge}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableGapCriticos').innerHTML = html;
+    }
+
+    // ---- BENCHMARK ----
+    function renderBenchmark() {
+        const comp = DATA.comparativa_especialidades
+            .filter(c => c.especialidad && c.diferencia_vs_promedio !== null && c.diferencia_vs_promedio < 0)
+            .sort((a, b) => a.diferencia_vs_promedio - b.diferencia_vs_promedio);
+
+        let html = '<thead><tr><th>Especialidad</th><th>ASISA</th><th>Prom. Mercado</th><th>Max Mercado</th><th>Faltan para igualar</th><th>Severidad</th></tr></thead><tbody>';
+        for (const c of comp) {
+            const faltan = Math.ceil(Math.abs(c.diferencia_vs_promedio));
+            const sev = faltan > 10 ? 'danger' : faltan > 5 ? 'warning' : 'info';
+            html += `<tr><td><strong>${c.especialidad}</strong></td><td>${c.asisa}</td>
+                <td>${c.promedio_competencia}</td><td>${c.max_competencia}</td>
+                <td style="color:var(--danger);font-weight:600">+${faltan} profesionales</td>
+                <td><span class="badge badge-${sev}">${faltan > 10 ? 'Critico' : faltan > 5 ? 'Alto' : 'Medio'}</span></td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableBenchmark').innerHTML = html;
+    }
+
+    // ---- AREAS SANITARIAS ----
+    function renderAreas() {
+        const areas = DATA.areas_sanitarias || [];
+        const ratios = DATA.ratios_por_area || [];
+        const densidad = DATA.densidad_municipios || [];
+
+        // Chart: ratios per 10K
+        if (ratios.length) {
+            new Chart(document.getElementById('chartAreaRatios'), {
+                type: 'bar',
+                data: {
+                    labels: ratios.map(r => r.area_sanitaria ? r.area_sanitaria.replace('Área ', '') : ''),
+                    datasets: [
+                        { label: 'ASISA prof/10K hab', data: ratios.map(r => r.asisa_prof_per_10k), backgroundColor: COLORS.ASISA, borderRadius: 4 },
+                        { label: 'Comp. promedio prof/10K hab', data: ratios.map(r => r.comp_avg_prof_per_10k), backgroundColor: '#d1d5db', borderRadius: 4 },
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top' } },
+                    scales: { y: { beginAtZero: true, title: { display: true, text: 'Profesionales por 10.000 hab.' } } }
+                }
+            });
+        }
+
+        // Table areas
+        let html = '<thead><tr><th>Area Sanitaria</th><th>Poblacion</th><th>ASISA prof.</th><th>Comp. prof.</th><th>ASISA/10K</th><th>Comp.prom/10K</th><th>Especialidades ASISA</th><th>Estado</th></tr></thead><tbody>';
+        for (const a of areas) {
+            const r = ratios.find(x => x.area_sanitaria === a.area_sanitaria) || {};
+            const ratio = r.asisa_prof_per_10k || 0;
+            const compRatio = r.comp_avg_prof_per_10k || 0;
+            let badge = '';
+            if (ratio < compRatio * 0.5) badge = '<span class="badge badge-danger">Deficit critico</span>';
+            else if (ratio < compRatio) badge = '<span class="badge badge-warning">Por debajo</span>';
+            else badge = '<span class="badge badge-success">OK</span>';
+
+            html += `<tr><td><strong>${a.area_sanitaria || ''}</strong></td>
+                <td>${(a.poblacion || 0).toLocaleString()}</td>
+                <td>${a.asisa_profesionales || 0}</td><td>${a.comp_profesionales || 0}</td>
+                <td style="font-weight:600">${ratio}</td><td>${compRatio}</td>
+                <td>${a.asisa_especialidades || 0}/${a.comp_especialidades || 0}</td>
+                <td>${badge}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableAreas').innerHTML = html;
+
+        // Table densidad municipios
+        const sorted = [...densidad].sort((a, b) => (a.asisa_per_10k || 0) - (b.asisa_per_10k || 0));
+        html = '<thead><tr><th>Municipio</th><th>Area</th><th>Poblacion</th><th>ASISA prof.</th><th>ASISA/10K</th><th>Comp.prom/10K</th><th>Estado</th></tr></thead><tbody>';
+        for (const d of sorted) {
+            const ratio = d.asisa_per_10k || 0;
+            const compRatio = d.comp_avg_per_10k || 0;
+            let badge = '';
+            if (ratio === 0) badge = '<span class="badge badge-danger">Sin cobertura</span>';
+            else if (ratio < compRatio * 0.5) badge = '<span class="badge badge-danger">Deficit critico</span>';
+            else if (ratio < compRatio) badge = '<span class="badge badge-warning">Por debajo</span>';
+            else badge = '<span class="badge badge-success">OK</span>';
+
+            html += `<tr><td><strong>${d.municipio}</strong></td><td style="font-size:0.8rem">${(d.area_sanitaria || '').replace('Área ', '')}</td>
+                <td>${(d.poblacion || 0).toLocaleString()}</td><td>${d.asisa_prof || 0}</td>
+                <td style="font-weight:600">${ratio}</td><td>${compRatio}</td><td>${badge}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableDensidad').innerHTML = html;
+    }
+
+    // ---- CENTERS ----
+    function renderCenters() {
+        renderCenterTable();
+        document.getElementById('filterCenter').addEventListener('input', renderCenterTable);
+    }
+
+    function renderCenterTable() {
+        const filter = document.getElementById('filterCenter').value.toLowerCase();
+        const gaps = DATA.gaps_centros_asisa.filter(g =>
+            g.centro.toLowerCase().includes(filter) || (g.municipio && g.municipio.toLowerCase().includes(filter))
+        );
+
+        let html = '<thead><tr><th>Centro</th><th>Municipio</th><th>Aseguradoras</th><th>Especialidades</th><th>Profesionales</th></tr></thead><tbody>';
+        for (const g of gaps) {
+            html += `<tr><td><strong>${g.centro}</strong></td><td>${g.municipio || ''}</td>
+                <td>${g.aseguradoras}</td><td>${g.especialidades}</td><td>${g.profesionales}</td></tr>`;
+        }
+        html += '</tbody>';
+        document.getElementById('tableCenterGaps').innerHTML = html;
+    }
+
+    // ---- INIT ----
+    loadData();
+    </script>
+</body>
+</html>
