@@ -123,9 +123,56 @@
         .severity-high { border-left: 3px solid var(--danger); }
         .severity-medium { border-left: 3px solid var(--warning); }
         .severity-low { border-left: 3px solid var(--success); }
+
+        /* Login gate */
+        #loginGate {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--asisa-primary), var(--asisa-secondary));
+            display: flex; align-items: center; justify-content: center; z-index: 9999;
+        }
+        #loginGate.hidden { display: none; }
+        .login-box {
+            background: white; border-radius: 16px; padding: 2.5rem; width: 380px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3); text-align: center;
+        }
+        .login-box h2 { color: var(--asisa-primary); margin-bottom: 0.5rem; font-size: 1.4rem; }
+        .login-box p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .login-box input {
+            width: 100%; padding: 0.8rem 1rem; border: 2px solid var(--border); border-radius: 10px;
+            font-size: 1.1rem; text-align: center; letter-spacing: 4px; font-weight: 600;
+            outline: none; transition: border-color 0.2s;
+        }
+        .login-box input:focus { border-color: var(--asisa-secondary); }
+        .login-box input.error { border-color: var(--danger); animation: shake 0.4s; }
+        .login-box button {
+            width: 100%; margin-top: 1rem; padding: 0.8rem; border: none; border-radius: 10px;
+            background: var(--asisa-primary); color: white; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .login-box button:hover { background: var(--asisa-secondary); }
+        .login-error { color: var(--danger); font-size: 0.85rem; margin-top: 0.7rem; display: none; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+        #appContent { display: none; }
+        #appContent.visible { display: block; }
     </style>
 </head>
 <body>
+    <!-- LOGIN GATE -->
+    <div id="loginGate">
+        <div class="login-box">
+            <h2>ASISA Asturias</h2>
+            <p>Comparador de Red Medica</p>
+            <input type="password" id="accessCode" placeholder="Codigo de acceso" maxlength="10" autocomplete="off">
+            <button onclick="checkAccess()">Acceder</button>
+            <div class="login-error" id="loginError">Codigo incorrecto</div>
+        </div>
+    </div>
+
+    <div id="appContent">
     <header>
         <h1>ASISA Asturias - Comparador de Red Medica</h1>
         <p>Analisis competitivo vs Adeslas, DKV, Mapfre y Sanitas | Datos 2026</p>
@@ -264,9 +311,55 @@
             </div>
         </div>
     </div>
+    </div> <!-- close appContent -->
 
     <script>
-    // Load data
+    // ============================================================
+    // ACCESS GATE
+    // ============================================================
+    // SHA-256 hash of the access code (not storing plaintext)
+    const ACCESS_HASH = '8d23cf6c86e834a7aa6eded54c26ce2bb2e74903538c61bdd5d2197997ab2f72';
+
+    async function sha256(text) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(text);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    async function checkAccess() {
+        const input = document.getElementById('accessCode');
+        const error = document.getElementById('loginError');
+        const code = input.value.trim();
+
+        const hash = await sha256(code);
+        if (hash === ACCESS_HASH) {
+            document.getElementById('loginGate').classList.add('hidden');
+            document.getElementById('appContent').classList.add('visible');
+            sessionStorage.setItem('asisa_auth', 'true');
+            loadData();
+        } else {
+            input.classList.add('error');
+            error.style.display = 'block';
+            setTimeout(() => { input.classList.remove('error'); }, 400);
+        }
+    }
+
+    // Allow Enter key
+    document.getElementById('accessCode').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') checkAccess();
+    });
+
+    // Check if already authenticated in this session
+    if (sessionStorage.getItem('asisa_auth') === 'true') {
+        document.getElementById('loginGate').classList.add('hidden');
+        document.getElementById('appContent').classList.add('visible');
+        loadData();
+    }
+
+    // ============================================================
+    // DATA
+    // ============================================================
     let DATA = null;
 
     async function loadData() {
