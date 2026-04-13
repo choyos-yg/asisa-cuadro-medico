@@ -124,6 +124,49 @@
         .severity-medium { border-left: 3px solid var(--warning); }
         .severity-low { border-left: 3px solid var(--success); }
 
+        /* Sub-tabs */
+        .subtabs {
+            display: flex; gap: 0.3rem; margin-bottom: 1rem; padding: 0.3rem;
+            background: #e5e7eb; border-radius: 10px; width: fit-content; flex-wrap: wrap;
+        }
+        .subtab {
+            padding: 0.45rem 1rem; border: none; background: transparent; cursor: pointer;
+            font-size: 0.85rem; color: var(--text-muted); border-radius: 7px;
+            transition: all 0.15s; white-space: nowrap;
+        }
+        .subtab:hover { color: var(--asisa-primary); }
+        .subtab.active { background: white; color: var(--asisa-primary); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+        .subtab-content { display: none; }
+        .subtab-content.active { display: block; }
+
+        /* Advanced filter bar */
+        .filters-card {
+            background: var(--card-bg); border-radius: 12px; padding: 1rem 1.2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 1.2rem;
+        }
+        .filters-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.7rem;
+        }
+        .filter-group label {
+            display: block; font-size: 0.72rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; font-weight: 600;
+        }
+        .filter-group input, .filter-group select {
+            width: 100%; padding: 0.5rem 0.7rem; border: 1px solid var(--border);
+            border-radius: 7px; font-size: 0.85rem; background: white; outline: none;
+        }
+        .filter-group input:focus, .filter-group select:focus { border-color: var(--asisa-secondary); }
+        .filter-summary {
+            margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;
+        }
+        .filter-summary .count { color: var(--asisa-primary); font-weight: 600; }
+        .filter-clear {
+            background: none; border: none; color: var(--asisa-secondary);
+            cursor: pointer; font-size: 0.8rem; text-decoration: underline;
+        }
+
         /* Login gate */
         #loginGate {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -307,19 +350,57 @@
                 Los nombres de centros estan normalizados entre aseguradoras (mayusculas, acentos, variantes).
                 Solo se muestran centros con al menos 2 profesionales.
             </p>
-            <div class="filter-bar">
-                <input type="text" id="filterCenter" placeholder="Buscar centro o municipio...">
+
+            <div class="subtabs" data-group="centers">
+                <button class="subtab active" data-subtab="gaps">Centros sin ASISA</button>
+                <button class="subtab" data-subtab="shared">Centros compartidos</button>
             </div>
-            <div class="card">
-                <h3>Centros donde la competencia tiene presencia y ASISA no</h3>
-                <div class="table-wrapper"><table id="tableCenterGaps"></table></div>
+
+            <!-- Filters -->
+            <div class="filters-card">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Buscar</label>
+                        <input type="text" id="fc_search" placeholder="Centro o municipio...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Municipio</label>
+                        <select id="fc_municipio"><option value="">Todos</option></select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Aseguradora</label>
+                        <select id="fc_aseguradora"><option value="">Todas</option></select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Min. profesionales</label>
+                        <select id="fc_minprof">
+                            <option value="2">2+</option>
+                            <option value="5">5+</option>
+                            <option value="10">10+</option>
+                            <option value="20">20+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-summary">
+                    <span class="count" id="fc_count">–</span>
+                    <button class="filter-clear" onclick="clearCenterFilters()">Limpiar filtros</button>
+                </div>
             </div>
-            <div class="card">
-                <h3>Centros compartidos (ASISA + competencia)</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
-                    Centros donde al menos ASISA y un competidor tienen profesionales concertados.
-                </p>
-                <div class="table-wrapper"><table id="tableCenterShared"></table></div>
+
+            <div class="subtab-content active" data-subtab-content="gaps">
+                <div class="card">
+                    <h3>Centros donde la competencia tiene presencia y ASISA no</h3>
+                    <div class="table-wrapper"><table id="tableCenterGaps"></table></div>
+                </div>
+            </div>
+            <div class="subtab-content" data-subtab-content="shared">
+                <div class="card">
+                    <h3>Centros compartidos (ASISA + competencia)</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                        Centros donde al menos ASISA y un competidor tienen profesionales concertados.
+                    </p>
+                    <div class="table-wrapper"><table id="tableCenterShared"></table></div>
+                </div>
             </div>
         </div>
 
@@ -328,46 +409,100 @@
             <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
                 Analisis de profesionales cruzando aseguradoras. Los nombres estan normalizados
                 (se eliminan prefijos Dr./Dra., acentos, orden apellido/nombre) para detectar correctamente
-                al mismo profesional aunque aparezca escrito distinto en cada cuadro medico.
+                al mismo profesional aunque aparezca escrito distinto en cada cuadro medico. El matching
+                usa ademas la familia de especialidad para evitar fusionar homonimos en campos distintos.
             </p>
             <div class="kpi-grid" id="profKpis"></div>
 
-            <div class="card">
-                <h3>Profesionales que la competencia tiene y ASISA no</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
-                    Candidatos a incorporar a la red ASISA. Ordenado por numero de competidores que ya lo tienen
-                    (a mas competidores, mayor probabilidad de que sea un profesional bien establecido).
-                </p>
-                <div class="filter-bar">
-                    <input type="text" id="filterProfFalta" placeholder="Buscar por nombre, especialidad o municipio...">
-                </div>
-                <div class="table-wrapper"><table id="tableProfFaltan"></table></div>
+            <div class="subtabs" data-group="prof">
+                <button class="subtab active" data-subtab="faltan">No esta en ASISA</button>
+                <button class="subtab" data-subtab="exclusivos">Exclusivos ASISA</button>
+                <button class="subtab" data-subtab="compartidos">Compartidos</button>
             </div>
 
-            <div class="card">
-                <h3>Profesionales exclusivos de ASISA</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
-                    Profesionales que tiene ASISA y ningun competidor tiene en su red.
-                    Son ventaja competitiva diferencial de ASISA.
-                </p>
-                <div class="filter-bar">
-                    <input type="text" id="filterProfExclu" placeholder="Buscar por nombre, especialidad o municipio...">
+            <!-- Filters -->
+            <div class="filters-card">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Buscar</label>
+                        <input type="text" id="fp_search" placeholder="Nombre, centro...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Municipio</label>
+                        <select id="fp_municipio"><option value="">Todos</option></select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Especialidad</label>
+                        <select id="fp_especialidad"><option value="">Todas</option></select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Familia</label>
+                        <select id="fp_familia"><option value="">Todas</option></select>
+                    </div>
+                    <div class="filter-group" id="fp_competidores_wrap">
+                        <label>Competidores min.</label>
+                        <select id="fp_competidores">
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="table-wrapper"><table id="tableProfExclusivos"></table></div>
+                <div class="filter-summary">
+                    <span class="count" id="fp_count">–</span>
+                    <button class="filter-clear" onclick="clearProfFilters()">Limpiar filtros</button>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Profesionales compartidos ASISA + competencia</h3>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
-                    Profesionales en la red ASISA que tambien estan en uno o mas competidores.
-                </p>
-                <div class="table-wrapper"><table id="tableProfCompartidos"></table></div>
+            <div class="subtab-content active" data-subtab-content="faltan">
+                <div class="card">
+                    <h3>Profesionales que la competencia tiene y ASISA no</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                        Candidatos a incorporar a la red ASISA. Ordenado por numero de competidores que ya lo tienen.
+                    </p>
+                    <div class="table-wrapper"><table id="tableProfFaltan"></table></div>
+                </div>
+            </div>
+
+            <div class="subtab-content" data-subtab-content="exclusivos">
+                <div class="card">
+                    <h3>Profesionales exclusivos de ASISA</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                        Profesionales que tiene ASISA y ningun competidor tiene en su red. Ventaja competitiva.
+                    </p>
+                    <div class="table-wrapper"><table id="tableProfExclusivos"></table></div>
+                </div>
+            </div>
+
+            <div class="subtab-content" data-subtab-content="compartidos">
+                <div class="card">
+                    <h3>Profesionales compartidos ASISA + competencia</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                        Profesionales en la red ASISA que tambien estan en uno o mas competidores.
+                    </p>
+                    <div class="table-wrapper"><table id="tableProfCompartidos"></table></div>
+                </div>
             </div>
         </div>
     </div>
     </div> <!-- close appContent -->
 
     <script>
+    // ============================================================
+    // DATA STATE (must be declared before access gate uses it)
+    // ============================================================
+    let DATA = null;
+    let DATA_LOADED = false;
+
+    async function loadData() {
+        if (DATA_LOADED) return;
+        DATA_LOADED = true;
+        const resp = await fetch('data.json');
+        DATA = await resp.json();
+        renderAll();
+    }
+
     // ============================================================
     // ACCESS GATE
     // ============================================================
@@ -411,19 +546,6 @@
         loadData();
     }
 
-    // ============================================================
-    // DATA
-    // ============================================================
-    let DATA = null;
-    let DATA_LOADED = false;
-
-    async function loadData() {
-        if (DATA_LOADED) return;
-        DATA_LOADED = true;
-        const resp = await fetch('data.json');
-        DATA = await resp.json();
-        renderAll();
-    }
 
     // ============================================================
     // TABS
@@ -449,6 +571,11 @@
     };
 
     function renderAll() {
+        // Setup interactive components first
+        try { setupSubtabs(); } catch (e) { console.error('setupSubtabs:', e); }
+        try { initCentersFilters(); } catch (e) { console.error('initCentersFilters:', e); }
+        try { initProfFilters(); } catch (e) { console.error('initProfFilters:', e); }
+
         const fns = [renderOverview, renderSpecialties, renderGeography, renderGaps, renderBenchmark, renderAreas, renderCenters, renderProfessionals];
         for (const fn of fns) {
             try { fn(); } catch (e) { console.error(fn.name + ' failed:', e); }
@@ -734,52 +861,174 @@
         document.getElementById('tableDensidad').innerHTML = html;
     }
 
-    // ---- CENTERS ----
+    // ============================================================
+    // SUB-TABS wiring
+    // ============================================================
+    function setupSubtabs() {
+        document.querySelectorAll('.subtabs').forEach(group => {
+            const buttons = group.querySelectorAll('.subtab');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const parent = btn.closest('.tab-content');
+                    parent.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+                    parent.querySelectorAll('.subtab-content').forEach(c => c.classList.remove('active'));
+                    btn.classList.add('active');
+                    parent.querySelector(`[data-subtab-content="${btn.dataset.subtab}"]`).classList.add('active');
+
+                    // Trigger re-render when switching subtabs in filtered views
+                    if (parent.id === 'tab-centers') renderCenters();
+                    if (parent.id === 'tab-professionals') renderProfessionals();
+                });
+            });
+        });
+    }
+
+    // ============================================================
+    // CENTERS (with sub-tabs + filters)
+    // ============================================================
+    function getActiveSubtab(tabId) {
+        const el = document.querySelector(`#${tabId} .subtab.active`);
+        return el ? el.dataset.subtab : null;
+    }
+
+    function populateSelect(selectId, values, currentValue) {
+        const sel = document.getElementById(selectId);
+        const current = currentValue !== undefined ? currentValue : sel.value;
+        sel.innerHTML = '<option value="">' + (sel.dataset.allLabel || 'Todos') + '</option>';
+        for (const v of values) {
+            const opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v;
+            if (v === current) opt.selected = true;
+            sel.appendChild(opt);
+        }
+    }
+
+    function clearCenterFilters() {
+        document.getElementById('fc_search').value = '';
+        document.getElementById('fc_municipio').value = '';
+        document.getElementById('fc_aseguradora').value = '';
+        document.getElementById('fc_minprof').value = '2';
+        renderCenters();
+    }
+
+    function initCentersFilters() {
+        // Populate municipio & aseguradora from available data
+        const all = [...(DATA.gaps_centros_asisa || []), ...(DATA.centros_compartidos || [])];
+        const munis = [...new Set(all.map(c => c.municipio).filter(Boolean))].sort();
+        const asegSet = new Set();
+        all.forEach(c => (c.aseguradoras || '').split(',').forEach(a => { if (a.trim()) asegSet.add(a.trim()); }));
+        const asegs = [...asegSet].sort();
+
+        populateSelect('fc_municipio', munis);
+        populateSelect('fc_aseguradora', asegs);
+
+        // Wire up filter changes
+        ['fc_search', 'fc_municipio', 'fc_aseguradora', 'fc_minprof'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('input', renderCenters);
+            el.addEventListener('change', renderCenters);
+        });
+    }
+
     function renderCenters() {
-        renderCenterTable();
-        renderCenterShared();
-        document.getElementById('filterCenter').addEventListener('input', () => {
-            renderCenterTable();
-            renderCenterShared();
-        });
-    }
+        const sub = getActiveSubtab('tab-centers') || 'gaps';
+        const search = document.getElementById('fc_search').value.toLowerCase();
+        const muni = document.getElementById('fc_municipio').value;
+        const aseg = document.getElementById('fc_aseguradora').value;
+        const minProf = parseInt(document.getElementById('fc_minprof').value || '2', 10);
 
-    function renderCenterTable() {
-        const filter = document.getElementById('filterCenter').value.toLowerCase();
-        const gaps = DATA.gaps_centros_asisa.filter(g => {
-            const centro = (g.centro_original || '').toLowerCase();
-            const muni = (g.municipio || '').toLowerCase();
-            return centro.includes(filter) || muni.includes(filter);
+        const applyFilters = (items, getName) => items.filter(c => {
+            const name = (getName(c) || '').toLowerCase();
+            const cMuni = (c.municipio || '').toLowerCase();
+            if (search && !name.includes(search) && !cMuni.includes(search)) return false;
+            if (muni && c.municipio !== muni) return false;
+            if (aseg && !(c.aseguradoras || '').split(',').map(s => s.trim()).includes(aseg)) return false;
+            const prof = c.profesionales ?? c.profesionales_totales ?? 0;
+            if (prof < minProf) return false;
+            return true;
         });
 
-        let html = '<thead><tr><th>Centro</th><th>Municipio</th><th>Aseguradoras</th><th>Especialidades</th><th>Profesionales</th></tr></thead><tbody>';
-        for (const g of gaps) {
-            html += `<tr><td><strong>${g.centro_original}</strong></td><td>${g.municipio || ''}</td>
-                <td>${g.aseguradoras}</td><td>${g.especialidades}</td><td>${g.profesionales}</td></tr>`;
+        if (sub === 'gaps') {
+            const data = applyFilters(DATA.gaps_centros_asisa || [], c => c.centro_original);
+            let html = '<thead><tr><th>Centro</th><th>Municipio</th><th>Aseguradoras</th><th>Especialidades</th><th>Profesionales</th></tr></thead><tbody>';
+            for (const g of data) {
+                html += `<tr><td><strong>${g.centro_original}</strong></td><td>${g.municipio || ''}</td>
+                    <td>${g.aseguradoras}</td><td>${g.especialidades}</td><td>${g.profesionales}</td></tr>`;
+            }
+            html += '</tbody>';
+            document.getElementById('tableCenterGaps').innerHTML = html;
+            document.getElementById('fc_count').textContent = `${data.length} centros (sin ASISA)`;
+        } else {
+            const data = applyFilters(DATA.centros_compartidos || [], c => c.centro_norm);
+            let html = '<thead><tr><th>Centro</th><th>Municipio</th><th>Aseguradoras</th><th>Nº aseg.</th><th>Profesionales</th></tr></thead><tbody>';
+            for (const c of data) {
+                const nombre = c.centro_norm.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                html += `<tr><td><strong>${nombre}</strong></td><td>${c.municipio || ''}</td>
+                    <td>${c.aseguradoras}</td><td>${c.num_aseguradoras}</td><td>${c.profesionales_totales}</td></tr>`;
+            }
+            html += '</tbody>';
+            document.getElementById('tableCenterShared').innerHTML = html;
+            document.getElementById('fc_count').textContent = `${data.length} centros compartidos`;
         }
-        html += '</tbody>';
-        document.getElementById('tableCenterGaps').innerHTML = html;
     }
 
-    function renderCenterShared() {
-        const filter = document.getElementById('filterCenter').value.toLowerCase();
-        const shared = (DATA.centros_compartidos || []).filter(c => {
-            const centro = (c.centro_norm || '').toLowerCase();
-            const muni = (c.municipio || '').toLowerCase();
-            return centro.includes(filter) || muni.includes(filter);
+    // ============================================================
+    // PROFESSIONALS (with sub-tabs + filters)
+    // ============================================================
+    function clearProfFilters() {
+        document.getElementById('fp_search').value = '';
+        document.getElementById('fp_municipio').value = '';
+        document.getElementById('fp_especialidad').value = '';
+        document.getElementById('fp_familia').value = '';
+        document.getElementById('fp_competidores').value = '1';
+        renderProfessionals();
+    }
+
+    function initProfFilters() {
+        const all = [
+            ...(DATA.profesionales_faltantes_asisa || []),
+            ...(DATA.profesionales_exclusivos_asisa || []),
+            ...(DATA.profesionales_compartidos || [])
+        ];
+        const munis = [...new Set(all.map(p => p.municipio).filter(Boolean))].sort();
+        const familias = [...new Set(all.map(p => p.familia).filter(Boolean))].sort();
+        const espSet = new Set();
+        all.forEach(p => (p.especialidades || '').split(',').forEach(e => { if (e.trim()) espSet.add(e.trim()); }));
+        const especialidades = [...espSet].sort();
+
+        populateSelect('fp_municipio', munis);
+        populateSelect('fp_especialidad', especialidades);
+        populateSelect('fp_familia', familias);
+
+        ['fp_search', 'fp_municipio', 'fp_especialidad', 'fp_familia', 'fp_competidores'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('input', renderProfessionals);
+            el.addEventListener('change', renderProfessionals);
         });
-
-        let html = '<thead><tr><th>Centro</th><th>Municipio</th><th>Aseguradoras</th><th>Nro</th><th>Profesionales</th></tr></thead><tbody>';
-        for (const c of shared) {
-            const nombre = c.centro_norm.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-            html += `<tr><td><strong>${nombre}</strong></td><td>${c.municipio || ''}</td>
-                <td>${c.aseguradoras}</td><td>${c.num_aseguradoras}</td><td>${c.profesionales_totales}</td></tr>`;
-        }
-        html += '</tbody>';
-        document.getElementById('tableCenterShared').innerHTML = html;
     }
 
-    // ---- PROFESSIONALS ----
+    function filterProfList(items) {
+        const search = document.getElementById('fp_search').value.toLowerCase();
+        const muni = document.getElementById('fp_municipio').value;
+        const esp = document.getElementById('fp_especialidad').value;
+        const fam = document.getElementById('fp_familia').value;
+
+        return items.filter(p => {
+            const name = (p.nombre || p.nombre_asisa || p.nombre_competencia || p.profesional_norm || '').toLowerCase();
+            const centro = (p.centro || '').toLowerCase();
+            const especialidades = (p.especialidades || '').toLowerCase();
+            const muniVal = p.municipio || '';
+            const famVal = p.familia || '';
+
+            if (search && !name.includes(search) && !centro.includes(search) && !especialidades.includes(search)) return false;
+            if (muni && muniVal !== muni) return false;
+            if (esp && !(p.especialidades || '').split(',').map(s => s.trim()).includes(esp)) return false;
+            if (fam && famVal !== fam) return false;
+            return true;
+        });
+    }
+
     function renderProfessionals() {
         const k = DATA.kpis_competitivos;
         document.getElementById('profKpis').innerHTML = `
@@ -788,21 +1037,19 @@
             <div class="kpi-card danger"><div class="label">No esta en ASISA</div><div class="value">${k.profesionales_faltantes_total}</div><div class="sub">oportunidades red</div></div>
         `;
 
-        renderProfFaltan();
-        renderProfExclusivos();
-        renderProfCompartidos();
+        const sub = getActiveSubtab('tab-professionals') || 'faltan';
+        const compWrap = document.getElementById('fp_competidores_wrap');
+        compWrap.style.display = sub === 'faltan' ? '' : 'none';
 
-        document.getElementById('filterProfFalta').addEventListener('input', renderProfFaltan);
-        document.getElementById('filterProfExclu').addEventListener('input', renderProfExclusivos);
+        if (sub === 'faltan') renderProfFaltan();
+        else if (sub === 'exclusivos') renderProfExclusivos();
+        else renderProfCompartidos();
     }
 
     function renderProfFaltan() {
-        const filter = document.getElementById('filterProfFalta').value.toLowerCase();
-        const data = (DATA.profesionales_faltantes_asisa || []).filter(p => {
-            return (p.nombre || '').toLowerCase().includes(filter) ||
-                   (p.especialidades || '').toLowerCase().includes(filter) ||
-                   (p.municipio || '').toLowerCase().includes(filter);
-        });
+        const minComp = parseInt(document.getElementById('fp_competidores').value || '1', 10);
+        const data = filterProfList(DATA.profesionales_faltantes_asisa || [])
+            .filter(p => (p.num_competidores || 0) >= minComp);
 
         let html = '<thead><tr><th>Profesional</th><th>Especialidad(es)</th><th>Municipio</th><th>Centro</th><th>Competidores</th></tr></thead><tbody>';
         for (const p of data.slice(0, 500)) {
@@ -818,19 +1065,14 @@
         }
         html += '</tbody>';
         if (data.length > 500) {
-            html += `<tfoot><tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:1rem">Mostrando 500 de ${data.length} resultados. Filtra para ver mas.</td></tr></tfoot>`;
+            html += `<tfoot><tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:1rem">Mostrando 500 de ${data.length}. Filtra para ver mas.</td></tr></tfoot>`;
         }
         document.getElementById('tableProfFaltan').innerHTML = html;
+        document.getElementById('fp_count').textContent = `${data.length} profesionales (no estan en ASISA)`;
     }
 
     function renderProfExclusivos() {
-        const filter = document.getElementById('filterProfExclu').value.toLowerCase();
-        const data = (DATA.profesionales_exclusivos_asisa || []).filter(p => {
-            return (p.nombre || '').toLowerCase().includes(filter) ||
-                   (p.especialidades || '').toLowerCase().includes(filter) ||
-                   (p.municipio || '').toLowerCase().includes(filter);
-        });
-
+        const data = filterProfList(DATA.profesionales_exclusivos_asisa || []);
         let html = '<thead><tr><th>Profesional</th><th>Especialidad(es)</th><th>Municipio</th><th>Centro</th></tr></thead><tbody>';
         for (const p of data.slice(0, 500)) {
             html += `<tr><td><strong>${p.nombre}</strong></td>
@@ -840,13 +1082,14 @@
         }
         html += '</tbody>';
         if (data.length > 500) {
-            html += `<tfoot><tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:1rem">Mostrando 500 de ${data.length} resultados.</td></tr></tfoot>`;
+            html += `<tfoot><tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:1rem">Mostrando 500 de ${data.length}.</td></tr></tfoot>`;
         }
         document.getElementById('tableProfExclusivos').innerHTML = html;
+        document.getElementById('fp_count').textContent = `${data.length} profesionales exclusivos de ASISA`;
     }
 
     function renderProfCompartidos() {
-        const data = DATA.profesionales_compartidos || [];
+        const data = filterProfList(DATA.profesionales_compartidos || []);
         let html = '<thead><tr><th>Profesional</th><th>Especialidad(es)</th><th>Municipio</th><th>Aseguradoras</th></tr></thead><tbody>';
         for (const p of data.slice(0, 500)) {
             const nombre = p.nombre_asisa || p.nombre_competencia || p.profesional_norm;
@@ -857,9 +1100,10 @@
         }
         html += '</tbody>';
         if (data.length > 500) {
-            html += `<tfoot><tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:1rem">Mostrando 500 de ${data.length} resultados.</td></tr></tfoot>`;
+            html += `<tfoot><tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:1rem">Mostrando 500 de ${data.length}.</td></tr></tfoot>`;
         }
         document.getElementById('tableProfCompartidos').innerHTML = html;
+        document.getElementById('fp_count').textContent = `${data.length} profesionales compartidos`;
     }
 
     // ---- INIT ----
