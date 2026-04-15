@@ -18,25 +18,17 @@ DB_PATH = os.path.join(BASE, 'data', 'cuadro_medico.db')
 # Clave: nombre de la familia.
 # Valor: lista de especialidades que se consideran parte de la misma familia.
 FAMILIES = {
+    # Nota: tras las reagrupaciones solicitadas por el cliente (2026-04-15),
+    # varias subespecialidades se fusionaron directamente en la especialidad principal.
+    # Ej: TAC, Mamografía, Ecografía, etc. → Radiodiagnóstico.
     'Odontología/Maxilofacial': [
         'Odontología',
-        'Odontología - Ortodoncia',
-        'Odontología - Periodoncia',
         'Cirugía Oral y Maxilofacial',
     ],
     'Cardiología': [
         'Cardiología',
         'Pruebas Diagnósticas Cardiológicas',
         'Cirugía Cardiovascular',
-    ],
-    'Radiología/Diagnóstico por Imagen': [
-        'Radiodiagnóstico',
-        'Ecografía',
-        'Mamografía',
-        'TAC',
-        'Resonancia Magnética',
-        'Densitometría Ósea',
-        'Diagnóstico Prenatal',
     ],
     'Digestivo': [
         'Aparato Digestivo',
@@ -58,9 +50,6 @@ FAMILIES = {
         'Oncología',
         'Oncología Médica',
         'Oncología Radioterápica',
-    ],
-    'Hematología': [
-        'Hematología',
     ],
     'Traumatología/Reumatología': [
         'Traumatología',

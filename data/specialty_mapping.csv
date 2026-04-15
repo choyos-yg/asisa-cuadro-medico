@@ -41,13 +41,13 @@ Cirugia Maxilofacial,Cirugía Oral y Maxilofacial
 Cirugia Plastica y Reparadora,Cirugía Plástica y Reparadora
 Clinica Psiquiatrica,Psiquiatría
 Clinica Psiquiatrica Somio,Psiquiatría
-DENSITOMETRIA,Densitometría Ósea
-DENSITOMETRIA OSEA,Densitometría Ósea
-DENSITOMETRÍA ÓSEA,Densitometría Ósea
+DENSITOMETRIA,Radiodiagnóstico
+DENSITOMETRIA OSEA,Radiodiagnóstico
+DENSITOMETRÍA ÓSEA,Radiodiagnóstico
 DERMATOLOGIA,Dermatología
 DERMATOLOGIA MEDICO-QUIRURGICA Y VENEREO,Dermatología
 DERMATOLOGÍA Y VENEREOLOGÍA,Dermatología
-DIAGNÓSTICO ESPECIAL PRENATAL,Diagnóstico Prenatal
+DIAGNÓSTICO ESPECIAL PRENATAL,Ginecología y Obstetricia
 DIETETICA Y NUTRICION,Dietética y Nutrición
 DIETÉTICA Y NUTRICIÓN,Dietética y Nutrición
 DIGESTIVO,Aparato Digestivo
@@ -55,9 +55,9 @@ Dermatologia,Dermatología
 Diagnostico por la Imagen,Radiodiagnóstico
 ECO-DOPPLER,Pruebas Diagnósticas Cardiológicas
 ECOCARDIOGRAFÍA,Pruebas Diagnósticas Cardiológicas
-ECOGRAFIA,Ecografía
-ECOGRAFIAS,Ecografía
-ECOGRAFÍA UROLÓGICA,Ecografía
+ECOGRAFIA,Radiodiagnóstico
+ECOGRAFIAS,Radiodiagnóstico
+ECOGRAFÍA UROLÓGICA,Radiodiagnóstico
 ENDOCRINO Y NUTRICIÓN,Endocrinología y Nutrición
 ENDOCRINOLOGIA,Endocrinología y Nutrición
 ENDOCRINOLOGIA Y NUTRICION,Endocrinología y Nutrición
@@ -93,8 +93,8 @@ IMPLANTOLOGIA,Odontología
 LOGOFONATRIA,Logopedia
 LOGOPEDIA,Logopedia
 LOGOPEDIA Y FONIATRIA,Logopedia
-MAMOGRAFIA,Mamografía
-MAMOGRAFÍA,Mamografía
+MAMOGRAFIA,Radiodiagnóstico
+MAMOGRAFÍA,Radiodiagnóstico
 MATRONA,Matronas
 MATRONAS,Matronas
 MEDICINA FAMILIAR Y COMUNITARIA,Medicina General
@@ -129,14 +129,14 @@ ODONTOLOGIA CONSERVADORA,Odontología
 ODONTOLOGIA PREVENTIVA,Odontología
 ODONTOLOGÍA GENERAL,Odontología
 ODONTOLOGÍA IMPLANTES,Odontología
-ODONTOLOGÍA ORTODONCIA,Odontología - Ortodoncia
+ODONTOLOGÍA ORTODONCIA,Odontología
 OFTALMOLOGIA,Oftalmología
 OFTALMOLOGÍA,Oftalmología
 ONCOLOGIA,Oncología
 ONCOLOGIA MEDICA,Oncología Médica
 ONCOLOGIA RADIOTERAPICA,Oncología Radioterápica
 ONCOLOGÍA MÉDICA,Oncología Médica
-ORTODONCIA,Odontología - Ortodoncia
+ORTODONCIA,Odontología
 OTORRINOLARINGOLOGIA,Otorrinolaringología
 OTORRINOLARINGOLOGÍA,Otorrinolaringología
 Obstetricia y Ginecologia,Ginecología y Obstetricia
@@ -150,12 +150,12 @@ Oxigenoterapia y Aerosoles,Oxigenoterapia
 PEDIATRIA,Pediatría
 PEDIATRIA-MEDICO PUERICULTOR,Pediatría
 PEDIATRÍA,Pediatría
-PERIODONCIA,Odontología - Periodoncia
+PERIODONCIA,Odontología
 PODOLOGIA,Podología
 PODOLOGÍA,Podología
 PREPARACION AL PARTO,Matronas
 PREPARACIÓN AL PARTO,Matronas
-PROCTOLOGÍA,Proctología
+PROCTOLOGÍA,Cirugía General
 PRUEBAS DE DIAGNOSTICO CARDIOLOGICO NO INVASIVO,Pruebas Diagnósticas Cardiológicas
 PSICOLOGIA,Psicología
 PSICOLOGÍA,Psicología
@@ -166,7 +166,7 @@ Pediatria y Puericultura,Pediatría
 Podologia,Podología
 Preparacion al Parto,Matronas
 Psiquiatria,Psiquiatría
-R.M.N.,Resonancia Magnética
+R.M.N.,Radiodiagnóstico
 RADIODIAGNOSTICO,Radiodiagnóstico
 RADIODIAGNÓSTICO,Radiodiagnóstico
 RADIOLOGIA,Radiodiagnóstico
@@ -177,10 +177,10 @@ RADIOLOGÍA DENTAL,Radiodiagnóstico
 RADIOTERAPIA,Oncología Radioterápica
 REHABILITACIÓN,Fisioterapia
 REHABILITADORES Y CENTROS DE REHABILITACION,Fisioterapia
-RESONANCIA ABIERTA TORENO S.L.,Resonancia Magnética
-RESONANCIA MAGNETICA,Resonancia Magnética
-RESONANCIA MAGNÉTICA NUCLEAR. R.M.N.,Resonancia Magnética
-RESONANCIA NUCLEAR MAGNETICA,Resonancia Magnética
+RESONANCIA ABIERTA TORENO S.L.,Radiodiagnóstico
+RESONANCIA MAGNETICA,Radiodiagnóstico
+RESONANCIA MAGNÉTICA NUCLEAR. R.M.N.,Radiodiagnóstico
+RESONANCIA NUCLEAR MAGNETICA,Radiodiagnóstico
 REUMATOLOGIA,Reumatología
 REUMATOLOGÍA,Reumatología
 Rehabilitacion,Fisioterapia
@@ -188,9 +188,9 @@ Rehabilitacion Fisioterapeutas,Fisioterapia
 Rehabilitacion Medicos Rehabilitadores,Fisioterapia
 Rehabilitacion del Lenguaje Logopedia,Logopedia
 Reumatologia,Reumatología
-T.A.C.,TAC
-TOMOGRAFIA COMPUTARIZADA,TAC
-TOMOGRAFÍA AXIAL COMPUTERIZADA. T.A.C.,TAC
+T.A.C.,Radiodiagnóstico
+TOMOGRAFIA COMPUTARIZADA,Radiodiagnóstico
+TOMOGRAFÍA AXIAL COMPUTERIZADA. T.A.C.,Radiodiagnóstico
 TRATAMIENTO DEL DOLOR,Tratamiento del Dolor
 TRAUMATOLOGIA,Traumatología
 TRAUMATOLOGIA Y CIRUGIA ORTOPEDICA,Traumatología

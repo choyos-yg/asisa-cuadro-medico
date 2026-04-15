@@ -102,13 +102,13 @@ SPECIALTY_MAP = {
     'RADIOLOGÍA DENTAL': 'Radiodiagnóstico',
     'Diagnostico por la Imagen': 'Radiodiagnóstico',
 
-    # --- Diagnóstico prenatal ---
-    'DIAGNÓSTICO ESPECIAL PRENATAL': 'Diagnóstico Prenatal',
+    # --- Diagnóstico prenatal → Ginecología y Obstetricia [CLIENTE] ---
+    'DIAGNÓSTICO ESPECIAL PRENATAL': 'Ginecología y Obstetricia',
 
-    # --- Densitometría ---
-    'DENSITOMETRIA': 'Densitometría Ósea',
-    'DENSITOMETRIA OSEA': 'Densitometría Ósea',
-    'DENSITOMETRÍA ÓSEA': 'Densitometría Ósea',
+    # --- Densitometría → Radiodiagnóstico [CLIENTE] ---
+    'DENSITOMETRIA': 'Radiodiagnóstico',
+    'DENSITOMETRIA OSEA': 'Radiodiagnóstico',
+    'DENSITOMETRÍA ÓSEA': 'Radiodiagnóstico',
 
     # --- Dietética y Nutrición ---
     'DIETETICA Y NUTRICION': 'Dietética y Nutrición',
@@ -121,10 +121,10 @@ SPECIALTY_MAP = {
     'PRUEBAS DE DIAGNOSTICO CARDIOLOGICO NO INVASIVO': 'Pruebas Diagnósticas Cardiológicas',
     'ECO-DOPPLER': 'Pruebas Diagnósticas Cardiológicas',
 
-    # --- Ecografía ---
-    'ECOGRAFIA': 'Ecografía',
-    'ECOGRAFIAS': 'Ecografía',
-    'ECOGRAFÍA UROLÓGICA': 'Ecografía',
+    # --- Ecografía → Radiodiagnóstico [CLIENTE] ---
+    'ECOGRAFIA': 'Radiodiagnóstico',
+    'ECOGRAFIAS': 'Radiodiagnóstico',
+    'ECOGRAFÍA UROLÓGICA': 'Radiodiagnóstico',
 
     # --- Endocrinología ---
     'ENDOCRINOLOGIA': 'Endocrinología y Nutrición',
@@ -183,9 +183,9 @@ SPECIALTY_MAP = {
     'LOGOFONATRIA': 'Logopedia',
     'Rehabilitacion del Lenguaje Logopedia': 'Logopedia',
 
-    # --- Mamografía ---
-    'MAMOGRAFIA': 'Mamografía',
-    'MAMOGRAFÍA': 'Mamografía',
+    # --- Mamografía → Radiodiagnóstico [CLIENTE] ---
+    'MAMOGRAFIA': 'Radiodiagnóstico',
+    'MAMOGRAFÍA': 'Radiodiagnóstico',
 
     # --- Matronas / Preparación al parto [CLIENTE: son lo mismo, independiente de ginecología] ---
     'MATRONA': 'Matronas',
@@ -248,9 +248,10 @@ SPECIALTY_MAP = {
     'ODONTOLOGIA CONSERVADORA': 'Odontología',
     'ODONTOLOGIA PREVENTIVA': 'Odontología',
     'ESTOMATOLOGIA DE URGENCIA': 'Odontología',
-    'ODONTOLOGÍA ORTODONCIA': 'Odontología - Ortodoncia',
-    'ORTODONCIA': 'Odontología - Ortodoncia',
-    'PERIODONCIA': 'Odontología - Periodoncia',
+    # --- Odontología (incluye Ortodoncia y Periodoncia) [CLIENTE] ---
+    'ODONTOLOGÍA ORTODONCIA': 'Odontología',
+    'ORTODONCIA': 'Odontología',
+    'PERIODONCIA': 'Odontología',
 
     # --- Oftalmología ---
     'OFTALMOLOGIA': 'Oftalmología',
@@ -290,8 +291,8 @@ SPECIALTY_MAP = {
     'ESTUDIO BIOMECANICO DE LA MARCHA / PISADA SERVICIOS PODOACITVA': 'Podología',
     'ESTUDIO BIOMECÁNICO DE LA MARCHA': 'Podología',
 
-    # --- Proctología ---
-    'PROCTOLOGÍA': 'Proctología',
+    # --- Proctología → Cirugía General [CLIENTE] ---
+    'PROCTOLOGÍA': 'Cirugía General',
 
     # --- Psicología (NO incluye Neuropsicología) [CLIENTE] ---
     'PSICOLOGIA': 'Psicología',
@@ -308,22 +309,22 @@ SPECIALTY_MAP = {
     'HOSPITAL PSIQUIATRICO': 'Psiquiatría',
     'HOSPITALIZACI\u00d3N PSIQUI\u00c1TRICA': 'Psiquiatría',
 
-    # --- Resonancia Magnética ---
-    'RESONANCIA MAGNETICA': 'Resonancia Magnética',
-    'RESONANCIA MAGNÉTICA NUCLEAR. R.M.N.': 'Resonancia Magnética',
-    'RESONANCIA NUCLEAR MAGNETICA': 'Resonancia Magnética',
-    'RESONANCIA ABIERTA TORENO S.L.': 'Resonancia Magnética',
-    'R.M.N.': 'Resonancia Magnética',
+    # --- Resonancia Magnética → Radiodiagnóstico [CLIENTE] ---
+    'RESONANCIA MAGNETICA': 'Radiodiagnóstico',
+    'RESONANCIA MAGNÉTICA NUCLEAR. R.M.N.': 'Radiodiagnóstico',
+    'RESONANCIA NUCLEAR MAGNETICA': 'Radiodiagnóstico',
+    'RESONANCIA ABIERTA TORENO S.L.': 'Radiodiagnóstico',
+    'R.M.N.': 'Radiodiagnóstico',
 
     # --- Reumatología ---
     'REUMATOLOGIA': 'Reumatología',
     'REUMATOLOGÍA': 'Reumatología',
     'Reumatologia': 'Reumatología',
 
-    # --- TAC ---
-    'T.A.C.': 'TAC',
-    'TOMOGRAFIA COMPUTARIZADA': 'TAC',
-    'TOMOGRAFÍA AXIAL COMPUTERIZADA. T.A.C.': 'TAC',
+    # --- TAC → Radiodiagnóstico [CLIENTE] ---
+    'T.A.C.': 'Radiodiagnóstico',
+    'TOMOGRAFIA COMPUTARIZADA': 'Radiodiagnóstico',
+    'TOMOGRAFÍA AXIAL COMPUTERIZADA. T.A.C.': 'Radiodiagnóstico',
 
     # --- Tratamiento del dolor ---
     'TRATAMIENTO DEL DOLOR': 'Tratamiento del Dolor',

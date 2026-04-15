@@ -3,24 +3,24 @@
     "por_aseguradora": [
       {
         "aseguradora": "ASISA",
-        "total_registros": 928,
-        "especialidades": 50,
-        "municipios": 27,
-        "profesionales_unicos": 551,
-        "centros": 178
+        "total_registros": 933,
+        "especialidades": 45,
+        "municipios": 30,
+        "profesionales_unicos": 553,
+        "centros": 181
       },
       {
         "aseguradora": "DKV",
         "total_registros": 705,
-        "especialidades": 46,
+        "especialidades": 39,
         "municipios": 17,
-        "profesionales_unicos": 586,
+        "profesionales_unicos": 588,
         "centros": 77
       },
       {
         "aseguradora": "Sanitas",
         "total_registros": 576,
-        "especialidades": 50,
+        "especialidades": 44,
         "municipios": 25,
         "profesionales_unicos": 168,
         "centros": 70
@@ -43,9 +43,9 @@
       }
     ],
     "totales": {
-      "registros": 3231,
-      "especialidades": 62,
-      "municipios": 54
+      "registros": 3236,
+      "especialidades": 53,
+      "municipios": 57
     }
   },
   "comparativa_especialidades": [
@@ -66,44 +66,12 @@
       "detalle": "Adeslas:20,DKV:20,Mapfre:23,Sanitas:1"
     },
     {
-      "especialidad": "Mamografía",
-      "asisa": 0,
-      "promedio_competencia": 12.0,
-      "max_competencia": 12,
-      "diferencia_vs_promedio": -12.0,
-      "detalle": "DKV:12"
-    },
-    {
-      "especialidad": "Odontología - Ortodoncia",
-      "asisa": 0,
-      "promedio_competencia": 11.0,
-      "max_competencia": 18,
-      "diferencia_vs_promedio": -11.0,
-      "detalle": "DKV:18,Sanitas:4"
-    },
-    {
       "especialidad": "Análisis Clínicos",
       "asisa": 3,
       "promedio_competencia": 12.7,
       "max_competencia": 20,
       "diferencia_vs_promedio": -9.7,
       "detalle": "Adeslas:20,DKV:4,Mapfre:14"
-    },
-    {
-      "especialidad": "Diagnóstico Prenatal",
-      "asisa": 0,
-      "promedio_competencia": 9.0,
-      "max_competencia": 9,
-      "diferencia_vs_promedio": -9.0,
-      "detalle": "DKV:9"
-    },
-    {
-      "especialidad": "TAC",
-      "asisa": 0,
-      "promedio_competencia": 8.0,
-      "max_competencia": 8,
-      "diferencia_vs_promedio": -8.0,
-      "detalle": "DKV:8"
     },
     {
       "especialidad": "Fisioterapia",
@@ -114,12 +82,12 @@
       "detalle": "Adeslas:64,DKV:31,Mapfre:31,Sanitas:16"
     },
     {
-      "especialidad": "Odontología - Periodoncia",
-      "asisa": 0,
-      "promedio_competencia": 7.0,
-      "max_competencia": 7,
-      "diferencia_vs_promedio": -7.0,
-      "detalle": "Sanitas:7"
+      "especialidad": "Radiodiagnóstico",
+      "asisa": 8,
+      "promedio_competencia": 15.3,
+      "max_competencia": 43,
+      "diferencia_vs_promedio": -7.300000000000001,
+      "detalle": "Adeslas:5,DKV:43,Mapfre:11,Sanitas:2"
     },
     {
       "especialidad": "Cirugía Pediátrica",
@@ -128,14 +96,6 @@
       "max_competencia": 9,
       "diferencia_vs_promedio": -6.0,
       "detalle": "DKV:9"
-    },
-    {
-      "especialidad": "Densitometría Ósea",
-      "asisa": 2,
-      "promedio_competencia": 8.0,
-      "max_competencia": 8,
-      "diferencia_vs_promedio": -6.0,
-      "detalle": "DKV:8"
     },
     {
       "especialidad": "Dietética y Nutrición",
@@ -154,36 +114,12 @@
       "detalle": "Adeslas:10,DKV:2"
     },
     {
-      "especialidad": "Resonancia Magnética",
-      "asisa": 0,
-      "promedio_competencia": 6.0,
-      "max_competencia": 6,
-      "diferencia_vs_promedio": -6.0,
-      "detalle": "DKV:6"
-    },
-    {
-      "especialidad": "Ecografía",
-      "asisa": 0,
-      "promedio_competencia": 5.5,
-      "max_competencia": 9,
-      "diferencia_vs_promedio": -5.5,
-      "detalle": "DKV:9,Sanitas:2"
-    },
-    {
       "especialidad": "Podología",
       "asisa": 8,
       "promedio_competencia": 13.0,
       "max_competencia": 19,
       "diferencia_vs_promedio": -5.0,
       "detalle": "Adeslas:19,DKV:17,Mapfre:10,Sanitas:6"
-    },
-    {
-      "especialidad": "Radiodiagnóstico",
-      "asisa": 6,
-      "promedio_competencia": 10.5,
-      "max_competencia": 25,
-      "diferencia_vs_promedio": -4.5,
-      "detalle": "Adeslas:5,DKV:25,Mapfre:11,Sanitas:1"
     },
     {
       "especialidad": "Reumatología",
@@ -232,14 +168,6 @@
       "max_competencia": 2,
       "diferencia_vs_promedio": -2.0,
       "detalle": "DKV:2"
-    },
-    {
-      "especialidad": "Proctología",
-      "asisa": 0,
-      "promedio_competencia": 2.0,
-      "max_competencia": 2,
-      "diferencia_vs_promedio": -2.0,
-      "detalle": "Adeslas:2"
     },
     {
       "especialidad": "Hematología",
@@ -296,14 +224,6 @@
       "max_competencia": 5,
       "diferencia_vs_promedio": -0.2999999999999998,
       "detalle": "Adeslas:5,DKV:5,Mapfre:1,Sanitas:2"
-    },
-    {
-      "especialidad": "Cirugía General",
-      "asisa": 5,
-      "promedio_competencia": 5.0,
-      "max_competencia": 7,
-      "diferencia_vs_promedio": 0.0,
-      "detalle": "Mapfre:7,Sanitas:3"
     },
     {
       "especialidad": "Matronas",
@@ -384,6 +304,14 @@
       "max_competencia": 4,
       "diferencia_vs_promedio": 1.0,
       "detalle": "Adeslas:1,DKV:4,Mapfre:1"
+    },
+    {
+      "especialidad": "Cirugía General",
+      "asisa": 5,
+      "promedio_competencia": 4.0,
+      "max_competencia": 7,
+      "diferencia_vs_promedio": 1.0,
+      "detalle": "Adeslas:2,Mapfre:7,Sanitas:3"
     },
     {
       "especialidad": "Pediatría",
@@ -474,20 +402,20 @@
       "detalle": "Adeslas:12,DKV:8,Mapfre:9,Sanitas:8"
     },
     {
-      "especialidad": "Odontología",
-      "asisa": 52,
-      "promedio_competencia": 44.0,
-      "max_competencia": 86,
-      "diferencia_vs_promedio": 8.0,
-      "detalle": "Adeslas:86,DKV:26,Mapfre:50,Sanitas:14"
-    },
-    {
       "especialidad": "Ginecología y Obstetricia",
       "asisa": 26,
-      "promedio_competencia": 17.5,
-      "max_competencia": 35,
-      "diferencia_vs_promedio": 8.5,
-      "detalle": "Adeslas:9,DKV:35,Mapfre:17,Sanitas:9"
+      "promedio_competencia": 19.5,
+      "max_competencia": 43,
+      "diferencia_vs_promedio": 6.5,
+      "detalle": "Adeslas:9,DKV:43,Mapfre:17,Sanitas:9"
+    },
+    {
+      "especialidad": "Odontología",
+      "asisa": 54,
+      "promedio_competencia": 46.8,
+      "max_competencia": 86,
+      "diferencia_vs_promedio": 7.200000000000003,
+      "detalle": "Adeslas:86,DKV:37,Mapfre:50,Sanitas:14"
     },
     {
       "especialidad": "Cardiología",
@@ -521,11 +449,6 @@
       "total_profesionales": 34
     },
     {
-      "especialidad_normalizada": "Odontología - Ortodoncia",
-      "aseguradoras_que_la_tienen": "DKV,Sanitas",
-      "total_profesionales": 22
-    },
-    {
       "especialidad_normalizada": "Endoscopia Digestiva",
       "aseguradoras_que_la_tienen": "Adeslas,DKV",
       "total_profesionales": 12
@@ -536,16 +459,6 @@
       "total_profesionales": 12
     },
     {
-      "especialidad_normalizada": "Diagnóstico Prenatal",
-      "aseguradoras_que_la_tienen": "DKV",
-      "total_profesionales": 9
-    },
-    {
-      "especialidad_normalizada": "Odontología - Periodoncia",
-      "aseguradoras_que_la_tienen": "Sanitas",
-      "total_profesionales": 7
-    },
-    {
       "especialidad_normalizada": "Osteopatía",
       "aseguradoras_que_la_tienen": "Mapfre",
       "total_profesionales": 3
@@ -554,11 +467,6 @@
       "especialidad_normalizada": "Microbiología",
       "aseguradoras_que_la_tienen": "Adeslas",
       "total_profesionales": 3
-    },
-    {
-      "especialidad_normalizada": "Proctología",
-      "aseguradoras_que_la_tienen": "Adeslas",
-      "total_profesionales": 2
     },
     {
       "especialidad_normalizada": "Oncología",
@@ -583,8 +491,8 @@
       "area_sanitaria": "Área IV - Oviedo",
       "asisa_registros": 408,
       "competencia_registros": 792,
-      "asisa_especialidades": 48,
-      "competencia_especialidades": 59,
+      "asisa_especialidades": 43,
+      "competencia_especialidades": 51,
       "num_aseguradoras": 5
     },
     {
@@ -593,8 +501,8 @@
       "area_sanitaria": "Área V - Gijón",
       "asisa_registros": 308,
       "competencia_registros": 725,
-      "asisa_especialidades": 45,
-      "competencia_especialidades": 53,
+      "asisa_especialidades": 40,
+      "competencia_especialidades": 45,
       "num_aseguradoras": 5
     },
     {
@@ -603,8 +511,8 @@
       "area_sanitaria": "Área III - Avilés",
       "asisa_registros": 86,
       "competencia_registros": 350,
-      "asisa_especialidades": 31,
-      "competencia_especialidades": 42,
+      "asisa_especialidades": 26,
+      "competencia_especialidades": 35,
       "num_aseguradoras": 5
     },
     {
@@ -624,7 +532,7 @@
       "asisa_registros": 9,
       "competencia_registros": 46,
       "asisa_especialidades": 6,
-      "competencia_especialidades": 11,
+      "competencia_especialidades": 10,
       "num_aseguradoras": 5
     },
     {
@@ -634,7 +542,7 @@
       "asisa_registros": 11,
       "competencia_registros": 45,
       "asisa_especialidades": 8,
-      "competencia_especialidades": 16,
+      "competencia_especialidades": 15,
       "num_aseguradoras": 5
     },
     {
@@ -644,7 +552,7 @@
       "asisa_registros": 21,
       "competencia_registros": 40,
       "asisa_especialidades": 11,
-      "competencia_especialidades": 16,
+      "competencia_especialidades": 14,
       "num_aseguradoras": 4
     },
     {
@@ -674,7 +582,7 @@
       "asisa_registros": 1,
       "competencia_registros": 19,
       "asisa_especialidades": 1,
-      "competencia_especialidades": 9,
+      "competencia_especialidades": 7,
       "num_aseguradoras": 5
     },
     {
@@ -714,7 +622,7 @@
       "asisa_registros": 11,
       "competencia_registros": 12,
       "asisa_especialidades": 6,
-      "competencia_especialidades": 7,
+      "competencia_especialidades": 6,
       "num_aseguradoras": 4
     },
     {
@@ -724,7 +632,7 @@
       "asisa_registros": 1,
       "competencia_registros": 11,
       "asisa_especialidades": 1,
-      "competencia_especialidades": 4,
+      "competencia_especialidades": 3,
       "num_aseguradoras": 3
     },
     {
@@ -734,7 +642,7 @@
       "asisa_registros": 2,
       "competencia_registros": 9,
       "asisa_especialidades": 2,
-      "competencia_especialidades": 5,
+      "competencia_especialidades": 3,
       "num_aseguradoras": 3
     },
     {
@@ -1088,6 +996,36 @@
       "num_aseguradoras": 1
     },
     {
+      "municipio": "985023143 y 630491742",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 1,
+      "competencia_registros": 0,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 0,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "985211917 y 627311377",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 3,
+      "competencia_registros": 0,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 0,
+      "num_aseguradoras": 1
+    },
+    {
+      "municipio": "985771477",
+      "poblacion": null,
+      "area_sanitaria": null,
+      "asisa_registros": 1,
+      "competencia_registros": 0,
+      "asisa_especialidades": 1,
+      "competencia_especialidades": 0,
+      "num_aseguradoras": 1
+    },
+    {
       "municipio": "El Entrego",
       "poblacion": "37978",
       "area_sanitaria": "Área VIII - Langreo",
@@ -1367,11 +1305,6 @@
     },
     {
       "municipio": "Avilés",
-      "especialidad_normalizada": "Odontología - Ortodoncia",
-      "aseguradoras_con_cobertura": 2
-    },
-    {
-      "municipio": "Avilés",
       "especialidad_normalizada": "Pruebas Diagnósticas Cardiológicas",
       "aseguradoras_con_cobertura": 2
     },
@@ -1403,11 +1336,6 @@
     {
       "municipio": "Gijón",
       "especialidad_normalizada": "Endoscopia Digestiva",
-      "aseguradoras_con_cobertura": 2
-    },
-    {
-      "municipio": "Gijón",
-      "especialidad_normalizada": "Odontología - Ortodoncia",
       "aseguradoras_con_cobertura": 2
     },
     {
@@ -1452,11 +1380,6 @@
     },
     {
       "municipio": "Oviedo",
-      "especialidad_normalizada": "Odontología - Ortodoncia",
-      "aseguradoras_con_cobertura": 2
-    },
-    {
-      "municipio": "Oviedo",
       "especialidad_normalizada": "Oncología",
       "aseguradoras_con_cobertura": 2
     },
@@ -1483,6 +1406,11 @@
     {
       "municipio": "Pola de Siero",
       "especialidad_normalizada": "Ginecología y Obstetricia",
+      "aseguradoras_con_cobertura": 2
+    },
+    {
+      "municipio": "Pola de Siero",
+      "especialidad_normalizada": "Odontología",
       "aseguradoras_con_cobertura": 2
     },
     {
@@ -1532,7 +1460,7 @@
       "centro_original": "Sanatorio Covadonga",
       "municipio": "Gijón",
       "aseguradoras": "DKV,Mapfre",
-      "especialidades": 21,
+      "especialidades": 20,
       "profesionales": 28
     },
     {
@@ -1541,7 +1469,7 @@
       "municipio": "Gijón",
       "aseguradoras": "DKV",
       "especialidades": 8,
-      "profesionales": 22
+      "profesionales": 23
     },
     {
       "centro_norm": "centro medico mapfre gijon",
@@ -1572,7 +1500,7 @@
       "centro_original": "Clinica Dental Sanitas Millennium Oviedo",
       "municipio": "Oviedo",
       "aseguradoras": "Sanitas",
-      "especialidades": 4,
+      "especialidades": 2,
       "profesionales": 11
     },
     {
@@ -1708,7 +1636,7 @@
       "centro_original": "Imagen Diagnóstica El Molinón",
       "municipio": "Gijón",
       "aseguradoras": "DKV",
-      "especialidades": 3,
+      "especialidades": 1,
       "profesionales": 4
     },
     {
@@ -1884,7 +1812,7 @@
       "centro_original": "Covadonga",
       "municipio": "Gijón",
       "aseguradoras": "DKV",
-      "especialidades": 4,
+      "especialidades": 1,
       "profesionales": 2
     },
     {
@@ -1924,7 +1852,7 @@
       "centro_original": "Radiología Asturiana",
       "municipio": "Oviedo",
       "aseguradoras": "DKV,Mapfre,Sanitas",
-      "especialidades": 5,
+      "especialidades": 4,
       "profesionales": 2
     },
     {
@@ -1957,7 +1885,7 @@
       "centro_norm": "hospital begona",
       "aseguradoras": "ASISA,Adeslas,DKV,Mapfre,Sanitas",
       "num_aseguradoras": 5,
-      "profesionales_totales": 143,
+      "profesionales_totales": 145,
       "municipio": "Oviedo"
     },
     {
@@ -2148,6 +2076,13 @@
       "num_aseguradoras": 2,
       "profesionales_totales": 2,
       "municipio": "Oviedo"
+    },
+    {
+      "centro_norm": "clinica besada",
+      "aseguradoras": "ASISA,Mapfre",
+      "num_aseguradoras": 2,
+      "profesionales_totales": 1,
+      "municipio": "Oviedo"
     }
   ],
   "concentracion_centros": [
@@ -2157,7 +2092,7 @@
       "centro_original": "Naranjo de Bulnes, 4 / CLINICA ASTURIAS",
       "municipio": "Oviedo",
       "profesionales": 100,
-      "especialidades": 35
+      "especialidades": 31
     },
     {
       "aseguradora": "ASISA",
@@ -2165,7 +2100,7 @@
       "centro_original": "CENTRO MEDICO DE ASTURIAS",
       "municipio": "Oviedo",
       "profesionales": 96,
-      "especialidades": 43
+      "especialidades": 39
     },
     {
       "aseguradora": "ASISA",
@@ -2173,7 +2108,7 @@
       "centro_original": "HOSPITAL BEGOÑA",
       "municipio": "Gijón",
       "profesionales": 47,
-      "especialidades": 36
+      "especialidades": 32
     },
     {
       "aseguradora": "ASISA",
@@ -2197,7 +2132,7 @@
       "centro_original": "POLICLINICA ROZONA",
       "municipio": "Avilés",
       "profesionales": 24,
-      "especialidades": 22
+      "especialidades": 18
     },
     {
       "aseguradora": "ASISA",
@@ -2277,7 +2212,7 @@
       "centro_original": "SALUTEC",
       "municipio": "Avilés",
       "profesionales": 4,
-      "especialidades": 5
+      "especialidades": 4
     },
     {
       "aseguradora": "ASISA",
@@ -2494,6 +2429,14 @@
       "municipio": "Aller",
       "profesionales": 2,
       "especialidades": 2
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro_norm": "adamez clinica dental",
+      "centro_original": "ADAMEZ CLINICA DENTAL",
+      "municipio": "985211917 y 627311377",
+      "profesionales": 2,
+      "especialidades": 1
     },
     {
       "aseguradora": "ASISA",
@@ -3461,7 +3404,15 @@
       "centro_original": "HT MEDICA HOSPITAL COVADONGA",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 5
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro_norm": "hospital psiquiatrico",
+      "centro_original": "HOSPITAL PSIQUIATRICO",
+      "municipio": "985771477",
+      "profesionales": 0,
+      "especialidades": 1
     },
     {
       "aseguradora": "ASISA",
@@ -3532,6 +3483,14 @@
       "centro_norm": "clinica dental rubio e hijo",
       "centro_original": "CLINICA DENTAL RUBIO E HIJO",
       "municipio": "Gijón",
+      "profesionales": 0,
+      "especialidades": 1
+    },
+    {
+      "aseguradora": "ASISA",
+      "centro_norm": "clinica besada",
+      "centro_original": "CLINICA BESADA",
+      "municipio": "985023143 y 630491742",
       "profesionales": 0,
       "especialidades": 1
     },
@@ -3733,15 +3692,15 @@
       "centro_original": "Clínica Asturias",
       "municipio": "Oviedo",
       "profesionales": 72,
-      "especialidades": 24
+      "especialidades": 22
     },
     {
       "aseguradora": "DKV",
       "centro_norm": "hospital begona",
       "centro_original": "Hospital Begoña",
       "municipio": "Gijón",
-      "profesionales": 41,
-      "especialidades": 16
+      "profesionales": 43,
+      "especialidades": 12
     },
     {
       "aseguradora": "DKV",
@@ -3756,7 +3715,7 @@
       "centro_norm": "clinicas cardialis",
       "centro_original": "Clínicas Cardialis",
       "municipio": "Gijón",
-      "profesionales": 22,
+      "profesionales": 23,
       "especialidades": 8
     },
     {
@@ -3805,7 +3764,7 @@
       "centro_original": "Salutec",
       "municipio": "Avilés",
       "profesionales": 9,
-      "especialidades": 6
+      "especialidades": 4
     },
     {
       "aseguradora": "DKV",
@@ -3941,7 +3900,7 @@
       "centro_original": "Imagen Diagnóstica El Molinón",
       "municipio": "Gijón",
       "profesionales": 4,
-      "especialidades": 3
+      "especialidades": 1
     },
     {
       "aseguradora": "DKV",
@@ -3997,7 +3956,7 @@
       "centro_original": "Covadonga)",
       "municipio": "Grado",
       "profesionales": 3,
-      "especialidades": 5
+      "especialidades": 2
     },
     {
       "aseguradora": "DKV",
@@ -5029,7 +4988,7 @@
       "centro_original": "Clinica Dental Sanitas Millennium Oviedo",
       "municipio": "Oviedo",
       "profesionales": 11,
-      "especialidades": 4
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -5037,7 +4996,7 @@
       "centro_original": "Clinica Asturias",
       "municipio": "Oviedo",
       "profesionales": 7,
-      "especialidades": 33
+      "especialidades": 29
     },
     {
       "aseguradora": "Sanitas",
@@ -5045,7 +5004,7 @@
       "centro_original": "Hospital Begoha",
       "municipio": "Gijón",
       "profesionales": 6,
-      "especialidades": 20
+      "especialidades": 18
     },
     {
       "aseguradora": "Sanitas",
@@ -5077,7 +5036,7 @@
       "centro_original": "Sabate",
       "municipio": "Avilés",
       "profesionales": 1,
-      "especialidades": 7
+      "especialidades": 4
     },
     {
       "aseguradora": "Sanitas",
@@ -5101,7 +5060,7 @@
       "centro_original": "Dr. Centro Medico de Asturias",
       "municipio": "Oviedo",
       "profesionales": 1,
-      "especialidades": 39
+      "especialidades": 35
     },
     {
       "aseguradora": "Sanitas",
@@ -5141,7 +5100,7 @@
       "centro_original": "Salud Dental Viesques Cb",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 5
+      "especialidades": 3
     },
     {
       "aseguradora": "Sanitas",
@@ -5157,7 +5116,7 @@
       "centro_original": "Radiologo Asturiana S.L.",
       "municipio": "Oviedo",
       "profesionales": 0,
-      "especialidades": 3
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -5197,7 +5156,7 @@
       "centro_original": "Policlinica Rozana",
       "municipio": "Avilés",
       "profesionales": 0,
-      "especialidades": 14
+      "especialidades": 12
     },
     {
       "aseguradora": "Sanitas",
@@ -5221,7 +5180,7 @@
       "centro_original": "Nuevo Salud Dental Viesques",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 4
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -5293,7 +5252,7 @@
       "centro_original": "Hi Medica Gijon",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 5
+      "especialidades": 1
     },
     {
       "aseguradora": "Sanitas",
@@ -5421,7 +5380,7 @@
       "centro_original": "Clinica Odontologica Integral Doctor Arias S.L.P.",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 5
+      "especialidades": 3
     },
     {
       "aseguradora": "Sanitas",
@@ -5437,7 +5396,7 @@
       "centro_original": "Clinica Junquera",
       "municipio": "Langreo",
       "profesionales": 0,
-      "especialidades": 4
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -5469,7 +5428,7 @@
       "centro_original": "Clinica Dental Sanitas Millennium Gijon",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 4
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -5477,7 +5436,7 @@
       "centro_original": "Clinica Dental Escobedo",
       "municipio": "Avilés",
       "profesionales": 0,
-      "especialidades": 4
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -5557,7 +5516,7 @@
       "centro_original": "Cda El Molinon",
       "municipio": "Gijón",
       "profesionales": 0,
-      "especialidades": 5
+      "especialidades": 2
     },
     {
       "aseguradora": "Sanitas",
@@ -7264,7 +7223,7 @@
       "nombre_asisa": "DR. RUBIO SERRALLER Carlos",
       "nombre_competencia": "Rubio Serraller,Carlos",
       "aseguradoras": "ASISA,DKV",
-      "especialidades": "Odontología,Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Gijón",
       "num_aseguradoras": 2
     },
@@ -7342,7 +7301,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Pedraza Cotarelo, Fernando José",
       "aseguradoras": "Adeslas,DKV,Mapfre,Sanitas",
-      "especialidades": "Odontología,Cirugía Oral y Maxilofacial,Odontología - Periodoncia,Odontología - Ortodoncia",
+      "especialidades": "Odontología,Cirugía Oral y Maxilofacial",
       "municipio": "Villaviciosa",
       "centro": "Consultorio",
       "num_competidores": 4
@@ -7425,12 +7384,12 @@
       "num_competidores": 3
     },
     {
-      "persona_id": "garcia gonzalez pedro|Radiología/Diagnóstico por Imagen",
+      "persona_id": "garcia gonzalez pedro|Radiodiagnóstico",
       "profesional_norm": "garcia gonzalez pedro",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "García González,Pedro",
       "aseguradoras": "Adeslas,DKV,Mapfre",
-      "especialidades": "Radiodiagnóstico,Resonancia Magnética",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Imagen Diagnóstica El Molinón",
       "num_competidores": 3
@@ -7496,7 +7455,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Sra. Sandalis Tasoglu, Marina Alejandra",
       "aseguradoras": "Mapfre,Sanitas",
-      "especialidades": "Odontología,Cirugía Oral y Maxilofacial,Odontología - Periodoncia,Odontología - Ortodoncia",
+      "especialidades": "Odontología,Cirugía Oral y Maxilofacial",
       "municipio": "Oviedo",
       "centro": "Consultorio",
       "num_competidores": 2
@@ -7579,12 +7538,12 @@
       "num_competidores": 2
     },
     {
-      "persona_id": "baniela alonso nicasio|Radiología/Diagnóstico por Imagen",
+      "persona_id": "baniela alonso nicasio|Radiodiagnóstico",
       "profesional_norm": "baniela alonso nicasio",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Baniela Alonso Nicasio",
       "aseguradoras": "DKV,Mapfre",
-      "especialidades": "Ecografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Policlínica Rozona",
       "num_competidores": 2
@@ -7683,7 +7642,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Dr. Cabeza Alvarado, Luis",
       "aseguradoras": "DKV,Sanitas",
-      "especialidades": "Odontología,Odontología - Periodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Bucodental",
       "num_competidores": 2
@@ -7881,7 +7840,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Gutiérrez Jiménez, Ana",
       "aseguradoras": "Adeslas,DKV",
-      "especialidades": "Odontología,Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Sama de Langreo",
       "centro": "",
       "num_competidores": 2
@@ -7953,12 +7912,12 @@
       "num_competidores": 2
     },
     {
-      "persona_id": "martinez camblor luis|Radiología/Diagnóstico por Imagen",
+      "persona_id": "martinez camblor luis|Radiodiagnóstico",
       "profesional_norm": "martinez camblor luis",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Martínez Camblor, Luis",
       "aseguradoras": "DKV,Mapfre",
-      "especialidades": "Densitometría Ósea,TAC,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Avilés",
       "centro": "Salutec",
       "num_competidores": 2
@@ -8035,7 +7994,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "MUÑIZ OSORIO, José Antonio",
       "aseguradoras": "Adeslas,Sanitas",
-      "especialidades": "Odontología,Odontología - Periodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "",
       "num_competidores": 2
@@ -8189,7 +8148,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "TAMARGO DEL CASTILLO, Rafael",
       "aseguradoras": "Adeslas,Sanitas",
-      "especialidades": "Odontología,Cirugía Oral y Maxilofacial,Odontología - Periodoncia,Odontología - Ortodoncia",
+      "especialidades": "Odontología,Cirugía Oral y Maxilofacial",
       "municipio": "Oviedo",
       "centro": "Clinica Dental Sanitas Millennium Oviedo",
       "num_competidores": 2
@@ -8299,7 +8258,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Sra. Alvarez Galan, Luz Adoracion",
       "aseguradoras": "Sanitas",
-      "especialidades": "Odontología,Cirugía Oral y Maxilofacial,Odontología - Periodoncia,Odontología - Ortodoncia",
+      "especialidades": "Odontología,Cirugía Oral y Maxilofacial",
       "municipio": "Avilés",
       "centro": "",
       "num_competidores": 1
@@ -8382,9 +8341,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "a baniela alonso nicasio|Radiología/Diagnóstico por Imagen",
+      "persona_id": "a baniela alonso nicasio|Radiodiagnóstico",
       "profesional_norm": "a baniela alonso nicasio",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dra. Baniela Alonso Nicasio",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -9955,12 +9914,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "a sanchez lopez paula|Radiología/Diagnóstico por Imagen",
+      "persona_id": "a sanchez lopez paula|Radiodiagnóstico",
       "profesional_norm": "a sanchez lopez paula",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dra. Sanchez Lopez, Paula",
       "aseguradoras": "Sanitas",
-      "especialidades": "Ecografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Avilés",
       "centro": "Sabate",
       "num_competidores": 1
@@ -10230,12 +10189,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "abascal garcia jose manuel|Radiología/Diagnóstico por Imagen",
+      "persona_id": "abascal garcia jose manuel|Radiodiagnóstico",
       "profesional_norm": "abascal garcia jose manuel",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Abascal García, José Manuel",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -10296,14 +10255,25 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "acebal alonso carlos|Radiología/Diagnóstico por Imagen",
+      "persona_id": "acebal alonso carlos|Ginecología/Obstetricia",
       "profesional_norm": "acebal alonso carlos",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
       "nombre": "Acebal Alonso, Carlos",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Diagnóstico Prenatal,Mamografía",
+      "especialidades": "Ginecología y Obstetricia",
       "municipio": "Gijón",
       "centro": "Insituto Urológico Asturiano",
+      "num_competidores": 1
+    },
+    {
+      "persona_id": "acebal alonso carlos|Radiodiagnóstico",
+      "profesional_norm": "acebal alonso carlos",
+      "familia": "Radiodiagnóstico",
+      "nombre": "Acebal Alonso, Carlos",
+      "aseguradoras": "DKV",
+      "especialidades": "Radiodiagnóstico",
+      "municipio": "Gijón",
+      "centro": "Hospital Begoña",
       "num_competidores": 1
     },
     {
@@ -10329,9 +10299,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "aguirre quiros gerardo|Radiología/Diagnóstico por Imagen",
+      "persona_id": "aguirre quiros gerardo|Radiodiagnóstico",
       "profesional_norm": "aguirre quiros gerardo",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Aguirre Quirós, Gerardo",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -10362,12 +10332,23 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "albadalejo salinas vicente|Radiología/Diagnóstico por Imagen",
+      "persona_id": "albadalejo salinas vicente|Ginecología/Obstetricia",
       "profesional_norm": "albadalejo salinas vicente",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
       "nombre": "Albadalejo Salinas, Vicente",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Diagnóstico Prenatal,Mamografía",
+      "especialidades": "Ginecología y Obstetricia",
+      "municipio": "Gijón",
+      "centro": "Hospital Begoña",
+      "num_competidores": 1
+    },
+    {
+      "persona_id": "albadalejo salinas vicente|Radiodiagnóstico",
+      "profesional_norm": "albadalejo salinas vicente",
+      "familia": "Radiodiagnóstico",
+      "nombre": "Albadalejo Salinas, Vicente",
+      "aseguradoras": "DKV",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Hospital Begoña",
       "num_competidores": 1
@@ -10472,12 +10453,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "alvarez - buylla camino miguel|Radiología/Diagnóstico por Imagen",
+      "persona_id": "alvarez - buylla camino miguel|Radiodiagnóstico",
       "profesional_norm": "alvarez - buylla camino miguel",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Álvarez - Buylla Camino, Miguel",
       "aseguradoras": "DKV",
-      "especialidades": "Resonancia Magnética",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Piedras Blancas",
       "centro": "",
       "num_competidores": 1
@@ -10587,15 +10568,15 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Álvarez Galán, Luz Adoración",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología,Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Avilés",
       "centro": "",
       "num_competidores": 1
     },
     {
-      "persona_id": "alvarez galan luz adoracion|Radiología/Diagnóstico por Imagen",
+      "persona_id": "alvarez galan luz adoracion|Radiodiagnóstico",
       "profesional_norm": "alvarez galan luz adoracion",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Álvarez Galán, Luz Adoración",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -10730,7 +10711,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Álvarez Medrano, José Luis",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología,Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -10967,9 +10948,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "andres gutierrez angeles|Radiología/Diagnóstico por Imagen",
+      "persona_id": "andres gutierrez angeles|Radiodiagnóstico",
       "profesional_norm": "andres gutierrez angeles",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Andrés Gutiérrez, Ángeles",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -11077,12 +11058,23 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "arguelles garcia pablo|Radiología/Diagnóstico por Imagen",
+      "persona_id": "arguelles garcia pablo|Ginecología/Obstetricia",
       "profesional_norm": "arguelles garcia pablo",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
+      "nombre": "Arguelles García, Pablo",
+      "aseguradoras": "DKV",
+      "especialidades": "Ginecología y Obstetricia",
+      "municipio": "Gijón",
+      "centro": "Clínicas Cardialis",
+      "num_competidores": 1
+    },
+    {
+      "persona_id": "arguelles garcia pablo|Radiodiagnóstico",
+      "profesional_norm": "arguelles garcia pablo",
+      "familia": "Radiodiagnóstico",
       "nombre": "Arguelles García,Pablo",
       "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal,Mamografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Clínicas Cardialis",
       "num_competidores": 1
@@ -11154,23 +11146,23 @@
       "num_competidores": 1
     },
     {
+      "persona_id": "aviles garcia paulino manuel|Cirugía General",
+      "profesional_norm": "aviles garcia paulino manuel",
+      "familia": "Cirugía General",
+      "nombre": "AVILÉS GARCÍA, Paulino Manuel",
+      "aseguradoras": "Adeslas",
+      "especialidades": "Cirugía General",
+      "municipio": "Oviedo",
+      "centro": "",
+      "num_competidores": 1
+    },
+    {
       "persona_id": "aviles garcia paulino manuel|Digestivo",
       "profesional_norm": "aviles garcia paulino manuel",
       "familia": "Digestivo",
       "nombre": "AVILÉS GARCÍA, Paulino Manuel",
       "aseguradoras": "Adeslas",
       "especialidades": "Aparato Digestivo",
-      "municipio": "Oviedo",
-      "centro": "",
-      "num_competidores": 1
-    },
-    {
-      "persona_id": "aviles garcia paulino manuel|Proctología",
-      "profesional_norm": "aviles garcia paulino manuel",
-      "familia": "Proctología",
-      "nombre": "AVILÉS GARCÍA, Paulino Manuel",
-      "aseguradoras": "Adeslas",
-      "especialidades": "Proctología",
       "municipio": "Oviedo",
       "centro": "",
       "num_competidores": 1
@@ -11588,7 +11580,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Bascarán Fernández, Juan José",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Bascarán",
       "num_competidores": 1
@@ -11902,12 +11894,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "bloque 3 martinez camblor luis|Radiología/Diagnóstico por Imagen",
+      "persona_id": "bloque 3 martinez camblor luis|Radiodiagnóstico",
       "profesional_norm": "bloque 3 martinez camblor luis",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Bloque 3 Martínez Camblor, Luis",
       "aseguradoras": "DKV",
-      "especialidades": "Mamografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Avilés",
       "centro": "Salutec",
       "num_competidores": 1
@@ -11924,12 +11916,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "bondelle fueyo roberto|Radiología/Diagnóstico por Imagen",
+      "persona_id": "bondelle fueyo roberto|Radiodiagnóstico",
       "profesional_norm": "bondelle fueyo roberto",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Bondelle Fueyo,Roberto",
       "aseguradoras": "DKV",
-      "especialidades": "Mamografía,TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Iramsa (Instituto Radiológico)",
       "num_competidores": 1
@@ -12100,12 +12092,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "c perez redondo julio|Radiología/Diagnóstico por Imagen",
+      "persona_id": "c perez redondo julio|Radiodiagnóstico",
       "profesional_norm": "c perez redondo julio",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "C. Pérez Redondo, Julio",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Mamografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Hospital Begoña",
       "num_competidores": 1
@@ -12188,9 +12180,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "calvo perez sandra maria|Radiología/Diagnóstico por Imagen",
+      "persona_id": "calvo perez sandra maria|Radiodiagnóstico",
       "profesional_norm": "calvo perez sandra maria",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Calvo Pérez, Sandra María",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -12292,15 +12284,15 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Canto Argiz, Elisa",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia,Odontología",
+      "especialidades": "Odontología",
       "municipio": "Gijón",
       "centro": "",
       "num_competidores": 1
     },
     {
-      "persona_id": "canto argiz elisa|Radiología/Diagnóstico por Imagen",
+      "persona_id": "canto argiz elisa|Radiodiagnóstico",
       "profesional_norm": "canto argiz elisa",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Canto Argiz, Elisa",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -12397,9 +12389,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "carreno rendueles jose eduardo|Radiología/Diagnóstico por Imagen",
+      "persona_id": "carreno rendueles jose eduardo|Radiodiagnóstico",
       "profesional_norm": "carreno rendueles jose eduardo",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Carreño Rendueles, José Eduardo",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -12529,9 +12521,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "casariego pola francisco|Radiología/Diagnóstico por Imagen",
+      "persona_id": "casariego pola francisco|Radiodiagnóstico",
       "profesional_norm": "casariego pola francisco",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Casariego Pola, Francisco",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -12573,12 +12565,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "casasola chamorro javier|Radiología/Diagnóstico por Imagen",
+      "persona_id": "casasola chamorro javier|Ginecología/Obstetricia",
       "profesional_norm": "casasola chamorro javier",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
       "nombre": "Casasola Chamorro, Javier",
       "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal",
+      "especialidades": "Ginecología y Obstetricia",
       "municipio": "Gijón",
       "centro": "",
       "num_competidores": 1
@@ -12672,12 +12664,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "caveda rodero patricia l|Radiología/Diagnóstico por Imagen",
+      "persona_id": "caveda rodero patricia l|Radiodiagnóstico",
       "profesional_norm": "caveda rodero patricia l",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Caveda Rodero, Patricia L.",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Mamografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Join Dental",
       "num_competidores": 1
@@ -12798,7 +12790,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Cobo Muñiz, Marta",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología,Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Luarca",
       "centro": "",
       "num_competidores": 1
@@ -12930,7 +12922,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Coronel González, Mª Juana",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Bascarán",
       "num_competidores": 1
@@ -13035,12 +13027,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "cruceyra betriu guillermo|Radiología/Diagnóstico por Imagen",
+      "persona_id": "cruceyra betriu guillermo|Ginecología/Obstetricia",
       "profesional_norm": "cruceyra betriu guillermo",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
       "nombre": "Cruceyra Betriu, Guillermo",
       "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal",
+      "especialidades": "Ginecología y Obstetricia",
       "municipio": "Gijón",
       "centro": "Insituto Urológico Asturiano",
       "num_competidores": 1
@@ -13326,7 +13318,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Del Campo Rodríguez, Alfredo",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -13761,9 +13753,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "fernandez alonso luz|Radiología/Diagnóstico por Imagen",
+      "persona_id": "fernandez alonso luz|Radiodiagnóstico",
       "profesional_norm": "fernandez alonso luz",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Fernandez Alonso Luz",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -13816,12 +13808,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "fernandez cuadriello estela|Radiología/Diagnóstico por Imagen",
+      "persona_id": "fernandez cuadriello estela|Radiodiagnóstico",
       "profesional_norm": "fernandez cuadriello estela",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Fernández Cuadriello, Estela",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Ecografía,Mamografía,Radiodiagnóstico,Resonancia Magnética,TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Join Dental",
       "num_competidores": 1
@@ -13871,9 +13863,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "fernandez fernandez cipriano|Radiología/Diagnóstico por Imagen",
+      "persona_id": "fernandez fernandez cipriano|Radiodiagnóstico",
       "profesional_norm": "fernandez fernandez cipriano",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "FERNÁNDEZ FERNÁNDEZ, Cipriano",
       "aseguradoras": "Adeslas",
       "especialidades": "Radiodiagnóstico",
@@ -14096,7 +14088,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Fernández Suárez, Hilario",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -14789,7 +14781,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "García González, Pablo",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología,Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Avilés",
       "centro": "Clínica B Internacional",
       "num_competidores": 1
@@ -14828,12 +14820,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "garcia gonzalez pedro r|Radiología/Diagnóstico por Imagen",
+      "persona_id": "garcia gonzalez pedro r|Radiodiagnóstico",
       "profesional_norm": "garcia gonzalez pedro r",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "García González, Pedro R.",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía,Radiodiagnóstico,Resonancia Magnética",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Mieres",
       "centro": "Imagen Diagnóstica El Molinón",
       "num_competidores": 1
@@ -14872,12 +14864,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "garcia isidro laura|Radiología/Diagnóstico por Imagen",
+      "persona_id": "garcia isidro laura|Radiodiagnóstico",
       "profesional_norm": "garcia isidro laura",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "García Isidro, Laura",
       "aseguradoras": "DKV",
-      "especialidades": "TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -14960,12 +14952,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "garcia perez juan|Radiología/Diagnóstico por Imagen",
+      "persona_id": "garcia perez juan|Radiodiagnóstico",
       "profesional_norm": "garcia perez juan",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "García Pérez, Juan",
       "aseguradoras": "DKV",
-      "especialidades": "TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -15081,6 +15073,17 @@
       "num_competidores": 1
     },
     {
+      "persona_id": "gil ugarteburu rodrigo|Ginecología/Obstetricia",
+      "profesional_norm": "gil ugarteburu rodrigo",
+      "familia": "Ginecología/Obstetricia",
+      "nombre": "Gil Ugarteburu, Rodrigo",
+      "aseguradoras": "DKV",
+      "especialidades": "Ginecología y Obstetricia",
+      "municipio": "Gijón",
+      "centro": "Insituto Urológico Asturiano",
+      "num_competidores": 1
+    },
+    {
       "persona_id": "gil ugarteburu rodrigo|Otorrinolaringología",
       "profesional_norm": "gil ugarteburu rodrigo",
       "familia": "Otorrinolaringología",
@@ -15089,17 +15092,6 @@
       "especialidades": "Otorrinolaringología",
       "municipio": "Gijón",
       "centro": "HOSPITAL BEGOÑA",
-      "num_competidores": 1
-    },
-    {
-      "persona_id": "gil ugarteburu rodrigo|Radiología/Diagnóstico por Imagen",
-      "profesional_norm": "gil ugarteburu rodrigo",
-      "familia": "Radiología/Diagnóstico por Imagen",
-      "nombre": "Gil Ugarteburu, Rodrigo",
-      "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal",
-      "municipio": "Gijón",
-      "centro": "Insituto Urológico Asturiano",
       "num_competidores": 1
     },
     {
@@ -15301,9 +15293,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "gonzalez gonzalez margarita|Radiología/Diagnóstico por Imagen",
+      "persona_id": "gonzalez gonzalez margarita|Radiodiagnóstico",
       "profesional_norm": "gonzalez gonzalez margarita",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Gonzalez Gonzalez, Margarita",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -15488,12 +15480,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "gonzalez rodriguez ivan|Radiología/Diagnóstico por Imagen",
+      "persona_id": "gonzalez rodriguez ivan|Ginecología/Obstetricia",
       "profesional_norm": "gonzalez rodriguez ivan",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
       "nombre": "González Rodríguez, Iván",
       "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal",
+      "especialidades": "Ginecología y Obstetricia",
       "municipio": "Gijón",
       "centro": "Clínicas Cardialis",
       "num_competidores": 1
@@ -15543,12 +15535,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "gonzalez suarez carmen|Radiología/Diagnóstico por Imagen",
+      "persona_id": "gonzalez suarez carmen|Radiodiagnóstico",
       "profesional_norm": "gonzalez suarez carmen",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "González Suárez, Carmen",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Mamografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Join Dental",
       "num_competidores": 1
@@ -15636,7 +15628,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "González Zapico, Marian",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Pola de Siero",
       "centro": "",
       "num_competidores": 1
@@ -15994,12 +15986,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "ht medica gijon - hosp nieto calleja ruperto b|Radiología/Diagnóstico por Imagen",
+      "persona_id": "ht medica gijon - hosp nieto calleja ruperto b|Radiodiagnóstico",
       "profesional_norm": "ht medica gijon - hosp nieto calleja ruperto b",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "HT Médica Gijón - Hosp. Nieto Calleja, Ruperto B.",
       "aseguradoras": "DKV",
-      "especialidades": "TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Hospital Begoña",
       "num_competidores": 1
@@ -16027,9 +16019,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "iglesias coca roberto|Radiología/Diagnóstico por Imagen",
+      "persona_id": "iglesias coca roberto|Radiodiagnóstico",
       "profesional_norm": "iglesias coca roberto",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Iglesias Coca Roberto;Dr. Alvarez Fernandez Jose Luis;Dr. Azpiroz Fernandez Juan Manuel;Dr. Mondebarri Luis Alfonso;Dr. Palacio Francisco Javier",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -16137,9 +16129,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "jimenez perez jose maria|Radiología/Diagnóstico por Imagen",
+      "persona_id": "jimenez perez jose maria|Radiodiagnóstico",
       "profesional_norm": "jimenez perez jose maria",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "JIMÉNEZ PÉREZ, José María",
       "aseguradoras": "Adeslas",
       "especialidades": "Radiodiagnóstico",
@@ -16302,9 +16294,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "junquera moreno juan|Radiología/Diagnóstico por Imagen",
+      "persona_id": "junquera moreno juan|Radiodiagnóstico",
       "profesional_norm": "junquera moreno juan",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Junquera Moreno Juan",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -16555,9 +16547,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "llano llano nuria|Radiología/Diagnóstico por Imagen",
+      "persona_id": "llano llano nuria|Radiodiagnóstico",
       "profesional_norm": "llano llano nuria",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "LLANO LLANO, Nuria",
       "aseguradoras": "Adeslas",
       "especialidades": "Radiodiagnóstico",
@@ -16577,12 +16569,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "llosa cortina juan carlos|Proctología",
+      "persona_id": "llosa cortina juan carlos|Cirugía General",
       "profesional_norm": "llosa cortina juan carlos",
-      "familia": "Proctología",
+      "familia": "Cirugía General",
       "nombre": "LLOSA CORTINA, Juan Carlos",
       "aseguradoras": "Adeslas",
-      "especialidades": "Proctología",
+      "especialidades": "Cirugía General",
       "municipio": "Oviedo",
       "centro": "POLICLÍNICAS OVIEDO",
       "num_competidores": 1
@@ -17077,7 +17069,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Mancebo Allende, Miguel",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -17193,9 +17185,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "martin castro ana isabel|Radiología/Diagnóstico por Imagen",
+      "persona_id": "martin castro ana isabel|Radiodiagnóstico",
       "profesional_norm": "martin castro ana isabel",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Martin Castro Ana Isabel;Dr. De Castro Cordova Ricardo;Dr. Rodriguez Alvarez Jose Antonio",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -17270,12 +17262,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "martin huescar agustin|Radiología/Diagnóstico por Imagen",
+      "persona_id": "martin huescar agustin|Radiodiagnóstico",
       "profesional_norm": "martin huescar agustin",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Martín Huéscar, Agustín",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Policlínica Rozona",
       "num_competidores": 1
@@ -17567,12 +17559,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "mateos montero abel ma|Radiología/Diagnóstico por Imagen",
+      "persona_id": "mateos montero abel ma|Ginecología/Obstetricia",
       "profesional_norm": "mateos montero abel ma",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Ginecología/Obstetricia",
       "nombre": "Mateos Montero, Abel Mª",
       "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal",
+      "especialidades": "Ginecología y Obstetricia",
       "municipio": "Gijón",
       "centro": "Clínicas Cardialis",
       "num_competidores": 1
@@ -17633,9 +17625,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "mendilagoita juliana juan|Radiología/Diagnóstico por Imagen",
+      "persona_id": "mendilagoita juliana juan|Radiodiagnóstico",
       "profesional_norm": "mendilagoita juliana juan",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Mendilagoita Juliana, Juan",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -17908,12 +17900,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "miranda lucas jose|Radiología/Diagnóstico por Imagen",
+      "persona_id": "miranda lucas jose|Radiodiagnóstico",
       "profesional_norm": "miranda lucas jose",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Miranda Lucas, José",
       "aseguradoras": "DKV",
-      "especialidades": "Mamografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Iramsa (Instituto Radiológico)",
       "num_competidores": 1
@@ -17979,7 +17971,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Molina Utrilla, Ramón",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Avilés",
       "centro": "",
       "num_competidores": 1
@@ -18249,9 +18241,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "nespral pazos carlos luis|Radiología/Diagnóstico por Imagen",
+      "persona_id": "nespral pazos carlos luis|Radiodiagnóstico",
       "profesional_norm": "nespral pazos carlos luis",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Nespral Pazos, Carlos Luis",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -18392,9 +18384,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "ocio fernandez german|Radiología/Diagnóstico por Imagen",
+      "persona_id": "ocio fernandez german|Radiodiagnóstico",
       "profesional_norm": "ocio fernandez german",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Ocio Fernandez German",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -18441,7 +18433,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Oteyza Fornieles, Belén",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -18535,9 +18527,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "palacios prieto angel|Radiología/Diagnóstico por Imagen",
+      "persona_id": "palacios prieto angel|Radiodiagnóstico",
       "profesional_norm": "palacios prieto angel",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "PALACIOS PRIETO, Ángel",
       "aseguradoras": "Adeslas",
       "especialidades": "Radiodiagnóstico",
@@ -18634,9 +18626,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "pedraza cotarelo fernando jose|Radiología/Diagnóstico por Imagen",
+      "persona_id": "pedraza cotarelo fernando jose|Radiodiagnóstico",
       "profesional_norm": "pedraza cotarelo fernando jose",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Pedraza Cotarelo, Fernando José",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -19184,12 +19176,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "quiros baragano sabino|Radiología/Diagnóstico por Imagen",
+      "persona_id": "quiros baragano sabino|Radiodiagnóstico",
       "profesional_norm": "quiros baragano sabino",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Quirós Baragaño, Sabino",
       "aseguradoras": "DKV",
-      "especialidades": "Densitometría Ósea,Radiodiagnóstico,Mamografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Synlab Oviedo",
       "num_competidores": 1
@@ -19206,12 +19198,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "r garcia isidro laura|Radiología/Diagnóstico por Imagen",
+      "persona_id": "r garcia isidro laura|Radiodiagnóstico",
       "profesional_norm": "r garcia isidro laura",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "R. García Isidro, Laura",
       "aseguradoras": "DKV",
-      "especialidades": "Resonancia Magnética",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Imagen Diagnóstica El Molinón",
       "num_competidores": 1
@@ -19327,9 +19319,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "rendueles molleda juan|Radiología/Diagnóstico por Imagen",
+      "persona_id": "rendueles molleda juan|Radiodiagnóstico",
       "profesional_norm": "rendueles molleda juan",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Rendueles Molleda, Juan",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -19338,12 +19330,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "renilla gonzalez alfredo|Radiología/Diagnóstico por Imagen",
+      "persona_id": "renilla gonzalez alfredo|Radiodiagnóstico",
       "profesional_norm": "renilla gonzalez alfredo",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Renilla González, Alfredo",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía,Radiodiagnóstico",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "",
       "num_competidores": 1
@@ -19723,9 +19715,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "rodriguez lopez luis|Radiología/Diagnóstico por Imagen",
+      "persona_id": "rodriguez lopez luis|Radiodiagnóstico",
       "profesional_norm": "rodriguez lopez luis",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Rodriguez Lopez Luis",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -19800,12 +19792,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "rodriguez olay jose javier|Radiología/Diagnóstico por Imagen",
+      "persona_id": "rodriguez olay jose javier|Radiodiagnóstico",
       "profesional_norm": "rodriguez olay jose javier",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Sr. Rodriguez Olay, Jose Javier",
       "aseguradoras": "Sanitas",
-      "especialidades": "Ecografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Clinica Santos Suarez",
       "num_competidores": 1
@@ -19838,7 +19830,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Rodriguez Remil, Marta",
       "aseguradoras": "Sanitas",
-      "especialidades": "Odontología - Periodoncia,Odontología",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clinica Dental Sanitas Millennium Oviedo",
       "num_competidores": 1
@@ -20031,9 +20023,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "rubio serraller carlos|Radiología/Diagnóstico por Imagen",
+      "persona_id": "rubio serraller carlos|Radiodiagnóstico",
       "profesional_norm": "rubio serraller carlos",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Rubio Serraller, Carlos",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -20148,17 +20140,6 @@
       "aseguradoras": "DKV",
       "especialidades": "Ginecología y Obstetricia",
       "municipio": "Gijón",
-      "centro": "Hospital Covadonga",
-      "num_competidores": 1
-    },
-    {
-      "persona_id": "salas villaverde ma nieves|Radiología/Diagnóstico por Imagen",
-      "profesional_norm": "salas villaverde ma nieves",
-      "familia": "Radiología/Diagnóstico por Imagen",
-      "nombre": "Salas Villaverde, Mª Nieves",
-      "aseguradoras": "DKV",
-      "especialidades": "Diagnóstico Prenatal",
-      "municipio": "Gijón",
       "centro": "Sanatorio Covadonga",
       "num_competidores": 1
     },
@@ -20262,9 +20243,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "sanchez alvarez jose maria|Radiología/Diagnóstico por Imagen",
+      "persona_id": "sanchez alvarez jose maria|Radiodiagnóstico",
       "profesional_norm": "sanchez alvarez jose maria",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Dr. Sanchez Alvarez Jose Maria;Dra. Garcia Rodriguez Raquel;Dra. Lopez Becoechea Jessica;Dra. Lopez Lopez Begona",
       "aseguradoras": "Mapfre",
       "especialidades": "Radiodiagnóstico",
@@ -20339,12 +20320,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "sanchez lopez paula|Radiología/Diagnóstico por Imagen",
+      "persona_id": "sanchez lopez paula|Radiodiagnóstico",
       "profesional_norm": "sanchez lopez paula",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Sánchez López, Paula",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Avilés",
       "centro": "Manuel",
       "num_competidores": 1
@@ -20421,7 +20402,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Sánchez Tabar, Luis Francisco",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -20581,9 +20562,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "silva ramos susana patricia|Radiología/Diagnóstico por Imagen",
+      "persona_id": "silva ramos susana patricia|Radiodiagnóstico",
       "profesional_norm": "silva ramos susana patricia",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Silva Ramos, Susana Patricia",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -20795,7 +20776,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Suárez Granda, Pablo José",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia",
+      "especialidades": "Odontología",
       "municipio": "Oviedo",
       "centro": "Clínica Oftalmológica Dres.",
       "num_competidores": 1
@@ -20933,9 +20914,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "suarez suarez maria ramona|Radiología/Diagnóstico por Imagen",
+      "persona_id": "suarez suarez maria ramona|Radiodiagnóstico",
       "profesional_norm": "suarez suarez maria ramona",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Suárez Suárez, María Ramona",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -21032,12 +21013,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "t a c pereira quintano rebeca|Radiología/Diagnóstico por Imagen",
+      "persona_id": "t a c pereira quintano rebeca|Radiodiagnóstico",
       "profesional_norm": "t a c pereira quintano rebeca",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "T.A.C. Pereira Quintano, Rebeca",
       "aseguradoras": "DKV",
-      "especialidades": "TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "Clínica Asturias",
       "num_competidores": 1
@@ -21285,12 +21266,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "tuero gonzalez juan senen|Radiología/Diagnóstico por Imagen",
+      "persona_id": "tuero gonzalez juan senen|Radiodiagnóstico",
       "profesional_norm": "tuero gonzalez juan senen",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Tuero González, Juan Senen",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Avilés",
       "centro": "Policlínica Rozona",
       "num_competidores": 1
@@ -21505,9 +21486,9 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "vazquez fernandez aurelio|Radiología/Diagnóstico por Imagen",
+      "persona_id": "vazquez fernandez aurelio|Radiodiagnóstico",
       "profesional_norm": "vazquez fernandez aurelio",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Vázquez Fernández, Aurelio",
       "aseguradoras": "DKV",
       "especialidades": "Radiodiagnóstico",
@@ -21626,12 +21607,12 @@
       "num_competidores": 1
     },
     {
-      "persona_id": "vicente palacio margarita|Radiología/Diagnóstico por Imagen",
+      "persona_id": "vicente palacio margarita|Radiodiagnóstico",
       "profesional_norm": "vicente palacio margarita",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "Vicente Palacio, Margarita",
       "aseguradoras": "DKV",
-      "especialidades": "Ecografía,Mamografía,Radiodiagnóstico,Resonancia Magnética,TAC",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
       "centro": "Multiclínicas Laserdental",
       "num_competidores": 1
@@ -21829,7 +21810,7 @@
       "familia": "Odontología/Maxilofacial",
       "nombre": "Villoria Yano, Fernando",
       "aseguradoras": "DKV",
-      "especialidades": "Odontología - Ortodoncia,Odontología",
+      "especialidades": "Odontología",
       "municipio": "Gijón",
       "centro": "Multiclínicas Laserdental",
       "num_competidores": 1
@@ -23321,9 +23302,9 @@
       "centro": "GESTION DE CENTROS MEDICOS MAPFRE"
     },
     {
-      "persona_id": "a perez jimenez maria felicidad|Radiología/Diagnóstico por Imagen",
+      "persona_id": "a perez jimenez maria felicidad|Radiodiagnóstico",
       "profesional_norm": "a perez jimenez maria felicidad",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DRA. PEREZ JIMENEZ Maria Felicidad",
       "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
@@ -23348,9 +23329,9 @@
       "centro": "LENA"
     },
     {
-      "persona_id": "a ranilla alonso nicanio|Radiología/Diagnóstico por Imagen",
+      "persona_id": "a ranilla alonso nicanio|Radiodiagnóstico",
       "profesional_norm": "a ranilla alonso nicanio",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DRA. RANILLA ALONSO Nicanio",
       "especialidades": "Radiodiagnóstico",
       "municipio": "Gijón",
@@ -23699,11 +23680,11 @@
       "centro": "MIERES"
     },
     {
-      "persona_id": "a vicente uruena julia|Radiología/Diagnóstico por Imagen",
+      "persona_id": "a vicente uruena julia|Radiodiagnóstico",
       "profesional_norm": "a vicente uruena julia",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DRA. VICENTE URUENA Julia",
-      "especialidades": "Densitometría Ósea",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "CLINICA ASTURIAS"
     },
@@ -23769,6 +23750,15 @@
       "especialidades": "Cardiología",
       "municipio": "Gijón",
       "centro": "Vicente Innerárity, 5 / CLINICA DE CARDIOLOGIA DR. ACERAL"
+    },
+    {
+      "persona_id": "acunedo roza andres|Odontología/Maxilofacial",
+      "profesional_norm": "acunedo roza andres",
+      "familia": "Odontología/Maxilofacial",
+      "nombre": "DR. ACUÑEDO ROZA Andres",
+      "especialidades": "Odontología",
+      "municipio": "985211917 y 627311377",
+      "centro": "ADAMEZ CLINICA DENTAL"
     },
     {
       "persona_id": "aguareles rosca julio a|Medicina General",
@@ -24311,9 +24301,9 @@
       "centro": "Avenida Pablo Iglesias, 95, BAJO"
     },
     {
-      "persona_id": "fernandez villamevtide jose aragon|Radiología/Diagnóstico por Imagen",
+      "persona_id": "fernandez villamevtide jose aragon|Radiodiagnóstico",
       "profesional_norm": "fernandez villamevtide jose aragon",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DR. FERNANDEZ VILLAMEVTIDE Jose Aragón",
       "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
@@ -24408,6 +24398,15 @@
       "especialidades": "Medicina General",
       "municipio": "Avilés",
       "centro": "POLICLINICA ROZONA"
+    },
+    {
+      "persona_id": "garcia adamez francisco javier|Odontología/Maxilofacial",
+      "profesional_norm": "garcia adamez francisco javier",
+      "familia": "Odontología/Maxilofacial",
+      "nombre": "DR. GARCIA ADAMEZ Francisco Javier",
+      "especialidades": "Odontología",
+      "municipio": "985211917 y 627311377",
+      "centro": "ADAMEZ CLINICA DENTAL"
     },
     {
       "persona_id": "garcia de la torre aurelio|Angiología y Cirugía Vascular",
@@ -24518,9 +24517,9 @@
       "centro": "CLINICA ASTURIAS"
     },
     {
-      "persona_id": "gomez illan rafael|Radiología/Diagnóstico por Imagen",
+      "persona_id": "gomez illan rafael|Radiodiagnóstico",
       "profesional_norm": "gomez illan rafael",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DR. GOMEZ ILLAN Rafael",
       "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
@@ -24581,9 +24580,9 @@
       "centro": "Avenida Pablo Iglesias, 92"
     },
     {
-      "persona_id": "gonzalez suarez daniel jesus|Radiología/Diagnóstico por Imagen",
+      "persona_id": "gonzalez suarez daniel jesus|Radiodiagnóstico",
       "profesional_norm": "gonzalez suarez daniel jesus",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DR. GONZALEZ SUAREZ Daniel Jesus",
       "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
@@ -25112,9 +25111,9 @@
       "centro": "HOSPITAL COVADONGA"
     },
     {
-      "persona_id": "prieto fernandez amador|Radiología/Diagnóstico por Imagen",
+      "persona_id": "prieto fernandez amador|Radiodiagnóstico",
       "profesional_norm": "prieto fernandez amador",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DR. PRIETO FERNANDEZ Amador",
       "especialidades": "Radiodiagnóstico",
       "municipio": "Avilés",
@@ -25139,11 +25138,11 @@
       "centro": "CLINICA ASTURIAS"
     },
     {
-      "persona_id": "quinones barraco sabino|Radiología/Diagnóstico por Imagen",
+      "persona_id": "quinones barraco sabino|Radiodiagnóstico",
       "profesional_norm": "quinones barraco sabino",
-      "familia": "Radiología/Diagnóstico por Imagen",
+      "familia": "Radiodiagnóstico",
       "nombre": "DR. QUIÑONES BARRACO Sabino",
-      "especialidades": "Densitometría Ósea",
+      "especialidades": "Radiodiagnóstico",
       "municipio": "Oviedo",
       "centro": "CLINICA ASTURIAS"
     },
@@ -25509,19 +25508,19 @@
     }
   ],
   "kpis_competitivos": {
-    "especialidades_mercado": 62,
-    "especialidades_asisa": 50,
-    "pct_cobertura_especialidades": 80.6,
+    "especialidades_mercado": 53,
+    "especialidades_asisa": 45,
+    "pct_cobertura_especialidades": 84.9,
     "profesionales_compartidos_total": 159,
-    "profesionales_faltantes_total": 1331,
-    "profesionales_exclusivos_asisa_total": 392,
+    "profesionales_faltantes_total": 1333,
+    "profesionales_exclusivos_asisa_total": 394,
     "por_aseguradora": [
       {
         "aseguradora": "ASISA",
-        "especialidades": 50,
-        "municipios": 27,
-        "profesionales": 551,
-        "centros": 178
+        "especialidades": 45,
+        "municipios": 30,
+        "profesionales": 553,
+        "centros": 181
       },
       {
         "aseguradora": "Adeslas",
@@ -25532,9 +25531,9 @@
       },
       {
         "aseguradora": "DKV",
-        "especialidades": 46,
+        "especialidades": 39,
         "municipios": 17,
-        "profesionales": 586,
+        "profesionales": 588,
         "centros": 77
       },
       {
@@ -25546,7 +25545,7 @@
       },
       {
         "aseguradora": "Sanitas",
-        "especialidades": 50,
+        "especialidades": 44,
         "municipios": 25,
         "profesionales": 168,
         "centros": 70
@@ -25562,7 +25561,7 @@
       "asisa_profesionales": 14,
       "comp_profesionales": 49,
       "asisa_especialidades": 11,
-      "comp_especialidades": 16,
+      "comp_especialidades": 14,
       "municipios": 6,
       "aseguradoras": 5
     },
@@ -25574,7 +25573,7 @@
       "asisa_profesionales": 11,
       "comp_profesionales": 57,
       "asisa_especialidades": 8,
-      "comp_especialidades": 12,
+      "comp_especialidades": 11,
       "municipios": 6,
       "aseguradoras": 5
     },
@@ -25598,7 +25597,7 @@
       "asisa_profesionales": 10,
       "comp_profesionales": 26,
       "asisa_especialidades": 7,
-      "comp_especialidades": 13,
+      "comp_especialidades": 11,
       "municipios": 5,
       "aseguradoras": 5
     },
@@ -25621,8 +25620,8 @@
       "competencia_registros": 846,
       "asisa_profesionales": 287,
       "comp_profesionales": 606,
-      "asisa_especialidades": 49,
-      "comp_especialidades": 59,
+      "asisa_especialidades": 44,
+      "comp_especialidades": 51,
       "municipios": 6,
       "aseguradoras": 5
     },
@@ -25632,9 +25631,9 @@
       "asisa_registros": 311,
       "competencia_registros": 744,
       "asisa_profesionales": 195,
-      "comp_profesionales": 524,
-      "asisa_especialidades": 45,
-      "comp_especialidades": 53,
+      "comp_profesionales": 526,
+      "asisa_especialidades": 40,
+      "comp_especialidades": 45,
       "municipios": 2,
       "aseguradoras": 5
     },
@@ -25645,8 +25644,8 @@
       "competencia_registros": 381,
       "asisa_profesionales": 54,
       "comp_profesionales": 253,
-      "asisa_especialidades": 31,
-      "comp_especialidades": 42,
+      "asisa_especialidades": 26,
+      "comp_especialidades": 35,
       "municipios": 6,
       "aseguradoras": 5
     }
@@ -25692,7 +25691,7 @@
       "poblacion": "305000",
       "asisa_prof": 195,
       "asisa_prof_per_10k": 6.39,
-      "comp_avg_prof_per_10k": 4.3
+      "comp_avg_prof_per_10k": 4.31
     },
     {
       "area_sanitaria": "Área VI - Arriondas",
@@ -26012,9 +26011,9 @@
       "poblacion": 268313,
       "area_sanitaria": "Área V - Gijón",
       "asisa_prof": 193,
-      "comp_prof": 506,
+      "comp_prof": 508,
       "asisa_per_10k": 7.19,
-      "comp_avg_per_10k": 4.71
+      "comp_avg_per_10k": 4.73
     },
     {
       "municipio": "Ribadesella",
