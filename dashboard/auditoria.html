@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría End-to-End | ASISA Asturias</title>
+<script>
+  // Gate: require authenticated session from index.html
+  if (sessionStorage.getItem('asisa_auth') !== 'true') {
+    window.location.href = 'index.html';
+  }
+</script>
+<style>
+:root {
+  --asisa-primary: #003366;
+  --asisa-secondary: #0066cc;
+  --bg: #f5f7fa;
+  --card-bg: #fff;
+  --text: #1a1a2e;
+  --text-muted: #6b7280;
+  --danger: #ef4444;
+  --success: #10b981;
+  --border: #e5e7eb;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+       background: var(--bg); color: var(--text); line-height: 1.6; }
+header { background: linear-gradient(135deg, var(--asisa-primary), var(--asisa-secondary));
+         color: white; padding: 2rem; }
+header h1 { font-size: 1.6rem; }
+header p { opacity: 0.85; margin-top: 0.3rem; font-size: 0.9rem; }
+header .back { color: white; text-decoration: underline; font-size: 0.85rem; opacity: 0.85; }
+.container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+.intro { background: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.intro h2 { color: var(--asisa-primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+.intro p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.insurer-section { margin-bottom: 2.5rem; }
+.insurer-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;
+                  padding-bottom: 0.5rem; border-bottom: 2px solid var(--asisa-primary); }
+.insurer-header h2 { color: var(--asisa-primary); font-size: 1.3rem; }
+.insurer-header .badge { background: var(--asisa-primary); color: white; padding: 0.15rem 0.7rem;
+                          border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+.sample { background: var(--card-bg); border-radius: 12px; padding: 1.5rem;
+          margin-bottom: 1.2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.sample h3 { color: var(--asisa-primary); font-size: 1.05rem; margin-bottom: 0.3rem; }
+.sample .subtitle { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+.sample-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 900px) { .sample-grid { grid-template-columns: 1fr; } }
+.panel { background: #fafbfc; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+.panel h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;
+            color: var(--text-muted); margin-bottom: 0.6rem; font-weight: 700; }
+.panel img { max-width: 100%; border: 1px solid var(--border); border-radius: 6px; }
+.panel pre { background: white; padding: 0.7rem; border-radius: 6px; font-size: 0.78rem;
+             overflow-x: auto; white-space: pre-wrap; word-break: break-word; border: 1px solid var(--border); }
+.fields { font-size: 0.85rem; }
+.fields .row { display: flex; justify-content: space-between; padding: 0.3rem 0;
+               border-bottom: 1px solid var(--border); gap: 1rem; }
+.fields .row:last-child { border-bottom: none; }
+.fields .label { color: var(--text-muted); font-weight: 600; flex-shrink: 0; }
+.fields .value { color: var(--text); text-align: right; word-break: break-word; }
+.fields .value code { background: #eef; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.8rem; }
+.checks { margin-top: 0.8rem; }
+.check { font-size: 0.82rem; padding: 0.4rem 0.6rem; border-radius: 6px; margin-bottom: 0.3rem; }
+.check.ok { background: #ecfdf5; color: #065f46; border-left: 3px solid var(--success); }
+.check.fail { background: #fef2f2; color: #7f1d1d; border-left: 3px solid var(--danger); }
+.kpi-list { font-size: 0.82rem; }
+.kpi-item { padding: 0.5rem; border-radius: 6px; background: white; margin-bottom: 0.4rem;
+            border: 1px solid var(--border); }
+.kpi-item .kpi-name { font-weight: 600; color: var(--asisa-primary); font-size: 0.83rem; }
+.kpi-item .kpi-value { color: var(--text); margin-top: 0.1rem; }
+.kpi-item .kpi-participation { color: var(--text-muted); font-size: 0.78rem; margin-top: 0.2rem; }
+.full-width { grid-column: 1 / -1; }
+.evidence-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+</style>
+</head><body>
+<header>
+  <a class="back" href="index.html">&larr; Volver al dashboard</a>
+  <h1>Auditoría End-to-End</h1>
+  <p>Trazabilidad desde el PDF original hasta los KPIs del dashboard</p>
+</header>
+<div class="container">
+  <div class="intro">
+    <h2>Metodología</h2>
+    <p>Se seleccionaron aleatoriamente <strong>5 registros por aseguradora</strong> (25 en total), con diversidad
+       forzada en especialidades y municipios. Para cada muestra se muestra:</p>
+    <p><strong>1. Evidencia</strong> — Imagen de la página del PDF original (o extracto de texto para los PDFs con texto extraíble).<br>
+    <strong>2. Registro normalizado</strong> — Todos los campos del SQLite tras extracción, normalización y enriquecimiento.<br>
+    <strong>3. Contribución a KPIs</strong> — Qué métricas del dashboard se ven afectadas por este registro.<br>
+    <strong>4. Checks de coherencia</strong> — Validaciones automáticas que deberían cumplirse.</p>
+    <p>Este reporte se genera con <code>scripts/generate_audit.py</code> contra la base SQLite.
+       Para validar manualmente: abrir el PDF en la página indicada y comparar con el registro extraído.</p>
+  </div>
+
+<div class="insurer-section">
+  <div class="insurer-header">
+    <h2>ASISA</h2>
+    <span class="badge">5 muestras</span>
+    <span style="color:var(--text-muted);font-size:0.85rem;">— Cuadro medico ASISA Asturias.pdf</span>
+  </div>
+<div class="sample">
+  <h3>Muestra #1: DR. GONCALVES LOSA Carlos A</h3>
+  <div class="subtitle">Psiquiatría — Gijón — Página 29 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/asisa_p029_s1.png" alt="Página 29 del PDF ASISA">
+                    <div class="evidence-note">PDF: Cuadro medico ASISA Asturias.pdf — Página 29</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">ASISA</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">DR. GONCALVES LOSA Carlos A</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>goncalves losa carlos a</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">PSIQUIATRIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Psiquiatría</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Salud Mental</span></div><div class="row"><span class="label">Centro</span><span class="value">HOSPITAL BEGOÑA</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>hospital begona</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Avenida Pablo Iglesias, 92</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985367711</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">29</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>goncalves losa carlos a|Salud Mental</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "PSIQUIATRIA" normalizada a "Psiquiatría"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>goncalves losa carlos a</code></div><div class="check ok">✓ persona_id: <code>goncalves losa carlos a|Salud Mental</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros ASISA</div>
+                    <div class="kpi-value">Valor actual: <strong>933</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos ASISA (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>553</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>goncalves losa carlos a|Salud Mental</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Psiquiatría en ASISA (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>6</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros ASISA en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>308</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio ASISA / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>6.39 prof/10K (195 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #2: DR. RAMOS RODRIGUEZ Santiago</h3>
+  <div class="subtitle">Neumología — Oviedo — Página 12 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/asisa_p012_s2.png" alt="Página 12 del PDF ASISA">
+                    <div class="evidence-note">PDF: Cuadro medico ASISA Asturias.pdf — Página 12</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">ASISA</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">DR. RAMOS RODRIGUEZ Santiago</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>ramos rodriguez santiago</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">NEUMOLOGIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Neumología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Neumología</span></div><div class="row"><span class="label">Centro</span><span class="value">POLICLINICAS OVIEDO</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>policlinica oviedo</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Quintana, 11</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985272717</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">12</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>ramos rodriguez santiago|Neumología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "NEUMOLOGIA" normalizada a "Neumología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>ramos rodriguez santiago</code></div><div class="check ok">✓ persona_id: <code>ramos rodriguez santiago|Neumología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros ASISA</div>
+                    <div class="kpi-value">Valor actual: <strong>933</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos ASISA (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>553</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>ramos rodriguez santiago|Neumología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Neumología en ASISA (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>8</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros ASISA en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>408</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio ASISA / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>8.44 prof/10K (287 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #3: SRA. CARRAL LLANO Maria Soledad</h3>
+  <div class="subtitle">Psicología — Oviedo — Página 14 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/asisa_p014_s3.png" alt="Página 14 del PDF ASISA">
+                    <div class="evidence-note">PDF: Cuadro medico ASISA Asturias.pdf — Página 14</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">ASISA</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">SRA. CARRAL LLANO Maria Soledad</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>a carral llano maria soledad</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">PSICOLOGIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Psicología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Salud Mental</span></div><div class="row"><span class="label">Centro</span><span class="value">CLINICA EL FONTAN</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>clinica el fontan</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Lila, 6</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985202020</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">14</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>a carral llano maria soledad|Salud Mental</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "PSICOLOGIA" normalizada a "Psicología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>a carral llano maria soledad</code></div><div class="check ok">✓ persona_id: <code>a carral llano maria soledad|Salud Mental</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros ASISA</div>
+                    <div class="kpi-value">Valor actual: <strong>933</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos ASISA (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>553</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>a carral llano maria soledad|Salud Mental</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Psicología en ASISA (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>15</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros ASISA en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>408</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio ASISA / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>8.44 prof/10K (287 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #4: DR. FEJOO GOMEZ Carlos</h3>
+  <div class="subtitle">Medicina General — Oviedo — Página 2 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/asisa_p002_s4.png" alt="Página 2 del PDF ASISA">
+                    <div class="evidence-note">PDF: Cuadro medico ASISA Asturias.pdf — Página 2</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">ASISA</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">DR. FEJOO GOMEZ Carlos</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>fejoo gomez carlos</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">MEDICINA GENERAL</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Medicina General</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Medicina General</span></div><div class="row"><span class="label">Centro</span><span class="value">CLINICA CERVANTES</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>clinica cervantes</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Cervantes, 21</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985236043</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">2</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>fejoo gomez carlos|Medicina General</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "MEDICINA GENERAL" normalizada a "Medicina General"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>fejoo gomez carlos</code></div><div class="check ok">✓ persona_id: <code>fejoo gomez carlos|Medicina General</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros ASISA</div>
+                    <div class="kpi-value">Valor actual: <strong>933</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos ASISA (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>553</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>fejoo gomez carlos|Medicina General</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Medicina General en ASISA (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>117</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros ASISA en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>408</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio ASISA / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>8.44 prof/10K (287 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Medicina General</strong></div>
+                    <div class="kpi-participation">Antes: Medicina General + Medicina Familiar y Comunitaria (fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #5: DR. GONZALEZ FERNANDEZ Jesus</h3>
+  <div class="subtitle">Cirugía General — Oviedo — Página 8 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/asisa_p008_s5.png" alt="Página 8 del PDF ASISA">
+                    <div class="evidence-note">PDF: Cuadro medico ASISA Asturias.pdf — Página 8</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">ASISA</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">DR. GONZALEZ FERNANDEZ Jesus</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>gonzalez fernandez jesus</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">CIRUGIA GENERAL Y DEL APARATO DIGESTIVO</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Cirugía General</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Cirugía General</span></div><div class="row"><span class="label">Centro</span><span class="value">CENTRO MEDICO DE ASTURIAS</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>centro medico de asturias</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Avenida Jose Maria Richard Grandio, 3</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985250300</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">8</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>gonzalez fernandez jesus|Cirugía General</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "CIRUGIA GENERAL Y DEL APARATO DIGESTIVO" normalizada a "Cirugía General"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>gonzalez fernandez jesus</code></div><div class="check ok">✓ persona_id: <code>gonzalez fernandez jesus|Cirugía General</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros ASISA</div>
+                    <div class="kpi-value">Valor actual: <strong>933</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos ASISA (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>553</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>gonzalez fernandez jesus|Cirugía General</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Cirugía General en ASISA (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>5</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros ASISA en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>408</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio ASISA / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>8.44 prof/10K (287 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Cirugía General</strong></div>
+                    <div class="kpi-participation">Antes: Cirugía General, Cirugía General y del Aparato Digestivo, Proctología (todas fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="insurer-section">
+  <div class="insurer-header">
+    <h2>Mapfre</h2>
+    <span class="badge">5 muestras</span>
+    <span style="color:var(--text-muted);font-size:0.85rem;">— Cuadro medico Mapfre Asturias.pdf</span>
+  </div>
+<div class="sample">
+  <h3>Muestra #6: Dr. Ocio Fernandez German</h3>
+  <div class="subtitle">Alergología — Oviedo — Página 59 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/mapfre_p059_s6.png" alt="Página 59 del PDF Mapfre">
+                    <div class="evidence-note">PDF: Cuadro medico Mapfre Asturias.pdf — Página 59</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Mapfre</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dr. Ocio Fernandez German</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>ocio fernandez german</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">Alergologia</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Alergología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Alergología</span></div><div class="row"><span class="label">Centro</span><span class="value">Clinica Asturias</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>clinica asturias</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ NARANJO DE BULNES 4</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985286000</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">59</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>ocio fernandez german|Alergología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "Alergologia" normalizada a "Alergología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>ocio fernandez german</code></div><div class="check ok">✓ persona_id: <code>ocio fernandez german|Alergología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Mapfre</div>
+                    <div class="kpi-value">Valor actual: <strong>476</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Mapfre (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>384</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>ocio fernandez german|Alergología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Alergología en Mapfre (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>3</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Mapfre en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>181</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Mapfre / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>5.15 prof/10K (175 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #7: Sra. Fernandez Gonzalez Rosalia</h3>
+  <div class="subtitle">Fisioterapia — Tineo — Página 74 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/mapfre_p074_s7.png" alt="Página 74 del PDF Mapfre">
+                    <div class="evidence-note">PDF: Cuadro medico Mapfre Asturias.pdf — Página 74</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Mapfre</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Sra. Fernandez Gonzalez Rosalia</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>a fernandez gonzalez rosalia</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">Rehabilitacion Fisioterapeutas</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Fisioterapia</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Rehabilitación</span></div><div class="row"><span class="label">Centro</span><span class="value">Consultorio</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>consultorio</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">AV. DE OVIEDO 3</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985900184;609588102</span></div><div class="row"><span class="label">Municipio</span><span class="value">Tineo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">8,769 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área II - Cangas del Narcea</span></div><div class="row"><span class="label">Página PDF</span><span class="value">74</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>a fernandez gonzalez rosalia|Rehabilitación</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "Rehabilitacion Fisioterapeutas" normalizada a "Fisioterapia"</div><div class="check ok">✓ Municipio "Tineo" tiene población (8,769 hab.)</div><div class="check ok">✓ Área sanitaria: Área II - Cangas del Narcea</div><div class="check ok">✓ Profesional normalizado: <code>a fernandez gonzalez rosalia</code></div><div class="check ok">✓ persona_id: <code>a fernandez gonzalez rosalia|Rehabilitación</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Mapfre</div>
+                    <div class="kpi-value">Valor actual: <strong>476</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Mapfre (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>384</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>a fernandez gonzalez rosalia|Rehabilitación</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Fisioterapia en Mapfre (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>31</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Mapfre en Tineo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>6</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Tineo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Mapfre / 10.000 hab en Área II - Cangas del Narcea (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>3.45 prof/10K (19 prof / 55,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Fisioterapia</strong></div>
+                    <div class="kpi-participation">Antes: Fisioterapia + Rehabilitación + Medicina Física (fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #8: Dra. Fernandez Lopez Belen</h3>
+  <div class="subtitle">Odontología — Oviedo — Página 67 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/mapfre_p067_s8.png" alt="Página 67 del PDF Mapfre">
+                    <div class="evidence-note">PDF: Cuadro medico Mapfre Asturias.pdf — Página 67</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Mapfre</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dra. Fernandez Lopez Belen</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>a fernandez lopez belen</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">Odontoestomatologia (Dental)</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Odontología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Odontología/Maxilofacial</span></div><div class="row"><span class="label">Centro</span><span class="value">Consultorio</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>consultorio</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ URIA 6 4</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985223347</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">67</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>a fernandez lopez belen|Odontología/Maxilofacial</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "Odontoestomatologia (Dental)" normalizada a "Odontología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>a fernandez lopez belen</code></div><div class="check ok">✓ persona_id: <code>a fernandez lopez belen|Odontología/Maxilofacial</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Mapfre</div>
+                    <div class="kpi-value">Valor actual: <strong>476</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Mapfre (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>384</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>a fernandez lopez belen|Odontología/Maxilofacial</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Odontología en Mapfre (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>50</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Mapfre en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>181</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Mapfre / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>5.15 prof/10K (175 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Odontología</strong></div>
+                    <div class="kpi-participation">Antes: Odontología, Odontología-Ortodoncia, Odontología-Periodoncia, Estomatología (todas fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #9: Dr. Cabanillas Farpón Ruben;Dra. Fueto Diaz Maria;Dr. Mendez Blanco Laura;Dra. Marton Lordi</h3>
+  <div class="subtitle">Oncología — Oviedo — Página 67 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/mapfre_p067_s9.png" alt="Página 67 del PDF Mapfre">
+                    <div class="evidence-note">PDF: Cuadro medico Mapfre Asturias.pdf — Página 67</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Mapfre</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dr. Cabanillas Farpón Ruben;Dra. Fueto Diaz Maria;Dr. Mendez Blanco Laura;Dra. Marton Lordi</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>cabanillas farpon ruben</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">Oncologia</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Oncología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Oncología</span></div><div class="row"><span class="label">Centro</span><span class="value">IMOMA</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>imoma</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">AV. RICHARD GRANDIO 3</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985250300.EXT</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">67</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>cabanillas farpon ruben|Oncología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "Oncologia" normalizada a "Oncología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>cabanillas farpon ruben</code></div><div class="check ok">✓ persona_id: <code>cabanillas farpon ruben|Oncología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Mapfre</div>
+                    <div class="kpi-value">Valor actual: <strong>476</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Mapfre (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>384</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>cabanillas farpon ruben|Oncología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Oncología en Mapfre (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>1</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Mapfre en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>181</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Mapfre / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>5.15 prof/10K (175 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #10: Dra. Gutierrez Jimenez Ana</h3>
+  <div class="subtitle">Odontología — Ribadesella — Página 73 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/mapfre_p073_s10.png" alt="Página 73 del PDF Mapfre">
+                    <div class="evidence-note">PDF: Cuadro medico Mapfre Asturias.pdf — Página 73</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Mapfre</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dra. Gutierrez Jimenez Ana</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>a gutierrez jimenez ana</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">Odontoestomatologia (Dental)</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Odontología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Odontología/Maxilofacial</span></div><div class="row"><span class="label">Centro</span><span class="value">Consultorio</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>consultorio</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ COMERCIO 6</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985861482</span></div><div class="row"><span class="label">Municipio</span><span class="value">Ribadesella</span></div><div class="row"><span class="label">Población municipio</span><span class="value">5,548 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área VI - Arriondas</span></div><div class="row"><span class="label">Página PDF</span><span class="value">73</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>a gutierrez jimenez ana|Odontología/Maxilofacial</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "Odontoestomatologia (Dental)" normalizada a "Odontología"</div><div class="check ok">✓ Municipio "Ribadesella" tiene población (5,548 hab.)</div><div class="check ok">✓ Área sanitaria: Área VI - Arriondas</div><div class="check ok">✓ Profesional normalizado: <code>a gutierrez jimenez ana</code></div><div class="check ok">✓ persona_id: <code>a gutierrez jimenez ana|Odontología/Maxilofacial</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Mapfre</div>
+                    <div class="kpi-value">Valor actual: <strong>476</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Mapfre (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>384</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>a gutierrez jimenez ana|Odontología/Maxilofacial</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Odontología en Mapfre (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>50</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Mapfre en Ribadesella (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>6</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Ribadesella</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Mapfre / 10.000 hab en Área VI - Arriondas (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>6.0 prof/10K (21 prof / 35,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Odontología</strong></div>
+                    <div class="kpi-participation">Antes: Odontología, Odontología-Ortodoncia, Odontología-Periodoncia, Estomatología (todas fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="insurer-section">
+  <div class="insurer-header">
+    <h2>Sanitas</h2>
+    <span class="badge">5 muestras</span>
+    <span style="color:var(--text-muted);font-size:0.85rem;">— Cuadro medico Sanitas Asturias (1).pdf</span>
+  </div>
+<div class="sample">
+  <h3>Muestra #11: Dr. Pedraza Cotarelo, Fernando Jose</h3>
+  <div class="subtitle">Odontología — Navia — Página 29 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/sanitas_p029_s11.png" alt="Página 29 del PDF Sanitas">
+                    <div class="evidence-note">PDF: Cuadro medico Sanitas Asturias (1).pdf — Página 29</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Sanitas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dr. Pedraza Cotarelo, Fernando Jose</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>pedraza cotarelo fernando jose</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">ORTODONCIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Odontología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Odontología/Maxilofacial</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">Carbo Nidus No 1 18</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 634 522</span></div><div class="row"><span class="label">Municipio</span><span class="value">Navia</span></div><div class="row"><span class="label">Población municipio</span><span class="value">8,136 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área I - Jarrio</span></div><div class="row"><span class="label">Página PDF</span><span class="value">29</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>pedraza cotarelo fernando jose|Odontología/Maxilofacial</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "ORTODONCIA" normalizada a "Odontología"</div><div class="check ok">✓ Municipio "Navia" tiene población (8,136 hab.)</div><div class="check ok">✓ Área sanitaria: Área I - Jarrio</div><div class="check ok">✓ Profesional normalizado: <code>pedraza cotarelo fernando jose</code></div><div class="check ok">✓ persona_id: <code>pedraza cotarelo fernando jose|Odontología/Maxilofacial</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Sanitas</div>
+                    <div class="kpi-value">Valor actual: <strong>576</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Sanitas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>168</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>pedraza cotarelo fernando jose|Odontología/Maxilofacial</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Odontología en Sanitas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>14</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Sanitas en Navia (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>8</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Navia</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Sanitas / 10.000 hab en Área I - Jarrio (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>1.64 prof/10K (7 prof / 42,600 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Odontología</strong></div>
+                    <div class="kpi-participation">Antes: Odontología, Odontología-Ortodoncia, Odontología-Periodoncia, Estomatología (todas fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #12: Sra. Esteban Mera, Veronica</h3>
+  <div class="subtitle">Podología — Oviedo — Página 8 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/sanitas_p008_s12.png" alt="Página 8 del PDF Sanitas">
+                    <div class="evidence-note">PDF: Cuadro medico Sanitas Asturias (1).pdf — Página 8</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Sanitas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Sra. Esteban Mera, Veronica</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>a esteban mera veronica</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">PODOLOGIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Podología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Podología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ Campomanes 4 Bajo</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 212 545</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">8</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>a esteban mera veronica|Podología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "PODOLOGIA" normalizada a "Podología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>a esteban mera veronica</code></div><div class="check ok">✓ persona_id: <code>a esteban mera veronica|Podología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Sanitas</div>
+                    <div class="kpi-value">Valor actual: <strong>576</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Sanitas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>168</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>a esteban mera veronica|Podología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Podología en Sanitas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>6</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Sanitas en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>192</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Sanitas / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>2.38 prof/10K (81 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #13: Dr. Baregano Peha, Luis Vicente</h3>
+  <div class="subtitle">Cardiología — Oviedo — Página 5 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/sanitas_p005_s13.png" alt="Página 5 del PDF Sanitas">
+                    <div class="evidence-note">PDF: Cuadro medico Sanitas Asturias (1).pdf — Página 5</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Sanitas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dr. Baregano Peha, Luis Vicente</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>baregano peha luis vicente</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">CARDIOLOGIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Cardiología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Cardiología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">Policlinico Quinteros. C/ Quinones 1 1</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 272 111</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">5</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>baregano peha luis vicente|Cardiología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "CARDIOLOGIA" normalizada a "Cardiología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>baregano peha luis vicente</code></div><div class="check ok">✓ persona_id: <code>baregano peha luis vicente|Cardiología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Sanitas</div>
+                    <div class="kpi-value">Valor actual: <strong>576</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Sanitas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>168</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>baregano peha luis vicente|Cardiología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Cardiología en Sanitas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>5</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Sanitas en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>192</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Sanitas / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>2.38 prof/10K (81 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #14: Dr. Fernandez Suarez, Hilario Javier</h3>
+  <div class="subtitle">Otorrinolaringología — Oviedo — Página 8 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/sanitas_p008_s14.png" alt="Página 8 del PDF Sanitas">
+                    <div class="evidence-note">PDF: Cuadro medico Sanitas Asturias (1).pdf — Página 8</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Sanitas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Dr. Fernandez Suarez, Hilario Javier</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>fernandez suarez hilario javier</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">OTORRINOLARINGOLOGIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Otorrinolaringología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Otorrinolaringología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ Quinones 1 1</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 213 717 / 985 433 946</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">8</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>fernandez suarez hilario javier|Otorrinolaringología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "OTORRINOLARINGOLOGIA" normalizada a "Otorrinolaringología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>fernandez suarez hilario javier</code></div><div class="check ok">✓ persona_id: <code>fernandez suarez hilario javier|Otorrinolaringología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Sanitas</div>
+                    <div class="kpi-value">Valor actual: <strong>576</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Sanitas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>168</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>fernandez suarez hilario javier|Otorrinolaringología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Otorrinolaringología en Sanitas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>7</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Sanitas en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>192</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Sanitas / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>2.38 prof/10K (81 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Otorrinolaringología</strong></div>
+                    <div class="kpi-participation">Antes: Otorrinolaringología + Audiología (fusionadas por cliente)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #15: Sr. Perez Alvarez, Martin</h3>
+  <div class="subtitle">Fisioterapia — El Franco — Página 17 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <img src="auditoria_images/sanitas_p017_s15.png" alt="Página 17 del PDF Sanitas">
+                    <div class="evidence-note">PDF: Cuadro medico Sanitas Asturias (1).pdf — Página 17</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Sanitas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Sr. Perez Alvarez, Martin</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>perez alvarez martin</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">FISIOTERAPEUTAS Y CENTROS DE FISIOTERAPIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Fisioterapia</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Rehabilitación</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">—</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 637 003</span></div><div class="row"><span class="label">Municipio</span><span class="value">El Franco</span></div><div class="row"><span class="label">Población municipio</span><span class="value">—</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área I - Jarrio</span></div><div class="row"><span class="label">Página PDF</span><span class="value">17</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>perez alvarez martin|Rehabilitación</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "FISIOTERAPEUTAS Y CENTROS DE FISIOTERAPIA" normalizada a "Fisioterapia"</div><div class="check fail">✗ Municipio "El Franco" sin población asignada</div><div class="check ok">✓ Área sanitaria: Área I - Jarrio</div><div class="check ok">✓ Profesional normalizado: <code>perez alvarez martin</code></div><div class="check ok">✓ persona_id: <code>perez alvarez martin|Rehabilitación</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Sanitas</div>
+                    <div class="kpi-value">Valor actual: <strong>576</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Sanitas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>168</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>perez alvarez martin|Rehabilitación</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Fisioterapia en Sanitas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>16</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Sanitas en El Franco (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>1</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en El Franco</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Sanitas / 10.000 hab en Área I - Jarrio (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>1.64 prof/10K (7 prof / 42,600 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Fisioterapia</strong></div>
+                    <div class="kpi-participation">Antes: Fisioterapia + Rehabilitación + Medicina Física (fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="insurer-section">
+  <div class="insurer-header">
+    <h2>Adeslas</h2>
+    <span class="badge">5 muestras</span>
+    <span style="color:var(--text-muted);font-size:0.85rem;">— Cuadro medico Adeslas Asturias.pdf</span>
+  </div>
+<div class="sample">
+  <h3>Muestra #16: GARCÍA ACERO, Azucena</h3>
+  <div class="subtitle">Enfermería — Gijón — Página 29 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 29 ===
+Gijón
+FERNÁNDEZ TABUYO, María Dolores TRIANA DURÁN, Ángela Rosa
+Avda. Pablo Iglesias, 90 Avda. José Manuel Palacio Álvarez, 10
+Teléfono 985 36 35 22 Teléfono 985 23 10 10
+Consulta de lunes a viernes Consulta previa petición
+de 8,30 a 11,30 VÁZQUEZ DE PRADA GONZÁLEZ, Ignacio Javier
+FIGAREDO PIDAL, Juan Santa Doradía, 4
+Cabrales, 72 - 4º - Oficina 7 Teléfono 985 35 04 04
+Teléfonos 985 34 52 47 - 607 51 53 93 Consulta previa petición
+Consulta de 10 a 13 y de 17 a 19,30, VEIGA GALLEGO, Roberto
+de lunes a viernes Avda. Pablo Iglesias, 90
+Previa petición Teléfono 985 36 35 22
+HEDRERA PELÁEZ, Antonio Consulta de lunes a viernes de 8,30 a 11,30;
+Luanco, 2 lunes, martes y jueves de 16,30 a 18,00
+Teléfono 985 35 88 27
+Consulta de 9 a 13 y de 16 a 19 PEDIATRÍA
+Previa petición
+HERRERO RÍOS, Florián RIOL DIEGO, Mario
+Puerto La Espina, 6 - 3º Izda. HOSPITAL BEGOÑA
+Teléfonos 985 39 32 14 - 639 73 83 32 Avda. Pablo Iglesias, 92
+Consulta previa petición Teléfono 985 36 77 11
+JUNQUERA RODRÍGUEZ, Eduardo Consulta previa petición
+Corrida, 18 - Entresuelo
+Teléfono 659 36 45 75 ENFERMERÍA
+Consulta de 15,30 a 16,30
+Previa petición COLUNGA GARCÍA, Arántzazu
+MENÉNDEZ DE BLAS, Mª Carmen Avda. Pablo Iglesias, 90
+Cangas de Onís, 13 - 1º Izda. Teléfono 985 36 35 22
+Teléfono 985 35 47 32 Consulta previa petición
+Consulta de 10 a 12,30 GARCÍA ACERO, Azucena
+Previa petición Cangas de Onís, 13 - 1º izda.
+RIERA CALVO, Andrés Miguel Teléfono 985 35 47 32
+Luanco, 2 Consulta previa petición
+Teléfono 985 35 88 27 GARCÍA SÁNCHEZ, Alberto
+Consulta de 11 a 13 y de 16 a 18 607 23 65 28
+Previa petición Servicio a domicilio previa petición
+SERRANO COBIÁN, María Elena MACIA PÉREZ, Rosendo
+Doctor Hurlé, 49 - 4º B Cabrales, 7 - 1º
+Teléfono 985 13 34 58 Teléfonos 985 34 52 47 - 620 43 77 33
+Consulta de 11,15 a 13 y de 18 a 20 Consulta de 18 a 19
+Previa petición Previa petición 27</pre>
+                    <div class="evidence-note">PDF: Cuadro medico Adeslas Asturias.pdf — Página 29 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Adeslas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">GARCÍA ACERO, Azucena</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>garcia acero azucena</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">ENFERMERÍA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Enfermería</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Enfermería</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">—</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 35 47 32 / 985 35 88 27</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">29</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>garcia acero azucena|Enfermería</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "ENFERMERÍA" normalizada a "Enfermería"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>garcia acero azucena</code></div><div class="check ok">✓ persona_id: <code>garcia acero azucena|Enfermería</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Adeslas</div>
+                    <div class="kpi-value">Valor actual: <strong>546</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Adeslas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>513</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>garcia acero azucena|Enfermería</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Enfermería en Adeslas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>20</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Adeslas en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>193</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Adeslas / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>6.46 prof/10K (197 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #17: MENÉNDEZ TORRE, Ángela</h3>
+  <div class="subtitle">Fisioterapia — Oviedo — Página 12 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 12 ===
+Oviedo
+MONTES DÍAZ, Bárbara ESCOTET MONROY, Sergio
+La Lila, 6-8 Arquitecto Reguera, 1
+Teléfono 985 20 20 20 Teléfono 985 23 42 60
+Consulta de 9,30 a 11,00 Consulta previa petición
+y de 17 a 18 FERNÁNDEZ MON, Juan Vicente
+Previa petición Marqués de Teverga, 12
+Teléfonos 984 19 36 67 - 684 64 53 31
+Consulta previa petición
+MATRONAS GARCÍA SANTOS, Claudia
+Prao Picón, s/n
+Teléfono 984 08 11 12
+CENTRO MÉDICO DE ASTURIAS
+Consulta previa petición
+Avda. José Mª Richard Grandío, 3
+LÓPEZ DÍAZ, Pedro
+Teléfono 985 27 25 68
+Cabo Noval, 11
+Consulta previa petición
+Teléfono 985 21 24 24
+Consulta de lunes a viernes
+de 8,30 a 14,30 y de 15,30 a 20,30
+FISIOTERAPIA
+Previa petición
+LORENZO ÁLVAREZ, Juan de
+ÁLVAREZ GÓMEZ, Guillermo
+González del Valle, 3 - 5º A
+Isla de Cuba, 10
+Teléfono 985 24 61 79
+Teléfono 984 10 34 45
+Consulta de lunes a viernes
+Consulta previa petición
+de 9 a 13 y de 16 a 20
+ÁLVAREZ SUÁREZ, Lorena
+Previa petición
+Pío XII, 4
+MADRID REIGADAS, Pablo
+Teléfono 985 15 02 47
+Matemático Pedrayes, 2
+Consulta previa petición
+Teléfono 684 60 90 15
+BÁRZANA GONZÁLEZ, Elena
+Consulta previa petición
+Matemático Pedrayes, 15-entreplanta C
+MARTÍNEZ GARRIDO, Ignacio
+Teléfono 985 25 85 58
+Prao Picón, s/n
+Consulta previa petición
+Teléfono 984 08 11 12
+CANCIO-DONLEBUN BLANCO, Héctor Consulta previa petición
+Prao Picón, s/n
+MENÉNDEZ TORRE, Ángela
+Teléfono 984 08 11 12 Matemático Pedrayes, 2
+Consulta previa petición Teléfono 684 60 90 15
+CANO GONZÁLEZ, Pablo Consulta previa petición
+Muñoz Degraín, 2 - 1º - Local 3 MENDIETA RODRÍGUEZ, Gerardo
+Teléfono 985 25 98 87 Pérez de Ayala, 14
+Consulta de lunes a viernes Teléfono 985 03 74 18
+de 9 a 14 y de 16 a 20 Consulta de 9 a 14 y de 16 a 20
+10 Previa petición Previa petición</pre>
+                    <div class="evidence-note">PDF: Cuadro medico Adeslas Asturias.pdf — Página 12 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Adeslas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">MENÉNDEZ TORRE, Ángela</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>menendez torre angela</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">FISIOTERAPIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Fisioterapia</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Rehabilitación</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">Muñoz Degraín, 2 - 1º - Local 3</span></div><div class="row"><span class="label">Teléfono</span><span class="value">984 08 11 12</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">12</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>menendez torre angela|Rehabilitación</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "FISIOTERAPIA" normalizada a "Fisioterapia"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>menendez torre angela</code></div><div class="check ok">✓ persona_id: <code>menendez torre angela|Rehabilitación</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Adeslas</div>
+                    <div class="kpi-value">Valor actual: <strong>546</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Adeslas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>513</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>menendez torre angela|Rehabilitación</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Fisioterapia en Adeslas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>64</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Adeslas en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>165</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Adeslas / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>5.09 prof/10K (173 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Fisioterapia</strong></div>
+                    <div class="kpi-participation">Antes: Fisioterapia + Rehabilitación + Medicina Física (fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #18: FERNÁNDEZ VEGA, Francisco José</h3>
+  <div class="subtitle">Nefrología — Oviedo — Página 20 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 20 ===
+Oviedo
+GUTIÉRREZ CECCHINI, Carmen MERINO MARTÍNEZ, Carlos
+Asturias, 9 - entreplanta Doctor Casal, 10 - 2º
+Teléfono 985 23 27 43 Teléfono 985 22 75 45
+Consulta previa petición Consulta de 9 a 15
+GUTIÉRREZ-CECCHINI PÉREZ, Carmen
+Previa petición
+Avda. José Mª Richard Grandío, 3
+Teléfono 985 27 25 68
+Consulta previa petición MEDICINA INTERNA
+(Asistencia a partos)
+HERNÁNDEZ MUÑOZ, Perla RODRÍGUEZ DÍAZ, Luis Antonio
+POLICLÍNICAS OVIEDO POLICLÍNICAS OVIEDO
+Quintana, 11
+Quintana, 11
+Teléfono 985 27 27 17
+Teléfono 985 27 27 17
+Consulta previa petición
+Consulta previa petición
+(Asistencia a partos)
+RODRÍGUEZ FIDALGO, Alfonso
+RODRÍGUEZ GUIRADO, Paloma
+POLICLÍNICAS OVIEDO
+San Francisco, 8 - 5º D
+Quintana, 11
+Teléfono 985 22 80 65
+Consulta previa petición Teléfono 985 27 27 17
+Consulta previa petición
+Naranjo de Bulnes, 4-6
+Teléfono 985 28 60 00
+MEDICINA NUCLEAR
+Consulta previa petición
+SÁNCHEZ DEL RÍO, Ángel
+AIRA DELGADO, Javier
+Naranjo de Bulnes, 4-6
+Avda. José Mª Richard Grandío, 3
+Teléfono 985 28 60 00
+Consulta previa petición Teléfono 985 27 25 68
+SUÁREZ ARIAS, Ana Covadonga Consulta previa petición
+Avda. José Mª Richard Grandío, 3
+Teléfono 985 27 25 68
+MICROBIOLOGÍA Y PARASITOLOGÍA
+Consulta previa petición
+(Asistencia a partos)
+VIOR MARTÍNEZ, Lucía TELENTI ASENSIO, Mauricio
+Avda. José Mª Richard Grandío, 3 San Francisco, 13 - 8º A
+Teléfono 985 27 25 68 Teléfono 985 21 81 02
+Consulta previa petición Consulta previa petición
+HEMATOLOGÍA Y HEMOTERAPIA
+NEFROLOGÍA
+BENITO ORTIZ, José Enrique
+Avda. José Mª Richard Grandío, 3 FERNÁNDEZ VEGA, Francisco José
+Teléfono 985 25 03 00 Avda. José Mª Richard Grandío, 3
+Consulta de 9 a 14 Teléfono 985 25 03 00
+18 Previa petición Consulta previa petición</pre>
+                    <div class="evidence-note">PDF: Cuadro medico Adeslas Asturias.pdf — Página 20 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Adeslas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">FERNÁNDEZ VEGA, Francisco José</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>fernandez vega francisco jose</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">NEFROLOGÍA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Nefrología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Nefrología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">—</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 25 03 00</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">20</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>fernandez vega francisco jose|Nefrología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "NEFROLOGÍA" normalizada a "Nefrología"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>fernandez vega francisco jose</code></div><div class="check ok">✓ persona_id: <code>fernandez vega francisco jose|Nefrología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Adeslas</div>
+                    <div class="kpi-value">Valor actual: <strong>546</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Adeslas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>513</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>fernandez vega francisco jose|Nefrología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Nefrología en Adeslas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>5</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Adeslas en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>165</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Adeslas / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>5.09 prof/10K (173 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #19: MAESTRO FERNÁNDEZ, Antonio</h3>
+  <div class="subtitle">Reumatología — Gijón — Página 42 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 42 ===
+Gijón
+GARCÍA MENÉNDEZ, Constantino RODRÍGUEZ LÓPEZ, Luis
+Carlos Bertrán, 1 - 1º E HOSPITAL BEGOÑA
+Teléfonos 985 13 11 66 - 609 34 33 13 Avda. Pablo Iglesias, 92
+Consulta previa petición Teléfono 985 36 77 11
+GARCÍA PORTABELLA, Pablo Consulta previa petición
+HOSPITAL BEGOÑA ROMERO BALLARIN, Jesús Luis
+Avda. Pablo Iglesias, 92 HOSPITAL BEGOÑA
+Teléfono 985 36 77 11 Avda. Pablo Iglesias, 92
+Consulta previa petición Teléfono 985 36 77 11
+GUERRA GARCÍA, Celestino Consulta previa petición
+Alfredo Truán, 7
+RUIZ DÍAZ, Javier Antonio
+Teléfonos 985 34 62 29 - 649 24 09 92
+HOSPITAL BEGOÑA
+Consulta previa petición
+Avda. Pablo Iglesias, 92
+IGLESIAS COLAO, Roberto
+Teléfono 985 36 77 11
+HOSPITAL BEGOÑA
+Consulta previa petición
+Avda. Pablo Iglesias, 92
+SIERRA PEREIRA, Andrés Alejandro
+Teléfono 985 36 77 11
+Avda. José Manuel Palacio Álvarez, 10
+Consulta previa petición
+Teléfono 985 23 10 10
+IGLESIAS GARCÍA, Roberto Adrián
+Consulta previa petición
+HOSPITAL BEGOÑA
+SUÁREZ SUÁREZ, Miguel Ángel
+Avda. Pablo Iglesias, 92
+Avda. Pablo Iglesias, 90
+Teléfono 985 36 77 11
+Teléfono 985 36 35 22
+Consulta previa petición
+Consulta previa petición
+MAESTRO FERNÁNDEZ, Antonio
+TOYOS MUNÁRRIZ, Carmen
+HOSPITAL BEGOÑA
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+Avda. Pablo Iglesias, 92
+Teléfono 985 36 77 11
+Teléfono 985 36 77 11
+Consulta previa petición
+Consulta previa petición
+MORO BARRERO, Luis Alfonso
+URBÓN MENÉNDEZ, Luis Antonio
+HOSPITAL BEGOÑA
+Avda. Jardín Botánico, 56-74
+Avda. Pablo Iglesias, 92
+Teléfono 985 36 77 11 Teléfono 984 49 38 44 - 685 90 87 55
+Consulta previa petición Consulta previa petición
+PÉREZ COTO, Iván VELASCO VILLA, Diego
+Avda. José Manuel Palacio Álvarez, 10 HOSPITAL BEGOÑA
+Teléfono 985 23 10 10 Avda. Pablo Iglesias, 92
+Consulta previa petición Teléfono 985 36 77 11
+PIPA MUÑIZ, Iván Consulta previa petición
+HOSPITAL BEGOÑA ZABALA LLERANDI, Jorge Abelardo
+Avda. Pablo Iglesias, 92 Avda. Pablo Iglesias, 90
+Teléfono 985 36 77 11 Teléfono 985 36 35 22
+40 Consulta previa petición Consulta previa petición</pre>
+                    <div class="evidence-note">PDF: Cuadro medico Adeslas Asturias.pdf — Página 42 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Adeslas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">MAESTRO FERNÁNDEZ, Antonio</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>maestro fernandez antonio</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">REUMATOLOGÍA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Reumatología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Traumatología/Reumatología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">—</span></div><div class="row"><span class="label">Teléfono</span><span class="value">—</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">42</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>maestro fernandez antonio|Traumatología/Reumatología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "REUMATOLOGÍA" normalizada a "Reumatología"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>maestro fernandez antonio</code></div><div class="check ok">✓ persona_id: <code>maestro fernandez antonio|Traumatología/Reumatología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Adeslas</div>
+                    <div class="kpi-value">Valor actual: <strong>546</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Adeslas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>513</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>maestro fernandez antonio|Traumatología/Reumatología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Reumatología en Adeslas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>20</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Adeslas en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>193</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Adeslas / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>6.46 prof/10K (197 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #20: CASASOLA CHAMORRO, Javier</h3>
+  <div class="subtitle">Urología — Gijón — Página 43 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 43 ===
+Gijón
+MONAGAS ARTEAGA, Serenella María
+UROLOGÍA
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+ABASCAL GARCÍA, José Manuel
+Teléfono 985 36 77 11
+Avda. Pablo Iglesias, 90
+Consulta previa petición
+Teléfono 985 36 35 22
+PÉREZ GARCÍA, Corina
+Consulta previa petición
+HOSPITAL BEGOÑA
+BLANCO FERNÁNDEZ, Rebeca
+Avda. Pablo Iglesias, 92
+HOSPITAL BEGOÑA
+Teléfono 985 36 77 11
+Avda. Pablo Iglesias, 92
+Consulta previa petición
+Teléfono 985 36 77 11
+SALGADO PLONSKI, José Javier
+Consulta previa petición
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+Avda. Jardín Botánico, 56-74
+Teléfono 985 36 77 11
+Teléfonos 984 49 38 44 - 685 90 87 55
+Consulta previa petición
+Consulta previa petición
+SUÁREZ SAL, Pelayo
+CASASOLA CHAMORRO, Javier
+HOSPITAL BEGOÑA
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+Avda. Pablo Iglesias, 92
+Teléfono 985 36 77 11
+Teléfono 985 36 77 11
+Consulta previa petición
+Consulta previa petición
+CRUCEYRA BETRIU, Guillermo
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+PERSONAL SANITARIO
+Teléfono 985 36 77 11
+Consulta previa petición
+FERNÁNDEZ-PELLO MONTES, Sergio
+AUDIOLOGÍA
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+FULLAONDO CANGA, Jaime
+Teléfono 985 36 77 11
+Avda. Pablo Iglesias, 90
+Consulta previa petición
+Teléfono 985 36 35 22
+GIL UGARTEBURU, Rodrigo
+Consulta previa petición
+HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92
+Teléfono 985 36 77 11 DIETÉTICA Y NUTRICIÓN
+Consulta previa petición
+GONZÁLEZ RODRÍGUEZ, Iván BALMORI BARRILERO, Paula
+HOSPITAL BEGOÑA HOSPITAL BEGOÑA
+Avda. Pablo Iglesias, 92 Avda. Pablo Iglesias, 92
+Teléfono 985 36 77 11 Teléfono 985 36 77 11
+Consulta previa petición Consulta previa petición 41</pre>
+                    <div class="evidence-note">PDF: Cuadro medico Adeslas Asturias.pdf — Página 43 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">Adeslas</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">CASASOLA CHAMORRO, Javier</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>casasola chamorro javier</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">UROLOGÍA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Urología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Urología</span></div><div class="row"><span class="label">Centro</span><span class="value">HOSPITAL BEGOÑA</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>hospital begona</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Avda. Pablo Iglesias, 92</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 36 77 11</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">43</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>casasola chamorro javier|Urología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "UROLOGÍA" normalizada a "Urología"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>casasola chamorro javier</code></div><div class="check ok">✓ persona_id: <code>casasola chamorro javier|Urología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros Adeslas</div>
+                    <div class="kpi-value">Valor actual: <strong>546</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos Adeslas (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>513</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>casasola chamorro javier|Urología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Urología en Adeslas (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>16</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros Adeslas en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>193</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio Adeslas / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>6.46 prof/10K (197 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="insurer-section">
+  <div class="insurer-header">
+    <h2>DKV</h2>
+    <span class="badge">5 muestras</span>
+    <span style="color:var(--text-muted);font-size:0.85rem;">— Cuadro medico DKV Asturias.pdf</span>
+  </div>
+<div class="sample">
+  <h3>Muestra #21: García González, Pedro R.</h3>
+  <div class="subtitle">Fisioterapia — Gijón — Página 64 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 64 ===
+&gt; Gijón | LASERTERAPIA PROSTÁTICA &lt;
+Hospital Begoña Linares Espec. En Digestivo
+Avda. Pablo Iglesias, De, 92 Linares Rodríguez, Antonio
+Tel.: 985 367 444 Avda. Jardin Botanico, del, 56-74 Bajo
+Tel.: 984 493 844
+Imagen Diagnóstica El Molinón
+García González, Pedro R. García Isidro, Laura
+Avda. Molinon, del, 265 Pta.8 García Pérez, Juan
+Tel.: 984 399 465 Plaza Seis de Agosto, Del, 3 Bajo
+Tel.: 985 171 732 - 985 171 736
+TOMOGRAFÍA AXIAL COMPUTERIZADA.
+T.A.C. Hospital Begoña
+HT Médica Gijón - Hosp. Nieto Calleja, Ruperto B.
+Covadonga Avda. Pablo Iglesias, De, 92
+Tel.: 985 367 444
+Fernández Cuadriello, Estela
+Vicente Palacio, Margarita FISIOTERAPIA
+C/ General Suarez Valdes, 40 Centro APS Fisioterapia
+Tel.: 984 200 402
+C/ Cienfuegos, 12 Bajo
+Clínica Zigomat Tel.: 620 401 164
+C/ Cienfuegos, 2 Corporación Fisiogestión Gijón
+Tel.: 984 240 809
+C/ Uria, 16 2ª Planta
+Hospital Begoña Tel.: 985 132 552
+C. Pérez Redondo, Julio
+Fisiocenter
+Avda. Pablo Iglesias, De, 92
+Tel.: 985 367 444 C/ Oran, 29 Bajo
+Tel.: 984 291 829
+Imagen Diagnóstica El Molinón
+Hospital Covadonga
+García González, Pedro R.
+Rodríguez Cuervo, Desiré
+Avda. Molinon, del, 265 Pta.8
+Tel.: 984 399 465 C/ General Suarez Valdes, 40
+Tel.: 985 365 122
+TRATAMIENTOS ESPECIALES
+LASERTERAPIA PROSTÁTICA
+ENDOSCOPIA DIGESTIVA
+Martín Huéscar, Agustín
+Hospital Covadonga
+C/ General Suárez Valdés, 40
+C/ General Suarez Valdes, 40 Tel.: 985 365 122
+Tel.: 985 365 122
+Cita online: reserva El profesional sanitario puede Consulta virtual: chatea, habla o haz
+una cita presencial. gestionar las solicitudes de sus videollamada con esta especialidad.
+autorizaciones en caso de necesidad
+&gt; 64</pre>
+                    <div class="evidence-note">PDF: Cuadro medico DKV Asturias.pdf — Página 64 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">DKV</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">García González, Pedro R.</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>garcia gonzalez pedro r</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">FISIOTERAPIA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Fisioterapia</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Rehabilitación</span></div><div class="row"><span class="label">Centro</span><span class="value">Hospital Covadonga</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>hospital covadonga</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">Avda. Molinon, del, 265 Pta.8</span></div><div class="row"><span class="label">Teléfono</span><span class="value">984 399 465</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">64</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>garcia gonzalez pedro r|Rehabilitación</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "FISIOTERAPIA" normalizada a "Fisioterapia"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>garcia gonzalez pedro r</code></div><div class="check ok">✓ persona_id: <code>garcia gonzalez pedro r|Rehabilitación</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros DKV</div>
+                    <div class="kpi-value">Valor actual: <strong>705</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos DKV (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>588</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>garcia gonzalez pedro r|Rehabilitación</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Fisioterapia en DKV (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>31</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros DKV en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>261</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio DKV / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>7.41 prof/10K (226 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Fisioterapia</strong></div>
+                    <div class="kpi-participation">Antes: Fisioterapia + Rehabilitación + Medicina Física (fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #22: Acebal Alonso, Carlos</h3>
+  <div class="subtitle">Ginecología y Obstetricia — Gijón — Página 62 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 62 ===
+&gt; Gijón | MAMOGRAFÍA &lt;
+Insituto Urológico Asturiano Acebal Alonso, Carlos
+(INSUAS)
+C/ Vicente Inerarity, 5
+Cruceyra Betriu, Guillermo Tel.: 984 493 844
+Gil Ugarteburu, Rodrigo
+Clínicas Cardialis
+González Rodríguez, Iván
+Arguelles García, Pablo
+Avda. Pablo Iglesias, 92
+Tel.: 984 065 975 C/ Jose Manuel Palacio Alvarez, 10
+Tel.: 985 231 010
+Mateos Montero, Abel Mª
+Hospital Begoña
+C/ Luciano Castañon, 10 2 B
+Acebal Alonso, Carlos
+Tel.: 985 131 818
+Albadalejo Salinas, Vicente
+ERGOMETRÍA Avda. Pablo Iglesias, De, 92
+Cortina Rodríguez, Mª Rosario Tel.: 985 367 444
+C/ General Suárez Valdés, 40 Hospital Covadonga
+Tel.: 985 365 122
+C/ General Suarez Valdes, 40
+Acebal Alonso, Carlos Tel.: 985 365 122
+C/ Vicente Inerarity, 5 MAMOGRAFÍA
+Tel.: 984 493 844
+Hospital Begoña
+Clínicas Cardialis C. Pérez Redondo, Julio
+Arguelles García, Pablo Caveda Rodero, Patricia L.
+Fernández Cuadriello, Estela
+C/ Jose Manuel Palacio Alvarez, 10
+González Suárez, Carmen
+Tel.: 985 231 010
+Avda. Pablo Iglesias, De, 92
+Hospital Begoña Tel.: 985 367 444
+Acebal Alonso, Carlos
+HT Médica Gijón - Hosp.
+Albadalejo Salinas, Vicente
+Covadonga
+Avda. Pablo Iglesias, De, 92
+Tel.: 985 367 444 Fernández Cuadriello, Estela
+Vicente Palacio, Margarita
+Hospital Covadonga
+C/ General Suarez Valdes, 40
+C/ General Suarez Valdes, 40 Tel.: 984 200 402
+Tel.: 985 365 122
+Imagen Diagnóstica El Molinón
+HOLTER García González, Pedro R.
+Cortina Rodríguez, Mª Rosario Avda. Molinon, del, 265 Pta.8
+Tel.: 984 399 465
+C/ General Suárez Valdés, 40
+Tel.: 985 365 122
+Cita online: reserva El profesional sanitario puede Consulta virtual: chatea, habla o haz
+una cita presencial. gestionar las solicitudes de sus videollamada con esta especialidad.
+autorizaciones en caso de necesidad
+&gt; 62</pre>
+                    <div class="evidence-note">PDF: Cuadro medico DKV Asturias.pdf — Página 62 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">DKV</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Acebal Alonso, Carlos</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>acebal alonso carlos</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">DIAGNÓSTICO ESPECIAL PRENATAL</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Ginecología y Obstetricia</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Ginecología/Obstetricia</span></div><div class="row"><span class="label">Centro</span><span class="value">Hospital Begoña</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>hospital begona</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ Luciano Castañon, 10 2 B</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 131 818</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">62</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>acebal alonso carlos|Ginecología/Obstetricia</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "DIAGNÓSTICO ESPECIAL PRENATAL" normalizada a "Ginecología y Obstetricia"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>acebal alonso carlos</code></div><div class="check ok">✓ persona_id: <code>acebal alonso carlos|Ginecología/Obstetricia</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros DKV</div>
+                    <div class="kpi-value">Valor actual: <strong>705</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos DKV (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>588</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>acebal alonso carlos|Ginecología/Obstetricia</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ginecología y Obstetricia en DKV (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>43</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros DKV en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>261</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio DKV / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>7.41 prof/10K (226 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">⚠ Reagrupación de especialidad</div>
+                    <div class="kpi-value">Valor actual: <strong>Ginecología y Obstetricia</strong></div>
+                    <div class="kpi-participation">Antes: Ginecología, Ginecología y Obstetricia, Obstetricia, Diagnóstico Prenatal (todas fusionadas)</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #23: González Rodríguez,Iván</h3>
+  <div class="subtitle">Pruebas Diagnósticas Cardiológicas — Oviedo — Página 37 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 37 ===
+&gt; RADIOLOGÍA DENTAL | OVIEDO CAPITAL &lt;
+Richard Rodríguez, José Mª Clínica Asturias
+Avda. Richard Grandio, S/N García Solana, Mª Isabel
+Tel.: 985 250 300 - 985 272 568 C/ Naranjo de Bulnes, 4-6 (Clínica Asturias)
+Tel.: 985 286 000
+Clínica Asturias
+Pachón Rebollo, Nicolás RADIOLOGÍA CONVENCIONAL
+Renilla González, Alfredo
+Radiología Asturiana
+C/ Naranjo de Bulnes, 4-6 (Clínica Asturias)
+Quirós Baragaño, Sabino
+Tel.: 985 286 000
+Quintana, 11 Bajo
+MAMOGRAFÍA
+Tel.: 985 272 717
+Radiología Asturiana Centro Médico Asturias
+Quirós Baragaño, Sabino
+Avda. Richard Grandio, S/N
+Quintana, 11 Bajo Tel.: 985 250 300 - 985 272 568
+Tel.: 985 272 717
+Clínica Asturias
+Centro Médico Asturias
+Bondelle Fueyo, Roberto
+Avda. Richard Grandio, S/N C/ Naranjo de Bulnes, 4-6 (Clínica Asturias)
+Tel.: 985 250 300 - 985 272 568 Tel.: 985 286 000
+Clínica Asturias Iramsa (Instituto Radiológico)
+Bondelle Fueyo, Roberto Miranda Lucas, José
+C/ Naranjo de Bulnes, 4-6 (Clínica Asturias) C/ Cervantes, 7 1º
+Tel.: 985 286 000 Tel.: 985 244 838
+Iramsa (Instituto Radiológico) RADIOLOGÍA DENTAL
+Miranda Lucas, José
+Calvo Pérez, Sandra María
+C/ Cervantes, 7 1º
+Tel.: 985 244 838 C/ Amsterdam, 4-1º B-C
+Tel.: 985 080 333
+NEUROFISIOLOGÍA CLÍNICA
+Clínica Junquera
+Centro Médico Asturias
+Plaza Longoria Carbajal, 4 1ºA
+Ana Belen, Perez - Morala Diaz
+Tel.: 985 252 280 - 985 275 549
+Cases Huerta, Mª José
+Avda. Richard Grandio, S/N Guillermo Rehberger Olivera
+Tel.: 985 250 300 - 985 272 568 Rehberger Olivera, Guillermo
+C/ Hermanos Menendez Pidal, 27-B
+Tel.: 985 951 908
+La especialidad está disponible en la APP Quiero
+E-receta: recibe la receta electrónica por el médico
+cuidarme Más
+&lt; 37</pre>
+                    <div class="evidence-note">PDF: Cuadro medico DKV Asturias.pdf — Página 37 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">DKV</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">González Rodríguez,Iván</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>gonzalez rodriguez ivan</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">HOLTER</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Pruebas Diagnósticas Cardiológicas</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Cardiología</span></div><div class="row"><span class="label">Centro</span><span class="value">Clínica Asturias</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value"><code>clinica asturias</code></span></div><div class="row"><span class="label">Dirección</span><span class="value">—</span></div><div class="row"><span class="label">Teléfono</span><span class="value">—</span></div><div class="row"><span class="label">Municipio</span><span class="value">Oviedo</span></div><div class="row"><span class="label">Población municipio</span><span class="value">217,584 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área IV - Oviedo</span></div><div class="row"><span class="label">Página PDF</span><span class="value">37</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>gonzalez rodriguez ivan|Cardiología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "HOLTER" normalizada a "Pruebas Diagnósticas Cardiológicas"</div><div class="check ok">✓ Municipio "Oviedo" tiene población (217,584 hab.)</div><div class="check ok">✓ Área sanitaria: Área IV - Oviedo</div><div class="check ok">✓ Profesional normalizado: <code>gonzalez rodriguez ivan</code></div><div class="check ok">✓ persona_id: <code>gonzalez rodriguez ivan|Cardiología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros DKV</div>
+                    <div class="kpi-value">Valor actual: <strong>705</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos DKV (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>588</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>gonzalez rodriguez ivan|Cardiología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Pruebas Diagnósticas Cardiológicas en DKV (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>29</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros DKV en Oviedo (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>254</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Oviedo</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio DKV / 10.000 hab en Área IV - Oviedo (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>6.59 prof/10K (224 prof / 340,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #24: López Fernández, Pedro Ataulfo</h3>
+  <div class="subtitle">Urología — Gijón — Página 59 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 59 ===
+&gt; UROLOGÍA | Gijón &lt;
+REUMATOLOGÍA Clínicas Cardialis
+Palacios Álvarez - Estrada, B. Perez Coto, Ivan
+Sierra, Andres Alejandro
+C/ Uría, 41 2
+C/ Jose Manuel Palacio Alvarez, 10
+Tel.: 985 360 059
+Tel.: 985 231 010
+Riestra Noriega, José Luis
+García Menéndez, Constantino
+Avda. Pablo Iglesias, de, 90 Policlínica
+C/ Carlos Bertrand, 1 1º E
+Begoña
+Tel.: 608 904 859
+Tel.: 985 363 611
+Hospital Begoña
+Hospital Covadonga
+Azpiroz Fernández, Juan
+Palacios Álvarez - Estrada, B.
+Iglesias Colao, Roberto
+C/ General Suarez Valdes, 40
+Palacio González, Fco. Javier
+Tel.: 985 365 122
+Avda. Pablo Iglesias, De, 92
+TRAUMATOLOGÍA Y ORTOPEDIA Tel.: 985 367 444
+Barrera Cadenas, Juan Luis Multiclínica Guerra
+Guerra García, Celestino
+C/ General Suarez Valdes, 40
+Tel.: 985 365 122 C/ Alfredo Truan, 7 Bajo
+Tel.: 985 346 229
+Es Clínic
+Sanatorio Covandonga
+Iglesias García, Roberto Adrián
+Urbón Menéndez, Luis
+C/ San Bernardo, 57
+Tel.: 984 994 586 C/ General Suarez Valdes, S/n
+Tel.: 985 365 122
+Centro Médico Salud 4
+UROLOGÍA
+Lázaro Menéndez, Victor Manuel
+López Fernández, Pedro Ataulfo Insituto Urológico Asturiano
+Menéndez Viñuela, Gonzalo (INSUAS)
+Suárez Suárez, Miguel Ángel
+Cruceyra Betriu, Guillermo
+C/ Capua, 29 Gil Ugarteburu, Rodrigo
+Tel.: 985 867 111 - 985 867 110 González Rodríguez, Iván
+Avda. Pablo Iglesias, 92
+Tel.: 984 065 975
+La especialidad está disponible en la APP Quiero
+E-receta: recibe la receta electrónica por el médico
+cuidarme Más
+&lt; 59</pre>
+                    <div class="evidence-note">PDF: Cuadro medico DKV Asturias.pdf — Página 59 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">DKV</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">López Fernández, Pedro Ataulfo</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>lopez fernandez pedro ataulfo</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">UROLOGÍA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Urología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Urología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">—</span></div><div class="row"><span class="label">Teléfono</span><span class="value">—</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">59</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>lopez fernandez pedro ataulfo|Urología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "UROLOGÍA" normalizada a "Urología"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>lopez fernandez pedro ataulfo</code></div><div class="check ok">✓ persona_id: <code>lopez fernandez pedro ataulfo|Urología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros DKV</div>
+                    <div class="kpi-value">Valor actual: <strong>705</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos DKV (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>588</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>lopez fernandez pedro ataulfo|Urología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Urología en DKV (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>25</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros DKV en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>261</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio DKV / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>7.41 prof/10K (226 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+<div class="sample">
+  <h3>Muestra #25: Callejo Magaz, Francisco</h3>
+  <div class="subtitle">Cardiología — Gijón — Página 52 del PDF</div>
+  <div class="sample-grid">
+    <div class="panel">
+      <h4>📄 Evidencia (fuente)</h4>
+      
+                    <pre>=== PAGINA 52 ===
+&gt; Gijón | CIRUGÍA CARDIOVASCULAR &lt;
+Rodríguez Olay, Javier Cortina Rodríguez, Mª Rosario
+Avda. Pablo Iglesias, de, 90 C/ General Suárez Valdés, 40
+Tel.: 985 363 522 Tel.: 985 365 122
+APARATO DIGESTIVO
+García Isidro, Laura Es Clínic
+García Pérez, Juan Carro Hevia, Amelia
+Plaza Seis de Agosto, Del, 3 Bajo C/ San Bernardo, 57
+Tel.: 985 171 732 - 985 171 736 Tel.: 984 994 586
+Centro Médico Salud 4
+Linares Espec. En Digestivo Cortina Rodríguez, Mª Rosario
+Gutierrez Caro, Rodolfo David
+Linares Rodríguez, Antonio
+C/ Capua, 29
+Avda. Jardin Botanico, del, 56-74 Bajo
+Tel.: 985 867 111 - 985 867 110
+Tel.: 984 493 844
+Clínicas Cardialis
+Arguelles García, Pablo
+Linares Rodríguez, Antonio
+C/ Jose Manuel Palacio Alvarez, 10
+Avda. Pablo Iglesias, de, 90 Bajo Tel.: 985 231 010
+Tel.: 985 363 611
+Hospital Begoña
+Hospital Begoña Acebal Alonso, Carlos
+Díaz Álvarez, Gonzalo José Avda. Pablo Iglesias, De, 92
+Avda. Pablo Iglesias, De, 92 Tel.: 985 367 444
+Tel.: 985 367 444
+Hospital Covadonga
+Hospital Covadonga
+C/ General Suarez Valdes, 40
+De la Coba Ortiz, Cristobal Tel.: 985 365 122
+C/ General Suarez Valdes, 40
+CIRUGÍA CARDIOVASCULAR
+Tel.: 985 365 122
+Hospital Begoña
+CARDIOLOGÍA
+Callejo Magaz, Francisco
+Acebal Alonso, Carlos
+Avda. Pablo Iglesias, De, 92
+C/ Vicente Inerarity, 5 Tel.: 985 367 444
+Tel.: 984 493 844
+Cita online: reserva El profesional sanitario puede Consulta virtual: chatea, habla o haz
+una cita presencial. gestionar las solicitudes de sus videollamada con esta especialidad.
+autorizaciones en caso de necesidad
+&gt; 52</pre>
+                    <div class="evidence-note">PDF: Cuadro medico DKV Asturias.pdf — Página 52 (texto extraído)</div>
+    </div>
+    <div class="panel">
+      <h4>🗂 Registro normalizado (SQLite)</h4>
+      <div class="fields"><div class="row"><span class="label">Aseguradora</span><span class="value">DKV</span></div><div class="row"><span class="label">Profesional (tal cual)</span><span class="value">Callejo Magaz, Francisco</span></div><div class="row"><span class="label">Profesional normalizado</span><span class="value"><code>callejo magaz francisco</code></span></div><div class="row"><span class="label">Especialidad original</span><span class="value">CARDIOLOGÍA</span></div><div class="row"><span class="label">Especialidad normalizada</span><span class="value"><strong>Cardiología</strong></span></div><div class="row"><span class="label">Familia especialidad</span><span class="value">Cardiología</span></div><div class="row"><span class="label">Centro</span><span class="value">—</span></div><div class="row"><span class="label">Centro normalizado</span><span class="value">—</span></div><div class="row"><span class="label">Dirección</span><span class="value">C/ Vicente Inerarity, 5</span></div><div class="row"><span class="label">Teléfono</span><span class="value">985 367 444</span></div><div class="row"><span class="label">Municipio</span><span class="value">Gijón</span></div><div class="row"><span class="label">Población municipio</span><span class="value">268,313 hab.</span></div><div class="row"><span class="label">Área sanitaria</span><span class="value">Área V - Gijón</span></div><div class="row"><span class="label">Página PDF</span><span class="value">52</span></div><div class="row"><span class="label">persona_id (clave matching)</span><span class="value"><code>callejo magaz francisco|Cardiología</code></span></div></div>
+      <div class="checks"><div class="check ok">✓ Especialidad "CARDIOLOGÍA" normalizada a "Cardiología"</div><div class="check ok">✓ Municipio "Gijón" tiene población (268,313 hab.)</div><div class="check ok">✓ Área sanitaria: Área V - Gijón</div><div class="check ok">✓ Profesional normalizado: <code>callejo magaz francisco</code></div><div class="check ok">✓ persona_id: <code>callejo magaz francisco|Cardiología</code></div></div>
+    </div>
+    <div class="panel full-width">
+      <h4>📊 Contribución a KPIs del dashboard</h4>
+      <div class="kpi-list"><div class="kpi-item">
+                    <div class="kpi-name">Total registros DKV</div>
+                    <div class="kpi-value">Valor actual: <strong>705</strong></div>
+                    <div class="kpi-participation">1 registro de este profesional</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Profesionales únicos DKV (KPI card)</div>
+                    <div class="kpi-value">Valor actual: <strong>588</strong></div>
+                    <div class="kpi-participation">Cuenta como 1 (persona_id: <code>callejo magaz francisco|Cardiología</code>)</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Cardiología en DKV (pestaña Especialidades)</div>
+                    <div class="kpi-value">Valor actual: <strong>10</strong></div>
+                    <div class="kpi-participation">Aporta al contador de esta especialidad</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Registros DKV en Gijón (pestaña Cobertura Geográfica)</div>
+                    <div class="kpi-value">Valor actual: <strong>261</strong></div>
+                    <div class="kpi-participation">Cuenta como registro en Gijón</div>
+                </div><div class="kpi-item">
+                    <div class="kpi-name">Ratio DKV / 10.000 hab en Área V - Gijón (pestaña Áreas Sanitarias)</div>
+                    <div class="kpi-value">Valor actual: <strong>7.41 prof/10K (226 prof / 305,000 hab)</strong></div>
+                    <div class="kpi-participation">Este profesional forma parte del numerador del ratio</div>
+                </div></div>
+    </div>
+  </div>
+</div>
+</div>
+</div></body></html>
